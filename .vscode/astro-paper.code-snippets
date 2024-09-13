@@ -23,9 +23,7 @@
     "body": [
       "${1:frontmatter}",
       "",
-      "${2: Introductory Sentence}",
-      "",
-      "## Table of contents",
+      "${2: 書き出し...}",
       "",
       "## ${3: heading 1}",
     ],
