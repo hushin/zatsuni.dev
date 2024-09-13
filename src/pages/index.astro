@@ -24,16 +24,15 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <main id="main-content">
     <section id="hero">
       <h1>雑にdev</h1>
-      <p>雑に作ったものを公開していくサイトです。雑記も書いていく予定。</p>
-      {
-        // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
+      <p>雑になんか作る。雑記も書く。</p>
+      <p>
+        <LinkButton
+          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+          href="/about"
+        >
+          About me
+        </LinkButton>
+      </p>
     </section>
 
     <Hr />
