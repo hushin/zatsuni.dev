@@ -45,7 +45,7 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
   {
-    name: "Link",
+    name: "Zenn",
     href: "https://zenn.dev/hush_in",
     linkTitle: `Zenn`,
     active: true,
