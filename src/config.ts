@@ -33,9 +33,21 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
   {
+    name: "Bluesky",
+    href: "https://bsky.app/profile/hushin.bsky.social",
+    linkTitle: `Bluesky`,
+    active: true,
+  },
+  {
     name: "Github",
     href: "https://github.com/hushin",
     linkTitle: `Github`,
+    active: true,
+  },
+  {
+    name: "Link",
+    href: "https://zenn.dev/hush_in",
+    linkTitle: `Zenn`,
     active: true,
   },
   {
