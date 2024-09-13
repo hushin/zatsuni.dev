@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "hush_in",
   profile: "https://zatsuni.dev/",
   desc: "雑になんか作る。雑記も書く。",
-  title: "雑にdev",
+  title: "zatsuni.dev",
   ogImage: "zatuni-og.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
