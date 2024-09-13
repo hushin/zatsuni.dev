@@ -21,15 +21,26 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <main id="main-content">
     <section id="hero">
       <h1>雑にdev</h1>
-      <p>雑になんか作る。雑記も書く。</p>
-      <p>
-        <LinkButton
-          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
-          href="/about"
-        >
-          About me
-        </LinkButton>
-      </p>
+      <div class="flex space-x-4">
+        <div>
+          <img
+            src="/my-icon-min.svg"
+            class="w-20 rounded-full bg-[#FF7F00]"
+            alt="hush_in icon"
+          />
+        </div>
+        <div class="flex flex-col justify-center">
+          <p>雑になんか作る。雑記も書く。</p>
+          <p>
+            <LinkButton
+              className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+              href="/about"
+            >
+              About me
+            </LinkButton>
+          </p>
+        </div>
+      </div>
     </section>
 
     <Hr />
@@ -102,9 +113,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   }
   #hero .rss-icon {
     @apply h-6 w-6 scale-110 fill-skin-accent sm:scale-125;
-  }
-  #hero p {
-    @apply my-2;
   }
   .social-wrapper {
     @apply mt-4 flex flex-col sm:flex-row sm:items-center;
