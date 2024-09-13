@@ -1,23 +1,150 @@
 ---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import LinkButton from "@components/LinkButton.astro";
+import Hr from "@components/Hr.astro";
+import Card from "@components/Card";
+import getSortedPosts from "@utils/getSortedPosts";
+import { SITE } from "@config";
+import Datetime from "@components/Datetime";
 
+const posts = await getCollection("blog");
+
+const sortedPosts = getSortedPosts(posts);
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 ---
 
-<html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>雑にdev</title>
-  </head>
-  <body>
-    <h1>雑にdev</h1>
-    <ul>
-      <li>
-        <a href="https://twitter.com/hush_in">https://twitter.com/hush_in</a>
-      </li>
-      <li><a href="https://github.com/hushin">https://github.com/hushin</a></li>
-      <li><a href="https://zenn.dev/hush_in">https://zenn.dev/hush_in</a></li>
-    </ul>
-  </body>
-</html>
+<Layout>
+  <Header />
+  <main id="main-content">
+    <section id="hero">
+      <h1>雑にdev</h1>
+      <div class="flex space-x-4">
+        <div>
+          <img
+            src="/my-icon-min.svg"
+            class="w-20 rounded-full bg-[#FF7F00]"
+            alt="hush_in icon"
+          />
+        </div>
+        <div class="flex flex-col justify-center">
+          <p>雑になんか作る。雑記も書く。</p>
+          <p>
+            <LinkButton
+              className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+              href="/about"
+            >
+              About me
+            </LinkButton>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <Hr />
+
+    {
+      featuredPosts.length > 0 && (
+        <>
+          <section id="featured">
+            <h2>人気の記事</h2>
+            <ul>
+              {featuredPosts.map(({ data, slug }) => (
+                <Card
+                  href={`/posts/${slug}/`}
+                  frontmatter={data}
+                  secHeading={false}
+                />
+              ))}
+            </ul>
+          </section>
+          {recentPosts.length > 0 && <Hr />}
+        </>
+      )
+    }
+
+    {
+      recentPosts.length > 0 && (
+        <section id="recent-posts">
+          <h2>最新記事</h2>
+          <ul>
+            {recentPosts.map(
+              ({ data, slug }, index) =>
+                index < SITE.postPerIndex && (
+                  <Card
+                    href={`/posts/${slug}/`}
+                    frontmatter={data}
+                    secHeading={false}
+                  />
+                )
+            )}
+          </ul>
+        </section>
+      )
+    }
+    <div class="all-posts-btn-wrapper">
+      <LinkButton href="/posts/">
+        すべての記事
+        <svg xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+          ></path>
+        </svg>
+      </LinkButton>
+    </div>
+
+    <Hr />
+    <section id="slide">
+      <h2>登壇資料</h2>
+      <ul>
+        <!-- TODO コンポーネント化したい -->
+        <li class="my-6">
+          <a
+            href={"https://hushin.github.io/slides/figma-cloudflare-hono.html"}
+            class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+          >
+            <h3>Figma API + Cloudflare + Hono で画像共有</h3>
+          </a>
+          <Datetime pubDatetime={"2024-01-12"} modDatetime={""} />
+          <p>
+            <a
+              href="https://kyotojs.connpass.com/event/302442/"
+              class="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+              >ToKyoto.js #02</a
+            > で登壇
+          </p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* ===== Hero Section ===== */
+  #hero {
+    @apply pb-6 pt-8;
+  }
+  #hero h1 {
+    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+  }
+
+  /* ===== Featured & Recent Posts Sections ===== */
+  #featured,
+  #recent-posts,
+  #slide {
+    @apply pb-6 pt-12;
+  }
+  #featured h2,
+  #recent-posts h2,
+  #slide h2 {
+    @apply text-2xl font-semibold tracking-wide;
+  }
+  .all-posts-btn-wrapper {
+    @apply my-8 text-center;
+  }
+</style>

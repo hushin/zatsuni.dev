@@ -1,0 +1,33 @@
+---
+layout: ../layouts/AboutLayout.astro
+title: "About"
+---
+import Socials from "@components/Socials.astro";
+
+<div class="flex space-x-4">
+  <div class="flex flex-col justify-center">
+    <img
+      src="/my-icon-min.svg"
+      class="w-40 rounded-full bg-[#FF7F00]"
+      alt="hush_in icon"
+    />
+  </div>
+  <div>
+    - hush_in / はっしゅ / 不信
+    - Ryo KUROIWA
+    - Web Developer
+      - Web フロントエンド中心
+    - 趣味はゲームとお酒と筋トレ
+    <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
+      <div class="mb-1 mr-2 whitespace-nowrap sm:mb-0">Social Links:</div>
+      <Socials />
+    </div>
+  </div>
+</div>
+
+
+## 過去サイト・作ったもの
+
+- [FLATV](https://flatv.fdempa.com/)
+  - [SWF2PNGSequence](https://flatv.fdempa.com/swf2pngsequence/) SWFからPNGシーケンスを作成するAIRアプリ
+- Qiita で一番伸びた記事 [Mac使いがWindows開発環境構築してみたログ #Windows10 - Qiita](https://qiita.com/hush_in/items/1ac22f4c4c07c7df7900)
