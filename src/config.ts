@@ -4,9 +4,9 @@ export const SITE: Site = {
   website: "https://zatsuni.dev/", // replace this with your deployed domain
   author: "hush_in",
   profile: "https://zatsuni.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  desc: "雑になんか作る。雑記も書く。",
   title: "雑にdev",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "zatuni-og.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,
