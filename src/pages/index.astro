@@ -8,6 +8,7 @@ import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE } from "@config";
+import Datetime from "@components/Datetime";
 
 const posts = await getCollection("blog");
 
@@ -84,7 +85,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         </section>
       )
     }
-
     <div class="all-posts-btn-wrapper">
       <LinkButton href="/posts/">
         すべての記事
@@ -95,6 +95,30 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         </svg>
       </LinkButton>
     </div>
+
+    <Hr />
+    <section id="slide">
+      <h2>登壇資料</h2>
+      <ul>
+        <!-- TODO コンポーネント化したい -->
+        <li class="my-6">
+          <a
+            href={"https://hushin.github.io/slides/figma-cloudflare-hono.html"}
+            class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+          >
+            <h3>Figma API + Cloudflare + Hono で画像共有</h3>
+          </a>
+          <Datetime pubDatetime={"2024-01-12"} modDatetime={""} />
+          <p>
+            <a
+              href="https://kyotojs.connpass.com/event/302442/"
+              class="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
+              >ToKyoto.js #02</a
+            > で登壇
+          </p>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <Footer />
@@ -123,11 +147,13 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
-  #recent-posts {
+  #recent-posts,
+  #slide {
     @apply pb-6 pt-12;
   }
   #featured h2,
-  #recent-posts h2 {
+  #recent-posts h2,
+  #slide h2 {
     @apply text-2xl font-semibold tracking-wide;
   }
   .all-posts-btn-wrapper {
