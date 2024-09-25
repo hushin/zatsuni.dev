@@ -55,15 +55,7 @@ const socialIcons = {
       <rect x="3" y="5" width="18" height="14" rx="2"></rect>
       <polyline points="3 7 12 13 21 7"></polyline>
     </svg>`,
-  Twitter: `<svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="icon-tabler"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path>
-    </svg>`,
+  X: `<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>`,
   Twitch: `<svg
       xmlns="http://www.w3.org/2000/svg"
       class="icon-tabler"
@@ -155,12 +147,27 @@ const socialIcons = {
   q-46 -22 -127 -33q-74 -10 -166 -11h-3zM367 267q73 0 109 56l24 39l24 -39q36 -56 109 -56q63 0 101 43t38 117v239h-95v-232q0 -74 -61 -74q-69 0 -69 88v127h-94v-127q0 -88 -69 -88q-61 0 -61 74v232h-95v-239q0 -74 38 -117t101 -43z" />
   </svg>`,
   Bluesky: `<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z" /></svg>`,
-  Zenn: `<svg width="24" height="24" viewBox="4 -4 20 30" xmlns="http://www.w3.org/2000/svg" class="icon-tabler"
+  Zenn: `<svg viewBox="4 -4 15 30" xmlns="http://www.w3.org/2000/svg" class="icon-zenn"
       stroke-linecap="round"
       stroke-linejoin="round">
 <path d="M5.11631 22.5426H1.5604L14.713 1H18.2267L5.11631 22.5426Z" />
 <path d="M22.579 13.0498L16.6695 22.5426H13.1466L19.0828 13.0498H22.579Z" />
 </svg>`,
+  Hatebu: `<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_26_2)">
+<path d="M398.15 0H101.85C45.5998 0 0 45.5998 0 101.85V398.15C0 454.4 45.5998 500 101.85 500H398.15C454.4 500 500 454.4 500 398.15V101.85C500 45.5998 454.4 0 398.15 0Z" fill="#00A4DE"/>
+<path d="M278.17 258.1C269.11 247.98 256.52 242.29 240.37 241.06C254.74 237.14 265.18 231.41 271.78 223.76C278.35 216.21 281.61 205.95 281.61 193.05C281.61 182.83 279.38 173.8 275.05 165.99C270.61 158.23 264.24 152.02 255.86 147.37C248.53 143.34 239.82 140.5 229.66 138.82C219.45 137.2 201.59 136.37 175.96 136.37H113.64V363.64H177.85C203.64 363.64 222.24 362.74 233.62 361.01C244.98 359.22 254.52 356.22 262.23 352.1C271.77 347.06 279.06 339.89 284.14 330.68C289.26 321.44 291.8 310.79 291.8 298.6C291.8 281.75 287.26 268.2 278.17 258.11V258.1ZM171.18 186.75H184.48C199.85 186.75 210.18 188.49 215.51 191.94C220.77 195.41 223.45 201.41 223.45 209.94C223.45 218.47 220.6 223.94 214.95 227.33C209.23 230.66 198.8 232.35 183.54 232.35H171.17V186.75H171.18ZM223.94 317.08C217.89 320.8 207.46 322.62 192.83 322.62H171.18V272.97H193.76C208.79 272.97 219.18 274.86 224.7 278.64C230.31 282.42 233.08 289.09 233.08 298.67C233.08 307.24 230.05 313.39 223.94 317.09V317.08Z" fill="white"/>
+<path d="M357.58 306.06C341.67 306.06 328.79 318.94 328.79 334.84C328.79 350.74 341.68 363.63 357.58 363.63C373.48 363.63 386.36 350.74 386.36 334.84C386.36 318.94 373.46 306.06 357.58 306.06Z" fill="white"/>
+<path d="M382.58 136.36H332.58V287.88H382.58V136.36Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_26_2">
+<rect width="500" height="500" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+`,
+  Pocket: `<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-pocket"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h14a2 2 0 0 1 2 2v6a9 9 0 0 1 -18 0v-6a2 2 0 0 1 2 -2" /><path d="M8 11l4 4l4 -4" /></svg>`,
 };
 
 export default socialIcons;

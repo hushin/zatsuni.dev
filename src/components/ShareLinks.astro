@@ -2,28 +2,43 @@
 import LinkButton from "./LinkButton.astro";
 import socialIcons from "@assets/socialIcons";
 
-const URL = Astro.url;
+export interface Props {
+  title: string;
+}
+
+const url = encodeURIComponent(Astro.url.href);
+const title = encodeURIComponent(Astro.props.title);
 
 const shareLinks = [
   {
-    name: "Facebook",
-    href: "https://www.facebook.com/sharer.php?u=",
-    linkTitle: `Share this post on Facebook`,
-  },
-  {
-    name: "Twitter",
-    href: "https://twitter.com/intent/tweet?url=",
+    name: "X",
+    href: "https://x.com/intent/post?url=(url)&text=(title)",
     linkTitle: `Tweet this post`,
   },
   {
-    name: "Pinterest",
-    href: "https://pinterest.com/pin/create/button/?url=",
-    linkTitle: `Share this post on Pinterest`,
+    name: "Bluesky",
+    href: "https://bsky.app/intent/compose?text=(title)%0A(url)",
+    linkTitle: `Share this post on Bluesky`,
   },
   {
-    name: "Mail",
-    href: "mailto:?subject=See%20this%20post&body=",
-    linkTitle: `Share this post via email`,
+    name: "Hatebu",
+    href: "https://b.hatena.ne.jp/add?mode=confirm&url=(url)&title=(title)",
+    linkTitle: `このエントリーをはてなブックマークに追加`,
+  },
+  {
+    name: "Pocket",
+    href: "https://getpocket.com/edit?url=(url)",
+    linkTitle: `このエントリーをPocketに追加`,
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/sharer.php?u=(url)",
+    linkTitle: `Share this post on Facebook`,
+  },
+  {
+    name: "Pinterest",
+    href: "https://pinterest.com/pin/create/button/?url=(url)",
+    linkTitle: `Share this post on Pinterest`,
   },
 ] as const;
 ---
@@ -34,7 +49,7 @@ const shareLinks = [
     {
       shareLinks.map(social => (
         <LinkButton
-          href={`${social.href + URL}`}
+          href={social.href.replace("(url)", url).replace("(title)", title)}
           className="link-button"
           title={social.linkTitle}
           showInNewTab={true}

@@ -19,4 +19,4 @@ description: Astro + Cloudflare Pages でサイトを構築
 - [Astro＋Cloudflare Pagesでブログ構築 | WEBOO.DEV](https://weboo.dev/posts/blog-by-astro-cloudflare-pages/)
 - [公開するまでにやったAstroPaperのカスタマイズまとめ | blog.lycheejam.net](https://blog.lycheejam.net/posts/my-astropaper-customize/)
 
-雑に作っていこうと思って `zatuni.dev` ドメインを取ったので雑にやっていきたいですね。
+雑に作っていこうと思って `zatsuni.dev` ドメインを取ったので雑にやっていきたいですね。

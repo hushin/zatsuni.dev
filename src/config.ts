@@ -6,7 +6,7 @@ export const SITE: Site = {
   profile: "https://zatsuni.dev/",
   desc: "雑になんか作る。雑記も書く。",
   title: "zatsuni.dev",
-  ogImage: "zatuni-og.png",
+  ogImage: "zatsuni-og.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 10,
@@ -27,9 +27,9 @@ export const LOGO_IMAGE = {
 
 export const SOCIALS: SocialObjects = [
   {
-    name: "Twitter",
+    name: "X",
     href: "https://x.com/hush_in",
-    linkTitle: `Twitter`,
+    linkTitle: `X(Twitter)`,
     active: true,
   },
   {
