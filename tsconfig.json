@@ -29,5 +29,6 @@
         "utils/*"
       ]
     }
-  }
+  },
+  "exclude": ["dist"]
 }
