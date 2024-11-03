@@ -6,7 +6,7 @@ export default async () => {
   return satori(
     <div
       style={{
-        background: "#fefbfb",
+        backgroundImage: "linear-gradient(135deg, #c6ffdd, #fbd786, #f7797d)",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -16,29 +16,12 @@ export default async () => {
     >
       <div
         style={{
-          position: "absolute",
-          top: "-1px",
-          right: "-1px",
-          border: "4px solid #000",
-          background: "#ecebeb",
-          opacity: "0.9",
-          borderRadius: "4px",
-          display: "flex",
-          justifyContent: "center",
-          margin: "2.5rem",
-          width: "88%",
-          height: "80%",
-        }}
-      />
-
-      <div
-        style={{
-          border: "4px solid #000",
           background: "#fefbfb",
-          borderRadius: "4px",
+          borderRadius: "24px",
+          boxShadow: "0 0 10px 4px rgba(0, 0, 0, 0.2)",
           display: "flex",
           justifyContent: "center",
-          margin: "2rem",
+          padding: "2rem 3rem",
           width: "88%",
           height: "80%",
         }}
@@ -48,9 +31,8 @@ export default async () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            margin: "20px",
-            width: "90%",
-            height: "90%",
+            width: "100%",
+            height: "100%",
           }}
         >
           <div
@@ -63,10 +45,11 @@ export default async () => {
               maxHeight: "90%",
               overflow: "hidden",
               textAlign: "center",
+              letterSpacing: "0.1em",
             }}
           >
             <p style={{ fontSize: 72, fontWeight: "bold" }}>{SITE.title}</p>
-            <p style={{ fontSize: 28 }}>{SITE.desc}</p>
+            <p style={{ fontSize: 36 }}>{SITE.desc}</p>
           </div>
 
           <div
