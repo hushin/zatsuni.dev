@@ -45,14 +45,14 @@ async function loadGoogleFonts(
 > {
   const fontsConfig = [
     {
-      name: "BIZ UDPGothic",
-      font: "BIZ+UDPGothic",
+      name: "Zen Maru Gothic",
+      font: "Zen+Maru+Gothic",
       weight: 400,
       style: "normal",
     },
     {
-      name: "BIZ UDPGothic",
-      font: "BIZ+UDPGothic:wght@700",
+      name: "Zen Maru Gothic",
+      font: "Zen+Maru+Gothic:wght@700",
       weight: 700,
       style: "bold",
     },
