@@ -3,15 +3,12 @@ import type { CollectionEntry } from "astro:content";
 import { SITE } from "@config";
 import loadGoogleFonts, { type FontOptions } from "../loadGoogleFont";
 import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const encodeSVGToBase64 = (imagePath: string) => {
-  const absolutePath = path.join(__dirname, imagePath);
-  const svgContent = fs.readFileSync(absolutePath, "utf-8");
-  return Buffer.from(svgContent).toString("base64");
+  const svgContent = fs.readFileSync(new URL(imagePath, import.meta.url), {
+    encoding: "base64",
+  });
+  return svgContent;
 };
 
 export default async (post: CollectionEntry<"blog">) => {
@@ -78,7 +75,7 @@ export default async (post: CollectionEntry<"blog">) => {
               }}
             >
               <img
-                src={`data:image/svg+xml;base64,${encodeSVGToBase64("../../../public/my-icon-min.svg")}`}
+                src={`data:image/svg+xml;base64,${encodeSVGToBase64("../my-icon-min.svg")}`}
                 width={100}
                 height={100}
                 style={{
