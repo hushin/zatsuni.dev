@@ -1,0 +1,129 @@
+digraph G  {
+  rankdir=LR;
+  splines=ortho;
+  nodesep=0.5;
+  ranksep=1.0;
+  fontname="Helvetica,Arial,sans-serif";
+  
+  node [
+    fontname="Helvetica,Arial,sans-serif",
+    shape=box,
+    style=filled,
+    fillcolor="#fdf5e6",
+    margin="0.3,0.1"
+  ];
+  edge [
+    fontname="Helvetica,Arial,sans-serif",
+    // decorate=true,
+    color=purple,
+  ];
+  
+  subgraph cluster_銀行 {
+    label="銀行";
+    bgcolor="#eef";
+    "SBI新生銀行" [label="SBI新生銀行\n(金利 0.3%)"];
+    "三井住友銀行" [label="三井住友銀行\n(金利 0.1%)"];
+    "住信SBIネット銀行" [label="住信SBIネット銀行\n(金利 0.1%)"];
+    "楽天銀行" [label="楽天銀行\n(金利 0.1%)"];
+
+    "三井住友銀行" -> "楽天銀行" [
+      headlabel="自動送金"
+      labeldistance=6
+      labelangle=-2
+    ];
+    "三井住友銀行" -> "SBI新生銀行" [label="自動送金"];
+  }
+  "会社" -> "三井住友銀行" [label="給与振込"];
+
+  subgraph cluster_カード {
+    label="クレジットカード";
+    bgcolor="#eef";
+    "楽天カード" [label="楽天カード\n(JCB)\n(ポイント1%)"];
+    "ビックカメラSuicaカード" [label="ビックカメラ\nSuicaカード\n(JCB)"];
+    "Amazonカード" [label="Amazon\nMastercard\n(Amazonで\nポイント2.5%)"];
+    "Oliveプラチナ" [label="Oliveプラチナ\nプリファード\n(Visa)"];
+    "三井住友カードゴールド" [label="三井住友カード\nゴールド（NL）\n(Visa)"];
+    "リクルートカードJCB" [label="リクルートカード\n(JCB)\n(ポイント1.2%)"];
+    "リクルートカードMC" [label="リクルートカード\n(MasterCard)\n(ポイント1.2%)"];
+    "EPOSカード" [label="EPOSカード\n(Visa)\n(ポイント0.5%)"];
+
+    "楽天銀行" -> "楽天カード";
+    "SBI新生銀行" -> "ビックカメラSuicaカード";
+    "SBI新生銀行" -> "Amazonカード";
+    "三井住友銀行" -> "Oliveプラチナ";
+    "三井住友銀行" -> "三井住友カードゴールド";
+    "SBI新生銀行" -> "リクルートカードJCB";
+    "SBI新生銀行" -> "リクルートカードMC";
+    "SBI新生銀行" -> "EPOSカード";
+  }
+
+  subgraph cluster_証券 {
+    label="証券";
+    bgcolor="#eef";
+    "楽天銀行" -> "楽天証券" [label="マネーブリッジ"];
+
+    "SBIベネフィット" [label="SBIベネフィット\n(iDeCo)"];
+
+    "SBI証券" -> "SBI新生銀行" [
+      taillabel="SBI新生コネクト"
+      labeldistance=30
+      labelangle=-2
+      dir="both"
+    ];
+    "SBI新生銀行" -> "SBIベネフィット";
+  }
+
+  "Oliveプラチナ" -> "SBI証券" [
+    headlabel="ポイント1% 上限月10万円"
+    labeldistance=12
+    labelangle=10
+  ];
+  "楽天カード" -> "楽天証券" [
+    headlabel="ポイント0.5% 上限月5万円"
+    labeldistance=3.5
+    labelangle=90
+  ];
+
+  subgraph cluster_プリペイド {
+    label="プリペイドカード";
+    bgcolor="#eef";
+    "Kyash" [label="Kyash\n(Visa)\n(ポイント0.2%\n月100ptまで)"];
+    "VポイントPay" [label="VポイントPay\n(Visa)"];
+    "ANA Pay" [label="ANA Pay\n(Visa)"];
+
+    "EPOSカード" -> "Kyash";
+    "Kyash" -> "PayPay";
+    "Kyash" -> "PayPal";
+    "SBI新生銀行" -> "PayPal";
+    "EPOSカード" -> "ANA Pay";
+  }
+
+  subgraph cluster_電子マネー {
+    label="電子マネー";
+    bgcolor="#eef";
+    "PayPay" [label="PayPay\n(残高のとき\nポイント0.5%)\n(他社クレカのとき0%)"];
+    "モバイルSuica" [label="モバイルSuica"];
+    "LINE Pay" [label="LINE Pay"];
+    "nanaco" [label="nanaco\n(ほぼ未使用)"];
+    "楽天Edy" [label="楽天Edy\n(ポイント0.5%)"];
+    "楽天キャッシュ";
+    "楽天ペイ";
+    "iD";
+    "メルペイ";
+    "メルコイン";
+    "QUICPay+" [label="QUICPay+"];
+    "Googleウォレット" [label="Google ウォレット\nタッチ決済"];
+
+    "SBI新生銀行" -> "PayPay";
+    "ビックカメラSuicaカード" -> "モバイルSuica" [label="オートチャージ ポイント1.5%"];
+    "楽天銀行" -> "メルペイ" -> "iD";
+    "メルペイ" -> "メルコイン";
+    "三井住友カードゴールド" -> "Googleウォレット";
+  }
+
+  "Kyash" -> "QUICPay+";
+  "ANA Pay" -> "楽天Edy";
+  "楽天Edy" -> "楽天キャッシュ" [label="0%"];
+  "楽天キャッシュ" -> "楽天ペイ" [label="1.5%"];
+  "楽天キャッシュ" -> "楽天証券" [label="ポイント0.5% 上限月5万円"];
+}
