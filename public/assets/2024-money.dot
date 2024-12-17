@@ -66,8 +66,8 @@ digraph G  {
 
     "SBI証券" -> "SBI新生銀行" [
       taillabel="SBI新生コネクト"
-      labeldistance=30
-      labelangle=-2
+    //   labeldistance=30
+    //   labelangle=-2
       dir="both"
     ];
     "SBI新生銀行" -> "SBIベネフィット";
@@ -75,13 +75,13 @@ digraph G  {
 
   "Oliveプラチナ" -> "SBI証券" [
     headlabel="ポイント1% 上限月10万円"
-    labeldistance=12
-    labelangle=10
+    // labeldistance=12
+    // labelangle=10
   ];
   "楽天カード" -> "楽天証券" [
     headlabel="ポイント0.5% 上限月5万円"
-    labeldistance=3.5
-    labelangle=90
+    // labeldistance=3.5
+    // labelangle=90
   ];
 
   subgraph cluster_プリペイド {
@@ -92,11 +92,11 @@ digraph G  {
     "ANA Pay" [label="ANA Pay\n(Visa)"];
 
     "EPOSカード" -> "Kyash";
-    "Kyash" -> "PayPay";
-    "Kyash" -> "PayPal";
-    "SBI新生銀行" -> "PayPal";
     "EPOSカード" -> "ANA Pay";
   }
+  "Kyash" -> "PayPay";
+  "Kyash" -> "PayPal";
+  "SBI新生銀行" -> "PayPal";
 
   subgraph cluster_電子マネー {
     label="電子マネー";
