@@ -3,9 +3,16 @@ import type { CollectionEntry } from "astro:content";
 import { SITE } from "@config";
 import loadGoogleFonts, { type FontOptions } from "../loadGoogleFont";
 import fs from "fs";
+import path from "path";
 
 const encodeSVGToBase64 = (imagePath: string) => {
-  const svgContent = fs.readFileSync(new URL(imagePath, import.meta.url), {
+  const basePath = path.resolve(
+    path.dirname(new URL(import.meta.url).pathname),
+    process.env.NODE_ENV === "development" ? "../../../public" : "../../public"
+  );
+
+  const resolvedPath = path.join(basePath, imagePath);
+  const svgContent = fs.readFileSync(resolvedPath, {
     encoding: "base64",
   });
   return svgContent;
@@ -75,7 +82,7 @@ export default async (post: CollectionEntry<"blog">) => {
               }}
             >
               <img
-                src={`data:image/svg+xml;base64,${encodeSVGToBase64("../my-icon-min.svg")}`}
+                src={`data:image/svg+xml;base64,${encodeSVGToBase64("my-icon-min.svg")}`}
                 width={100}
                 height={100}
                 style={{
@@ -83,17 +90,14 @@ export default async (post: CollectionEntry<"blog">) => {
                   backgroundColor: "#FF7F00",
                 }}
               />
-              <span>
-                by
-                <span
-                  style={{
-                    overflow: "hidden",
-                    fontWeight: "bold",
-                    marginLeft: "0.5em",
-                  }}
-                >
-                  {post.data.author}
-                </span>
+              <span
+                style={{
+                  overflow: "hidden",
+                  fontWeight: "bold",
+                  marginLeft: "0.2em",
+                }}
+              >
+                {post.data.author}
               </span>
             </span>
             <span style={{ overflow: "hidden", fontWeight: "bold" }}>
@@ -108,7 +112,7 @@ export default async (post: CollectionEntry<"blog">) => {
       height: 630,
       embedFont: true,
       fonts: (await loadGoogleFonts(
-        post.data.title + post.data.author + SITE.title + "by" + SITE.website
+        post.data.title + post.data.author + SITE.title + SITE.website
       )) as FontOptions[],
     }
   );
