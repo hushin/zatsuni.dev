@@ -47,7 +47,7 @@
 /* Base layer styles */
 @layer base {
   body {
-    @apply m-0 p-0 text-left break-words text-gray-dark text-[20px] leading-[1.7];
+    @apply text-gray-dark m-0 p-0 text-left text-[20px] leading-[1.7] break-words;
     font-family: sans-serif;
     background: linear-gradient(var(--gray-gradient)) no-repeat;
     background-size: 100% 600px;
@@ -60,7 +60,7 @@
   }
 
   main {
-    @apply w-[720px] max-w-[calc(100%-2em)] mx-auto py-12 px-4;
+    @apply mx-auto w-[720px] max-w-[calc(100%-2em)] px-4 py-12;
   }
 
   @media (max-width: 720px) {
@@ -75,7 +75,7 @@
   h4,
   h5,
   h6 {
-    @apply m-0 mb-2 text-black leading-[1.2];
+    @apply m-0 mb-2 leading-[1.2] text-black;
   }
 
   h1 {
@@ -132,16 +132,16 @@
   }
 
   img {
-    @apply max-w-full h-auto rounded-lg;
+    @apply h-auto max-w-full rounded-lg;
   }
 
   code {
-    @apply py-0.5 px-[5px] rounded-sm;
+    @apply rounded-sm px-[5px] py-0.5;
     background-color: rgb(var(--gray-light));
   }
 
   pre {
-    @apply p-6 rounded-lg;
+    @apply rounded-lg p-6;
   }
 
   pre > code {
@@ -149,7 +149,7 @@
   }
 
   blockquote {
-    @apply border-l-4 pl-5 m-0 text-[1.333em];
+    @apply m-0 border-l-4 pl-5 text-[1.333em];
     border-left-color: var(--accent);
   }
 
@@ -178,7 +178,7 @@
   }
 
   .hero-image img {
-    @apply block mx-auto rounded-xl;
+    @apply mx-auto block rounded-xl;
     box-shadow: var(--box-shadow);
   }
 }

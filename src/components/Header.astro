@@ -3,17 +3,21 @@ import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 ---
 
-<header class="m-0 px-4 bg-white shadow-sm">
+<header class="m-0 bg-white px-4 shadow-sm">
   <nav class="flex items-center justify-between">
     <h2 class="m-0 text-base">
-      <a href="/" class="py-4 px-2 text-black border-b-4 border-transparent no-underline">{SITE_TITLE}</a>
+      <a
+        href="/"
+        class="border-b-4 border-transparent px-2 py-4 text-black no-underline"
+        >{SITE_TITLE}</a
+      >
     </h2>
     <div class="internal-links flex">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/posts">Blog</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
     </div>
-    <div class="social-links flex md:flex hidden">
+    <div class="social-links flex hidden md:flex">
       <a href="https://m.webtoo.ls/@astro" target="_blank" class="flex">
         <span class="sr-only">Follow Astro on Mastodon</span>
         <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
