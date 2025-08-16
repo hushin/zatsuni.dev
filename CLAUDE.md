@@ -87,5 +87,4 @@ description: Astro + Cloudflare Pages でサイトを構築
 
 - Currently using default Astro blog template structure
 - Migration needed to align with user's desired structure and schema
-- Site URL placeholder: `https://example.com` (needs update)
 - Uses pnpm for package management
