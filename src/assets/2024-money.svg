@@ -1,0 +1,462 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1585pt" height="1325pt" viewBox="0.00 0.00 1585.19 1325.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1321)">
+<title>G</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1321 1581.19,-1321 1581.19,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_銀行</title>
+<polygon fill="#eeeeff" stroke="black" points="170.2,-644 170.2,-817 504.67,-817 504.67,-644 170.2,-644"/>
+<text text-anchor="middle" x="337.44" y="-800.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">銀行</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_カード</title>
+<polygon fill="#eeeeff" stroke="black" points="561.67,-8 561.67,-836 704.87,-836 704.87,-8 561.67,-8"/>
+<text text-anchor="middle" x="633.27" y="-819.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">クレジットカード</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_証券</title>
+<polygon fill="#eeeeff" stroke="black" points="761.87,-1076 761.87,-1309 905.86,-1309 905.86,-1076 761.87,-1076"/>
+<text text-anchor="middle" x="833.87" y="-1292.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">証券</text>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_プリペイド</title>
+<polygon fill="#eeeeff" stroke="black" points="766.35,-534 766.35,-825 901.38,-825 901.38,-534 766.35,-534"/>
+<text text-anchor="middle" x="833.87" y="-808.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">プリペイドカード</text>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_電子マネー</title>
+<polygon fill="#eeeeff" stroke="black" points="962.86,-317 962.86,-980 1510.11,-980 1510.11,-317 962.86,-317"/>
+<text text-anchor="middle" x="1236.48" y="-963.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">電子マネー</text>
+</g>
+<!-- SBI新生銀行 -->
+<g id="node1" class="node">
+<title>SBI新生銀行</title>
+<polygon fill="#fdf5e6" stroke="black" points="496.67,-700 389.69,-700 389.69,-652 496.67,-652 496.67,-700"/>
+<text text-anchor="middle" x="443.18" y="-680.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">SBI新生銀行</text>
+<text text-anchor="middle" x="443.18" y="-663.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(金利 0.3%)</text>
+</g>
+<!-- ビックカメラSuicaカード -->
+<g id="node7" class="node">
+<title>ビックカメラSuicaカード</title>
+<polygon fill="#fdf5e6" stroke="black" points="686.37,-702.4 580.17,-702.4 580.17,-637.6 686.37,-637.6 686.37,-702.4"/>
+<text text-anchor="middle" x="633.27" y="-682.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">ビックカメラ</text>
+<text text-anchor="middle" x="633.27" y="-665.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Suicaカード</text>
+<text text-anchor="middle" x="633.27" y="-649" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(JCB)</text>
+</g>
+<!-- SBI新生銀行&#45;&gt;ビックカメラSuicaカード -->
+<g id="edge5" class="edge">
+<title>SBI新生銀行-&gt;ビックカメラSuicaカード</title>
+<path fill="none" stroke="purple" d="M497.14,-690.4C497.14,-690.4 568.32,-690.4 568.32,-690.4"/>
+<polygon fill="purple" stroke="purple" points="568.32,-693.9 578.32,-690.4 568.32,-686.9 568.32,-693.9"/>
+</g>
+<!-- Amazonカード -->
+<g id="node8" class="node">
+<title>Amazonカード</title>
+<polygon fill="#fdf5e6" stroke="black" points="692.78,-601.8 573.76,-601.8 573.76,-520.2 692.78,-520.2 692.78,-601.8"/>
+<text text-anchor="middle" x="633.27" y="-582" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Amazon</text>
+<text text-anchor="middle" x="633.27" y="-565.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Mastercard</text>
+<text text-anchor="middle" x="633.27" y="-548.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(Amazonで</text>
+<text text-anchor="middle" x="633.27" y="-531.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">ポイント2.5%)</text>
+</g>
+<!-- SBI新生銀行&#45;&gt;Amazonカード -->
+<g id="edge6" class="edge">
+<title>SBI新生銀行-&gt;Amazonカード</title>
+<path fill="none" stroke="purple" d="M475.28,-651.61C475.28,-617.85 475.28,-561 475.28,-561 475.28,-561 562.03,-561 562.03,-561"/>
+<polygon fill="purple" stroke="purple" points="562.03,-564.5 572.03,-561 562.03,-557.5 562.03,-564.5"/>
+</g>
+<!-- リクルートカードJCB -->
+<g id="node11" class="node">
+<title>リクルートカードJCB</title>
+<polygon fill="#fdf5e6" stroke="black" points="696.87,-484.4 569.67,-484.4 569.67,-419.6 696.87,-419.6 696.87,-484.4"/>
+<text text-anchor="middle" x="633.27" y="-464.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">リクルートカード</text>
+<text text-anchor="middle" x="633.27" y="-447.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(JCB)</text>
+<text text-anchor="middle" x="633.27" y="-431" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(ポイント1.2%)</text>
+</g>
+<!-- SBI新生銀行&#45;&gt;リクルートカードJCB -->
+<g id="edge9" class="edge">
+<title>SBI新生銀行-&gt;リクルートカードJCB</title>
+<path fill="none" stroke="purple" d="M453.88,-651.6C453.88,-593.55 453.88,-452 453.88,-452 453.88,-452 557.75,-452 557.75,-452"/>
+<polygon fill="purple" stroke="purple" points="557.75,-455.5 567.75,-452 557.75,-448.5 557.75,-455.5"/>
+</g>
+<!-- リクルートカードMC -->
+<g id="node12" class="node">
+<title>リクルートカードMC</title>
+<polygon fill="#fdf5e6" stroke="black" points="696.87,-383.4 569.67,-383.4 569.67,-318.6 696.87,-318.6 696.87,-383.4"/>
+<text text-anchor="middle" x="633.27" y="-363.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">リクルートカード</text>
+<text text-anchor="middle" x="633.27" y="-346.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(MasterCard)</text>
+<text text-anchor="middle" x="633.27" y="-330" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(ポイント1.2%)</text>
+</g>
+<!-- SBI新生銀行&#45;&gt;リクルートカードMC -->
+<g id="edge10" class="edge">
+<title>SBI新生銀行-&gt;リクルートカードMC</title>
+<path fill="none" stroke="purple" d="M432.48,-651.57C432.48,-575.99 432.48,-351 432.48,-351 432.48,-351 557.67,-351 557.67,-351"/>
+<polygon fill="purple" stroke="purple" points="557.67,-354.5 567.67,-351 557.67,-347.5 557.67,-354.5"/>
+</g>
+<!-- EPOSカード -->
+<g id="node13" class="node">
+<title>EPOSカード</title>
+<polygon fill="#fdf5e6" stroke="black" points="695.12,-181.4 571.43,-181.4 571.43,-116.6 695.12,-116.6 695.12,-181.4"/>
+<text text-anchor="middle" x="633.27" y="-161.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">EPOSカード</text>
+<text text-anchor="middle" x="633.27" y="-144.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(Visa)</text>
+<text text-anchor="middle" x="633.27" y="-128" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(ポイント0.5%)</text>
+</g>
+<!-- SBI新生銀行&#45;&gt;EPOSカード -->
+<g id="edge11" class="edge">
+<title>SBI新生銀行-&gt;EPOSカード</title>
+<path fill="none" stroke="purple" d="M411.08,-651.64C411.08,-547.99 411.08,-149 411.08,-149 411.08,-149 559.57,-149 559.57,-149"/>
+<polygon fill="purple" stroke="purple" points="559.57,-152.5 569.57,-149 559.57,-145.5 559.57,-152.5"/>
+</g>
+<!-- SBIベネフィット -->
+<g id="node15" class="node">
+<title>SBIベネフィット</title>
+<polygon fill="#fdf5e6" stroke="black" points="897.86,-1276 769.87,-1276 769.87,-1228 897.86,-1228 897.86,-1276"/>
+<text text-anchor="middle" x="833.87" y="-1256.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">SBIベネフィット</text>
+<text text-anchor="middle" x="833.87" y="-1239.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(iDeCo)</text>
+</g>
+<!-- SBI新生銀行&#45;&gt;SBIベネフィット -->
+<g id="edge14" class="edge">
+<title>SBI新生銀行-&gt;SBIベネフィット</title>
+<path fill="none" stroke="purple" d="M496.82,-671.2C507.2,-671.2 514.92,-671.2 514.92,-671.2 514.92,-671.2 514.92,-1252 514.92,-1252 514.92,-1252 758.19,-1252 758.19,-1252"/>
+<polygon fill="purple" stroke="purple" points="758.19,-1255.5 768.19,-1252 758.19,-1248.5 758.19,-1255.5"/>
+</g>
+<!-- PayPay -->
+<g id="node20" class="node">
+<title>PayPay</title>
+<polygon fill="#fdf5e6" stroke="black" points="1126.04,-874.8 970.86,-874.8 970.86,-793.2 1126.04,-793.2 1126.04,-874.8"/>
+<text text-anchor="middle" x="1048.45" y="-855" font-family="Helvetica,Arial,sans-serif" font-size="14.00">PayPay</text>
+<text text-anchor="middle" x="1048.45" y="-838.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(残高のとき</text>
+<text text-anchor="middle" x="1048.45" y="-821.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">ポイント0.5%)</text>
+<text text-anchor="middle" x="1048.45" y="-804.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(他社クレカのとき0%)</text>
+</g>
+<!-- SBI新生銀行&#45;&gt;PayPay -->
+<g id="edge22" class="edge">
+<title>SBI新生銀行-&gt;PayPay</title>
+<path fill="none" stroke="purple" d="M443.18,-700.46C443.18,-703.9 443.18,-706.3 443.18,-706.3 443.18,-706.3 974.55,-706.3 974.55,-706.3 974.55,-706.3 974.55,-781.38 974.55,-781.38"/>
+<polygon fill="purple" stroke="purple" points="971.05,-781.38 974.55,-791.38 978.05,-781.38 971.05,-781.38"/>
+</g>
+<!-- PayPal -->
+<g id="node21" class="node">
+<title>PayPal</title>
+<polygon fill="#fdf5e6" stroke="black" points="1089.5,-1027 1007.41,-1027 1007.41,-991 1089.5,-991 1089.5,-1027"/>
+<text text-anchor="middle" x="1048.45" y="-1004.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">PayPal</text>
+</g>
+<!-- SBI新生銀行&#45;&gt;PayPal -->
+<g id="edge21" class="edge">
+<title>SBI新生銀行-&gt;PayPal</title>
+<path fill="none" stroke="purple" d="M496.98,-661.6C524.15,-661.6 551.42,-661.6 551.42,-661.6 551.42,-661.6 551.42,-1015 551.42,-1015 551.42,-1015 995.42,-1015 995.42,-1015"/>
+<polygon fill="purple" stroke="purple" points="995.42,-1018.5 1005.42,-1015 995.42,-1011.5 995.42,-1018.5"/>
+</g>
+<!-- 三井住友銀行 -->
+<g id="node2" class="node">
+<title>三井住友銀行</title>
+<polygon fill="#fdf5e6" stroke="black" points="300.54,-700 194.34,-700 194.34,-652 300.54,-652 300.54,-700"/>
+<text text-anchor="middle" x="247.44" y="-680.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">三井住友銀行</text>
+<text text-anchor="middle" x="247.44" y="-663.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(金利 0.1%)</text>
+</g>
+<!-- 三井住友銀行&#45;&gt;SBI新生銀行 -->
+<g id="edge3" class="edge">
+<title>三井住友銀行-&gt;SBI新生銀行</title>
+<path fill="none" stroke="purple" d="M300.93,-668C300.93,-668 377.9,-668 377.9,-668"/>
+<polygon fill="purple" stroke="purple" points="377.9,-671.5 387.9,-668 377.9,-664.5 377.9,-671.5"/>
+<text text-anchor="middle" x="339.61" y="-668.16" font-family="Helvetica,Arial,sans-serif" font-size="14.00">自動送金</text>
+</g>
+<!-- 楽天銀行 -->
+<g id="node4" class="node">
+<title>楽天銀行</title>
+<polygon fill="#fdf5e6" stroke="black" points="496.27,-784 390.09,-784 390.09,-736 496.27,-736 496.27,-784"/>
+<text text-anchor="middle" x="443.18" y="-764.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">楽天銀行</text>
+<text text-anchor="middle" x="443.18" y="-747.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(金利 0.1%)</text>
+</g>
+<!-- 三井住友銀行&#45;&gt;楽天銀行 -->
+<g id="edge2" class="edge">
+<title>三井住友銀行-&gt;楽天銀行</title>
+<path fill="none" stroke="purple" d="M300.93,-684C327.16,-684 353.19,-684 353.19,-684 353.19,-684 353.19,-760 353.19,-760 353.19,-760 378.28,-760 378.28,-760"/>
+<polygon fill="purple" stroke="purple" points="378.28,-763.5 388.28,-760 378.28,-756.5 378.28,-763.5"/>
+<text text-anchor="middle" x="357.65" y="-717.5" font-family="Helvetica,Arial,sans-serif" font-size="14.00">自動送金</text>
+</g>
+<!-- Oliveプラチナ -->
+<g id="node9" class="node">
+<title>Oliveプラチナ</title>
+<polygon fill="#fdf5e6" stroke="black" points="691.42,-282.4 575.12,-282.4 575.12,-217.6 691.42,-217.6 691.42,-282.4"/>
+<text text-anchor="middle" x="633.27" y="-262.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Oliveプラチナ</text>
+<text text-anchor="middle" x="633.27" y="-245.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">プリファード</text>
+<text text-anchor="middle" x="633.27" y="-229" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(Visa)</text>
+</g>
+<!-- 三井住友銀行&#45;&gt;Oliveプラチナ -->
+<g id="edge7" class="edge">
+<title>三井住友銀行-&gt;Oliveプラチナ</title>
+<path fill="none" stroke="purple" d="M265.14,-651.57C265.14,-561.05 265.14,-250 265.14,-250 265.14,-250 563.43,-250 563.43,-250"/>
+<polygon fill="purple" stroke="purple" points="563.43,-253.5 573.43,-250 563.43,-246.5 563.43,-253.5"/>
+</g>
+<!-- 三井住友カードゴールド -->
+<g id="node10" class="node">
+<title>三井住友カードゴールド</title>
+<polygon fill="#fdf5e6" stroke="black" points="695.7,-80.4 570.84,-80.4 570.84,-15.6 695.7,-15.6 695.7,-80.4"/>
+<text text-anchor="middle" x="633.27" y="-60.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">三井住友カード</text>
+<text text-anchor="middle" x="633.27" y="-43.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">ゴールド（NL）</text>
+<text text-anchor="middle" x="633.27" y="-27" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(Visa)</text>
+</g>
+<!-- 三井住友銀行&#45;&gt;三井住友カードゴールド -->
+<g id="edge8" class="edge">
+<title>三井住友銀行-&gt;三井住友カードゴールド</title>
+<path fill="none" stroke="purple" d="M229.74,-651.77C229.74,-536.35 229.74,-48 229.74,-48 229.74,-48 559.15,-48 559.15,-48"/>
+<polygon fill="purple" stroke="purple" points="559.15,-51.5 569.15,-48 559.15,-44.5 559.15,-51.5"/>
+</g>
+<!-- 住信SBIネット銀行 -->
+<g id="node3" class="node">
+<title>住信SBIネット銀行</title>
+<polygon fill="#fdf5e6" stroke="black" points="316.69,-784 178.2,-784 178.2,-736 316.69,-736 316.69,-784"/>
+<text text-anchor="middle" x="247.44" y="-764.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">住信SBIネット銀行</text>
+<text text-anchor="middle" x="247.44" y="-747.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(金利 0.1%)</text>
+</g>
+<!-- 楽天カード -->
+<g id="node6" class="node">
+<title>楽天カード</title>
+<polygon fill="#fdf5e6" stroke="black" points="689.87,-803.4 576.68,-803.4 576.68,-738.6 689.87,-738.6 689.87,-803.4"/>
+<text text-anchor="middle" x="633.27" y="-783.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">楽天カード</text>
+<text text-anchor="middle" x="633.27" y="-766.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(JCB)</text>
+<text text-anchor="middle" x="633.27" y="-750" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(ポイント1%)</text>
+</g>
+<!-- 楽天銀行&#45;&gt;楽天カード -->
+<g id="edge4" class="edge">
+<title>楽天銀行-&gt;楽天カード</title>
+<path fill="none" stroke="purple" d="M496.64,-761.3C496.64,-761.3 564.72,-761.3 564.72,-761.3"/>
+<polygon fill="purple" stroke="purple" points="564.72,-764.8 574.72,-761.3 564.72,-757.8 564.72,-764.8"/>
+</g>
+<!-- 楽天証券 -->
+<g id="node14" class="node">
+<title>楽天証券</title>
+<polygon fill="#fdf5e6" stroke="black" points="876.47,-1120 791.27,-1120 791.27,-1084 876.47,-1084 876.47,-1120"/>
+<text text-anchor="middle" x="833.87" y="-1097.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">楽天証券</text>
+</g>
+<!-- 楽天銀行&#45;&gt;楽天証券 -->
+<g id="edge12" class="edge">
+<title>楽天銀行-&gt;楽天証券</title>
+<path fill="none" stroke="purple" d="M425.48,-784.47C425.48,-863.68 425.48,-1108 425.48,-1108 425.48,-1108 779.42,-1108 779.42,-1108"/>
+<polygon fill="purple" stroke="purple" points="779.42,-1111.5 789.42,-1108 779.42,-1104.5 779.42,-1111.5"/>
+<text text-anchor="middle" x="633.27" y="-1106.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">マネーブリッジ</text>
+</g>
+<!-- メルペイ -->
+<g id="node29" class="node">
+<title>メルペイ</title>
+<polygon fill="#fdf5e6" stroke="black" points="1091.05,-947 1005.85,-947 1005.85,-911 1091.05,-911 1091.05,-947"/>
+<text text-anchor="middle" x="1048.45" y="-924.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">メルペイ</text>
+</g>
+<!-- 楽天銀行&#45;&gt;メルペイ -->
+<g id="edge24" class="edge">
+<title>楽天銀行-&gt;メルペイ</title>
+<path fill="none" stroke="purple" d="M460.88,-784.21C460.88,-830.94 460.88,-929 460.88,-929 460.88,-929 994.21,-929 994.21,-929"/>
+<polygon fill="purple" stroke="purple" points="994.21,-932.5 1004.21,-929 994.21,-925.5 994.21,-932.5"/>
+</g>
+<!-- 会社 -->
+<g id="node5" class="node">
+<title>会社</title>
+<polygon fill="#fdf5e6" stroke="black" points="64.2,-694 0,-694 0,-658 64.2,-658 64.2,-694"/>
+<text text-anchor="middle" x="32.1" y="-671.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">会社</text>
+</g>
+<!-- 会社&#45;&gt;三井住友銀行 -->
+<g id="edge1" class="edge">
+<title>会社-&gt;三井住友銀行</title>
+<path fill="none" stroke="purple" d="M64.34,-676C64.34,-676 182.54,-676 182.54,-676"/>
+<polygon fill="purple" stroke="purple" points="182.54,-679.5 192.54,-676 182.54,-672.5 182.54,-679.5"/>
+<text text-anchor="middle" x="121.2" y="-680.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">給与振込</text>
+</g>
+<!-- 楽天カード&#45;&gt;楽天証券 -->
+<g id="edge16" class="edge">
+<title>楽天カード-&gt;楽天証券</title>
+<path fill="none" stroke="purple" d="M686.17,-803.65C686.17,-886.07 686.17,-1096 686.17,-1096 686.17,-1096 779.63,-1096 779.63,-1096"/>
+<polygon fill="purple" stroke="purple" points="779.63,-1099.5 789.63,-1096 779.63,-1092.5 779.63,-1099.5"/>
+<text text-anchor="middle" x="724.07" y="-1083.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">ポイント0.5% 上限月5万円</text>
+</g>
+<!-- モバイルSuica -->
+<g id="node22" class="node">
+<title>モバイルSuica</title>
+<polygon fill="#fdf5e6" stroke="black" points="1106.6,-445 990.3,-445 990.3,-409 1106.6,-409 1106.6,-445"/>
+<text text-anchor="middle" x="1048.45" y="-422.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">モバイルSuica</text>
+</g>
+<!-- ビックカメラSuicaカード&#45;&gt;モバイルSuica -->
+<g id="edge23" class="edge">
+<title>ビックカメラSuicaカード-&gt;モバイルSuica</title>
+<path fill="none" stroke="purple" d="M686.56,-655.8C717.97,-655.8 751.62,-655.8 751.62,-655.8 751.62,-655.8 751.62,-432.3 751.62,-432.3 751.62,-432.3 978.29,-432.3 978.29,-432.3"/>
+<polygon fill="purple" stroke="purple" points="978.29,-435.8 988.29,-432.3 978.29,-428.8 978.29,-435.8"/>
+<text text-anchor="middle" x="869.97" y="-434.38" font-family="Helvetica,Arial,sans-serif" font-size="14.00">オートチャージ ポイント1.5%</text>
+</g>
+<!-- SBI証券 -->
+<g id="node16" class="node">
+<title>SBI証券</title>
+<polygon fill="#fdf5e6" stroke="black" points="876.86,-1192 790.87,-1192 790.87,-1156 876.86,-1156 876.86,-1192"/>
+<text text-anchor="middle" x="833.87" y="-1169.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">SBI証券</text>
+</g>
+<!-- Oliveプラチナ&#45;&gt;SBI証券 -->
+<g id="edge15" class="edge">
+<title>Oliveプラチナ-&gt;SBI証券</title>
+<path fill="none" stroke="purple" d="M691.89,-250C705.01,-250 715.12,-250 715.12,-250 715.12,-250 715.12,-1167.67 715.12,-1167.67 715.12,-1167.67 779.15,-1167.67 779.15,-1167.67"/>
+<polygon fill="purple" stroke="purple" points="779.15,-1171.17 789.15,-1167.67 779.15,-1164.17 779.15,-1171.17"/>
+<text text-anchor="middle" x="672.48" y="-1184.3" font-family="Helvetica,Arial,sans-serif" font-size="14.00">ポイント1% 上限月10万円</text>
+</g>
+<!-- Googleウォレット -->
+<g id="node32" class="node">
+<title>Googleウォレット</title>
+<polygon fill="#fdf5e6" stroke="black" points="1118.66,-373 978.24,-373 978.24,-325 1118.66,-325 1118.66,-373"/>
+<text text-anchor="middle" x="1048.45" y="-353.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Google ウォレット</text>
+<text text-anchor="middle" x="1048.45" y="-336.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">タッチ決済</text>
+</g>
+<!-- 三井住友カードゴールド&#45;&gt;Googleウォレット -->
+<g id="edge27" class="edge">
+<title>三井住友カードゴールド-&gt;Googleウォレット</title>
+<path fill="none" stroke="purple" d="M695.88,-48C811.86,-48 1048.45,-48 1048.45,-48 1048.45,-48 1048.45,-313.11 1048.45,-313.11"/>
+<polygon fill="purple" stroke="purple" points="1044.95,-313.11 1048.45,-323.11 1051.95,-313.11 1044.95,-313.11"/>
+</g>
+<!-- Kyash -->
+<g id="node17" class="node">
+<title>Kyash</title>
+<polygon fill="#fdf5e6" stroke="black" points="893.38,-791.8 774.35,-791.8 774.35,-710.2 893.38,-710.2 893.38,-791.8"/>
+<text text-anchor="middle" x="833.87" y="-772" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Kyash</text>
+<text text-anchor="middle" x="833.87" y="-755.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(Visa)</text>
+<text text-anchor="middle" x="833.87" y="-738.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(ポイント0.2%</text>
+<text text-anchor="middle" x="833.87" y="-721.6" font-family="Helvetica,Arial,sans-serif" font-size="14.00">月100ptまで)</text>
+</g>
+<!-- EPOSカード&#45;&gt;Kyash -->
+<g id="edge17" class="edge">
+<title>EPOSカード-&gt;Kyash</title>
+<path fill="none" stroke="purple" d="M695.53,-159.8C715.89,-159.8 733.37,-159.8 733.37,-159.8 733.37,-159.8 733.37,-723.1 733.37,-723.1 733.37,-723.1 762.44,-723.1 762.44,-723.1"/>
+<polygon fill="purple" stroke="purple" points="762.44,-726.6 772.44,-723.1 762.44,-719.6 762.44,-726.6"/>
+</g>
+<!-- ANA Pay -->
+<g id="node19" class="node">
+<title>ANA Pay</title>
+<polygon fill="#fdf5e6" stroke="black" points="882.88,-590 784.85,-590 784.85,-542 882.88,-542 882.88,-590"/>
+<text text-anchor="middle" x="833.87" y="-570.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">ANA Pay</text>
+<text text-anchor="middle" x="833.87" y="-553.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(Visa)</text>
+</g>
+<!-- EPOSカード&#45;&gt;ANA Pay -->
+<g id="edge18" class="edge">
+<title>EPOSカード-&gt;ANA Pay</title>
+<path fill="none" stroke="purple" d="M695.37,-138.2C754.28,-138.2 833.87,-138.2 833.87,-138.2 833.87,-138.2 833.87,-530.26 833.87,-530.26"/>
+<polygon fill="purple" stroke="purple" points="830.37,-530.26 833.87,-540.26 837.37,-530.26 830.37,-530.26"/>
+</g>
+<!-- SBI証券&#45;&gt;SBI新生銀行 -->
+<g id="edge13" class="edge">
+<title>SBI証券-&gt;SBI新生銀行</title>
+<path fill="none" stroke="purple" d="M833.87,-1144.24C833.87,-1144.24 833.87,-1137.5 833.87,-1137.5 833.87,-1137.5 533.17,-1137.5 533.17,-1137.5 533.17,-1137.5 533.17,-680.8 533.17,-680.8 533.17,-680.8 508.6,-680.8 508.6,-680.8"/>
+<polygon fill="purple" stroke="purple" points="830.37,-1144.24 833.87,-1154.24 837.37,-1144.24 830.37,-1144.24"/>
+<polygon fill="purple" stroke="purple" points="508.6,-677.3 498.6,-680.8 508.6,-684.3 508.6,-677.3"/>
+<text text-anchor="middle" x="833.17" y="-1131.56" font-family="Helvetica,Arial,sans-serif" font-size="14.00">SBI新生コネクト</text>
+</g>
+<!-- Kyash&#45;&gt;PayPay -->
+<g id="edge19" class="edge">
+<title>Kyash-&gt;PayPay</title>
+<path fill="none" stroke="purple" d="M887.87,-792.12C887.87,-795.87 887.87,-798.3 887.87,-798.3 887.87,-798.3 959,-798.3 959,-798.3"/>
+<polygon fill="purple" stroke="purple" points="959,-801.8 969,-798.3 959,-794.8 959,-801.8"/>
+</g>
+<!-- Kyash&#45;&gt;PayPal -->
+<g id="edge20" class="edge">
+<title>Kyash-&gt;PayPal</title>
+<path fill="none" stroke="purple" d="M882.36,-792.05C882.36,-863.46 882.36,-1003 882.36,-1003 882.36,-1003 995.46,-1003 995.46,-1003"/>
+<polygon fill="purple" stroke="purple" points="995.46,-1006.5 1005.46,-1003 995.46,-999.5 995.46,-1006.5"/>
+</g>
+<!-- QUICPay+ -->
+<g id="node31" class="node">
+<title>QUICPay+</title>
+<polygon fill="#fdf5e6" stroke="black" points="1101.61,-757 995.29,-757 995.29,-721 1101.61,-721 1101.61,-757"/>
+<text text-anchor="middle" x="1048.45" y="-734.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">QUICPay+</text>
+</g>
+<!-- Kyash&#45;&gt;QUICPay+ -->
+<g id="edge28" class="edge">
+<title>Kyash-&gt;QUICPay+</title>
+<path fill="none" stroke="purple" d="M893.64,-739C893.64,-739 983.34,-739 983.34,-739"/>
+<polygon fill="purple" stroke="purple" points="983.34,-742.5 993.34,-739 983.34,-735.5 983.34,-742.5"/>
+</g>
+<!-- VポイントPay -->
+<g id="node18" class="node">
+<title>VポイントPay</title>
+<polygon fill="#fdf5e6" stroke="black" points="892.02,-674 775.71,-674 775.71,-626 892.02,-626 892.02,-674"/>
+<text text-anchor="middle" x="833.87" y="-654.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">VポイントPay</text>
+<text text-anchor="middle" x="833.87" y="-637.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(Visa)</text>
+</g>
+<!-- 楽天Edy -->
+<g id="node25" class="node">
+<title>楽天Edy</title>
+<polygon fill="#fdf5e6" stroke="black" points="1110.29,-685 986.61,-685 986.61,-637 1110.29,-637 1110.29,-685"/>
+<text text-anchor="middle" x="1048.45" y="-665.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">楽天Edy</text>
+<text text-anchor="middle" x="1048.45" y="-648.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(ポイント0.5%)</text>
+</g>
+<!-- ANA Pay&#45;&gt;楽天Edy -->
+<g id="edge29" class="edge">
+<title>ANA Pay-&gt;楽天Edy</title>
+<path fill="none" stroke="purple" d="M883.33,-571.5C926.55,-571.5 982.43,-571.5 982.43,-571.5 982.43,-571.5 982.43,-655.5 982.43,-655.5 982.43,-655.5 982.82,-655.5 982.82,-655.5"/>
+<polygon fill="purple" stroke="purple" points="974.85,-659 984.85,-655.5 974.85,-652 974.85,-659"/>
+</g>
+<!-- LINE Pay -->
+<g id="node23" class="node">
+<title>LINE Pay</title>
+<polygon fill="#fdf5e6" stroke="black" points="1098.24,-517 998.66,-517 998.66,-481 1098.24,-481 1098.24,-517"/>
+<text text-anchor="middle" x="1048.45" y="-494.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">LINE Pay</text>
+</g>
+<!-- nanaco -->
+<g id="node24" class="node">
+<title>nanaco</title>
+<polygon fill="#fdf5e6" stroke="black" points="1100.96,-601 995.94,-601 995.94,-553 1100.96,-553 1100.96,-601"/>
+<text text-anchor="middle" x="1048.45" y="-581.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">nanaco</text>
+<text text-anchor="middle" x="1048.45" y="-564.4" font-family="Helvetica,Arial,sans-serif" font-size="14.00">(ほぼ未使用)</text>
+</g>
+<!-- 楽天キャッシュ -->
+<g id="node26" class="node">
+<title>楽天キャッシュ</title>
+<polygon fill="#fdf5e6" stroke="black" points="1315.74,-875 1199.04,-875 1199.04,-839 1315.74,-839 1315.74,-875"/>
+<text text-anchor="middle" x="1257.39" y="-852.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">楽天キャッシュ</text>
+</g>
+<!-- 楽天Edy&#45;&gt;楽天キャッシュ -->
+<g id="edge30" class="edge">
+<title>楽天Edy-&gt;楽天キャッシュ</title>
+<path fill="none" stroke="purple" d="M1110.49,-661C1153.95,-661 1204.29,-661 1204.29,-661 1204.29,-661 1204.29,-827.05 1204.29,-827.05"/>
+<polygon fill="purple" stroke="purple" points="1200.79,-827.05 1204.29,-837.05 1207.79,-827.05 1200.79,-827.05"/>
+<text text-anchor="middle" x="1183.46" y="-716.18" font-family="Helvetica,Arial,sans-serif" font-size="14.00">0%</text>
+</g>
+<!-- 楽天キャッシュ&#45;&gt;楽天証券 -->
+<g id="edge32" class="edge">
+<title>楽天キャッシュ-&gt;楽天証券</title>
+<path fill="none" stroke="purple" d="M1213.92,-875.41C1213.92,-932.39 1213.92,-1102 1213.92,-1102 1213.92,-1102 888.24,-1102 888.24,-1102"/>
+<polygon fill="purple" stroke="purple" points="888.24,-1098.5 878.24,-1102 888.24,-1105.5 888.24,-1098.5"/>
+<text text-anchor="middle" x="1048.45" y="-1105.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">ポイント0.5% 上限月5万円</text>
+</g>
+<!-- 楽天ペイ -->
+<g id="node27" class="node">
+<title>楽天ペイ</title>
+<polygon fill="#fdf5e6" stroke="black" points="1502.11,-875 1416.91,-875 1416.91,-839 1502.11,-839 1502.11,-875"/>
+<text text-anchor="middle" x="1459.51" y="-852.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">楽天ペイ</text>
+</g>
+<!-- 楽天キャッシュ&#45;&gt;楽天ペイ -->
+<g id="edge31" class="edge">
+<title>楽天キャッシュ-&gt;楽天ペイ</title>
+<path fill="none" stroke="purple" d="M1316.13,-857C1316.13,-857 1405.19,-857 1405.19,-857"/>
+<polygon fill="purple" stroke="purple" points="1405.19,-860.5 1415.19,-857 1405.19,-853.5 1405.19,-860.5"/>
+<text text-anchor="middle" x="1366.33" y="-861.2" font-family="Helvetica,Arial,sans-serif" font-size="14.00">1.5%</text>
+</g>
+<!-- iD -->
+<g id="node28" class="node">
+<title>iD</title>
+<polygon fill="#fdf5e6" stroke="black" points="1285.99,-947 1228.79,-947 1228.79,-911 1285.99,-911 1285.99,-947"/>
+<text text-anchor="middle" x="1257.39" y="-924.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">iD</text>
+</g>
+<!-- メルペイ&#45;&gt;iD -->
+<g id="edge25" class="edge">
+<title>メルペイ-&gt;iD</title>
+<path fill="none" stroke="purple" d="M1091.49,-935C1091.49,-935 1216.98,-935 1216.98,-935"/>
+<polygon fill="purple" stroke="purple" points="1216.98,-938.5 1226.98,-935 1216.98,-931.5 1216.98,-938.5"/>
+</g>
+<!-- メルコイン -->
+<g id="node30" class="node">
+<title>メルコイン</title>
+<polygon fill="#fdf5e6" stroke="black" points="1305.24,-803 1209.54,-803 1209.54,-767 1305.24,-767 1305.24,-803"/>
+<text text-anchor="middle" x="1257.39" y="-780.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">メルコイン</text>
+</g>
+<!-- メルペイ&#45;&gt;メルコイン -->
+<g id="edge26" class="edge">
+<title>メルペイ-&gt;メルコイン</title>
+<path fill="none" stroke="purple" d="M1091.26,-923C1123.63,-923 1162.54,-923 1162.54,-923 1162.54,-923 1162.54,-798.1 1162.54,-798.1 1162.54,-798.1 1197.62,-798.1 1197.62,-798.1"/>
+<polygon fill="purple" stroke="purple" points="1197.62,-801.6 1207.62,-798.1 1197.62,-794.6 1197.62,-801.6"/>
+</g>
+<!-- invisible1 -->
+<!-- invisible1&#45;&gt;SBI証券 -->
+</g>
+</svg>
