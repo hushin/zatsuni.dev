@@ -89,3 +89,8 @@ description: Astro + Cloudflare Pages でサイトを構築
 - Built on Astro blog template with customizations
 - Content schema and TailwindCSS implementation completed
 - Uses pnpm for package management
+
+## Styling Guidelines
+
+- **Always include TailwindCSS reference**: Add `@reference "tailwindcss";` at the top of `<style>` blocks when using `@apply` directive
+- This is required for TailwindCSS v4 to recognize utility classes like `left-16`, `z-50`, etc.
