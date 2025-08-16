@@ -7,11 +7,20 @@ interface DatetimesProps {
 }
 
 interface Props extends DatetimesProps {
-  size?: "sm" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
   className?: string;
+  showIcon?: boolean;
+  variant?: "default" | "badge";
 }
 
-const { pubDatetime, modDatetime, size = "sm", className = "" } = Astro.props;
+const {
+  pubDatetime,
+  modDatetime,
+  size = "sm",
+  className = "",
+  showIcon = true,
+  variant = "default",
+} = Astro.props;
 
 const myDatetime = new Date(
   modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime
@@ -27,35 +36,74 @@ const time = myDatetime.toLocaleTimeString(LOCALE.langTag, {
   hour: "2-digit",
   minute: "2-digit",
 });
+
+const sizeClasses = {
+  xs: "text-xs",
+  sm: "text-sm",
+  md: "text-base",
+  lg: "text-lg",
+};
+
+const iconSizeClasses = {
+  xs: "h-3 w-3",
+  sm: "h-4 w-4",
+  md: "h-5 w-5",
+  lg: "h-6 w-6",
+};
+
+const isUpdated = modDatetime && modDatetime > pubDatetime;
 ---
 
-<div class={`flex items-center space-x-2 opacity-80 ${className}`.trim()}>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class={`${
-      size === "sm" ? "scale-90" : "scale-100"
-    } inline-block h-6 w-6 min-w-[1.375rem]`}
-    style="fill: rgb(var(--gray-dark))"
-    aria-hidden="true"
-  >
-    <path
-      d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"
-    ></path>
-    <path
-      d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"
-    ></path>
-  </svg>
-  {
-    modDatetime && modDatetime > pubDatetime ? (
-      <span class={`${size === "sm" ? "text-sm" : "text-base"}`}>Updated:</span>
-    ) : (
-      <span class="sr-only">Published:</span>
-    )
-  }
-  <span class={`${size === "sm" ? "text-sm" : "text-base"}`}>
-    <time datetime={myDatetime.toISOString()}>{date}</time>
-    <span aria-hidden="true"> | </span>
-    <span class="sr-only">&nbsp;at&nbsp;</span>
-    <span class="text-nowrap">{time}</span>
-  </span>
-</div>
+{
+  variant === "badge" ? (
+    <div class={`badge badge-ghost badge-sm gap-1 ${className}`.trim()}>
+      {showIcon && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class={`${iconSizeClasses[size]} fill-current`}
+          aria-hidden="true"
+        >
+          <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z" />
+          <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z" />
+        </svg>
+      )}
+      <time datetime={myDatetime.toISOString()} class={sizeClasses[size]}>
+        {date}
+      </time>
+    </div>
+  ) : (
+    <div
+      class={`text-base-content/70 flex items-center gap-2 ${className}`.trim()}
+    >
+      {showIcon && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class={`${iconSizeClasses[size]} shrink-0 fill-current`}
+          aria-hidden="true"
+        >
+          <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z" />
+          <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z" />
+        </svg>
+      )}
+
+      <div class={`flex items-center gap-1 ${sizeClasses[size]}`}>
+        {isUpdated ? (
+          <span class="text-warning font-medium">Updated:</span>
+        ) : (
+          <span class="sr-only">Published:</span>
+        )}
+
+        <time datetime={myDatetime.toISOString()}>{date}</time>
+
+        <span aria-hidden="true" class="text-base-content/50">
+          •
+        </span>
+
+        <span class="text-nowrap">
+          <span class="sr-only">at </span>
+          {time}
+        </span>
+      </div>
+    </div>
+  )
+}

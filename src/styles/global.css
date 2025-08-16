@@ -1,4 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: fantasy --default;
+  themes:
+    fantasy --default,
+    dracula --prefersdark;
 }

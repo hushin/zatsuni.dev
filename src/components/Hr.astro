@@ -1,12 +1,34 @@
 ---
 export interface Props {
+  text?: string;
+  variant?: "neutral" | "primary" | "secondary" | "accent";
   noPadding?: boolean;
   ariaHidden?: boolean;
 }
 
-const { noPadding = false, ariaHidden = true } = Astro.props;
+const {
+  text,
+  variant = "neutral",
+  noPadding = false,
+  ariaHidden = true,
+} = Astro.props;
+
+const dividerClasses = [
+  "divider",
+  variant !== "neutral" && `divider-${variant}`,
+]
+  .filter(Boolean)
+  .join(" ");
 ---
 
 <div class={`max-w-3xl mx-auto ${noPadding ? "px-0" : "px-4"}`}>
-  <hr style="border-color: var(--color-skin-line);" aria-hidden={ariaHidden} />
+  {
+    text ? (
+      <div class={dividerClasses} aria-hidden={ariaHidden}>
+        {text}
+      </div>
+    ) : (
+      <div class={dividerClasses} aria-hidden={ariaHidden} />
+    )
+  }
 </div>

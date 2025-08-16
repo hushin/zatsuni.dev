@@ -6,6 +6,8 @@ export interface Props {
   title?: string;
   disabled?: boolean;
   showInNewTab?: boolean;
+  variant?: "primary" | "secondary" | "accent" | "ghost" | "link" | "outline";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
 const {
@@ -15,25 +17,35 @@ const {
   title,
   disabled = false,
   showInNewTab = false,
+  variant = "link",
+  size = "md",
 } = Astro.props;
+
+const buttonClasses = [
+  "btn",
+  variant === "primary" && "btn-primary",
+  variant === "secondary" && "btn-secondary",
+  variant === "accent" && "btn-accent",
+  variant === "ghost" && "btn-ghost",
+  variant === "link" && "btn-link",
+  variant === "outline" && "btn-outline",
+  size !== "md" && `btn-${size}`,
+  disabled && "btn-disabled",
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
 ---
 
 {
   disabled ? (
-    <span
-      class:list={["group inline-block", className]}
-      title={title}
-      aria-disabled={disabled}
-    >
+    <span class={buttonClasses} title={title} aria-disabled={disabled}>
       <slot />
     </span>
   ) : (
     <a
       {href}
-      class:list={["group inline-block", className]}
-      style="color: inherit;"
-      onmouseover="this.style.color = 'var(--color-skin-accent)'"
-      onmouseout="this.style.color = 'inherit'"
+      class={buttonClasses}
       aria-label={ariaLabel}
       title={title}
       {...(showInNewTab ? { rel: "noopener noreferrer" } : {})}
