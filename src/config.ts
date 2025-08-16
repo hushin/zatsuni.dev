@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: "https://zatsuni.dev/", // replace this with your deployed domain
   author: "hush_in",
   profile: "https://zatsuni.dev/",
-  desc: "雑になんか作る。雑記も書く。",
+  desc: "雑に作る。雑記も書く。",
   title: "雑にdev",
   // ogImage: "zatsuni-og.png",
   lightAndDarkMode: true,
