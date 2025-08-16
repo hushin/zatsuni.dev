@@ -99,11 +99,10 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     <section id="slide">
       <h2>登壇資料</h2>
       <ul>
-        <li class="my-6">
+        <li class="slide-item">
           <a
             href="https://hushin.github.io/slides/figma-cloudflare-hono.html"
-            class="inline-block text-lg font-medium decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
-            style="color: var(--accent)"
+            class="slide-link"
           >
             <h3>Figma API + Cloudflare + Hono で画像共有</h3>
           </a>
@@ -111,8 +110,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           <p>
             <a
               href="https://kyotojs.connpass.com/event/302442/"
-              class="underline decoration-dashed underline-offset-4"
-              >ToKyoto.js #02</a
+              class="event-link">ToKyoto.js #02</a
             > で登壇
           </p>
         </li>
@@ -145,5 +143,20 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   }
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
+  }
+
+  /* ===== Slide Section ===== */
+  .slide-item {
+    @apply my-4;
+  }
+  .slide-link {
+    @apply inline-block decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0;
+    color: var(--accent);
+  }
+  .slide-link h3 {
+    @apply text-lg font-medium;
+  }
+  .event-link {
+    @apply underline decoration-dashed underline-offset-4;
   }
 </style>
