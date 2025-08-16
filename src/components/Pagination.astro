@@ -57,9 +57,18 @@ const isNextDisabled = next === "disabled";
     @apply mt-auto mb-8 flex justify-center;
   }
   .disabled {
-    @apply hover:text-skin-base group-hover:fill-skin-base pointer-events-none opacity-50 select-none;
+    @apply pointer-events-none opacity-50 select-none;
+  }
+  .disabled:hover {
+    color: var(--color-skin-base);
+  }
+  .group:hover .disabled {
+    fill: var(--color-skin-base);
   }
   .disabled-svg {
-    @apply group-hover:!fill-skin-base;
+    fill: var(--color-skin-base) !important;
+  }
+  .group:hover .disabled-svg {
+    fill: var(--color-skin-base) !important;
   }
 </style>

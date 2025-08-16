@@ -30,7 +30,10 @@ const {
   ) : (
     <a
       {href}
-      class:list={["group hover:text-skin-accent inline-block", className]}
+      class:list={["group inline-block", className]}
+      style="color: inherit;"
+      onmouseover="this.style.color = 'var(--color-skin-accent)'"
+      onmouseout="this.style.color = 'inherit'"
       aria-label={ariaLabel}
       title={title}
       {...(showInNewTab ? { rel: "noopener noreferrer" } : {})}
