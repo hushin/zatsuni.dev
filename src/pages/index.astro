@@ -108,9 +108,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           </a>
           <Datetime pubDatetime="2024-01-12" modDatetime={null} />
           <p>
-            <a
-              href="https://kyotojs.connpass.com/event/302442/"
-              class="event-link">ToKyoto.js #02</a
+            <a href="https://kyotojs.connpass.com/event/302442/"
+              >ToKyoto.js #02</a
             > で登壇
           </p>
         </li>
@@ -155,8 +154,5 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   }
   .slide-link h3 {
     @apply text-lg font-medium;
-  }
-  .event-link {
-    @apply underline decoration-dashed underline-offset-4;
   }
 </style>
