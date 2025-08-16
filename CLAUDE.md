@@ -9,8 +9,8 @@ This is a personal blog built with Astro v5 using the blog starter template. The
 ### Target Tech Stack
 
 - **Framework**: Astro v5 with Content Loader API
-- **Styling**: TailwindCSS v4 (planned migration)
-- **Icons**: Boxicons, Tablers (planned)
+- **Styling**: TailwindCSS v4
+- **Icons**: Boxicons, Tablers (manual copy)
 - **Deployment**: Cloudflare Pages
 - **Package Manager**: pnpm
 
@@ -21,6 +21,7 @@ This is a personal blog built with Astro v5 using the blog starter template. The
 | `pnpm dev`       | Start development server at localhost:4321 |
 | `pnpm build`     | Build for production                       |
 | `pnpm preview`   | Preview production build locally           |
+| `pnpm format`    | Format code with Prettier                  |
 | `pnpm astro ...` | Run Astro CLI commands                     |
 
 ## Architecture
@@ -44,12 +45,12 @@ src/
 
 The project uses Astro's Content Loader API with glob loader. Current configuration in `src/content.config.ts`:
 
-- Loader: `glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' })`
-- Schema includes: title, description, pubDate, updatedDate, heroImage
+- Loader: `glob({ base: './src/data/blog', pattern: '**/[^_]*.{md,mdx}' })`
+- Schema includes: pubDatetime, modDatetime, title, featured, draft, tags, description, ogImage
 
-### Planned Content Schema Changes
+### Content Schema Format
 
-The user wants frontmatter format:
+The current frontmatter format already matches the desired structure:
 
 ```yaml
 ---
@@ -85,6 +86,6 @@ description: Astro + Cloudflare Pages でサイトを構築
 
 ## Notes
 
-- Currently using default Astro blog template structure
-- Migration needed to align with user's desired structure and schema
+- Built on Astro blog template with customizations
+- Content schema and TailwindCSS implementation completed
 - Uses pnpm for package management
