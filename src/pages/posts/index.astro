@@ -41,10 +41,8 @@ const pageTitle = "記事一覧";
       {
         years.map(year => (
           <section>
-            <h2 class="text-base-content mb-6 pb-2 text-2xl font-bold">
-              {year}年
-            </h2>
-            <ul class="space-y-0">
+            <h2 class="text-base-content mb-4 text-2xl font-bold">{year}年</h2>
+            <ul class="space-y-4">
               {postsByYear[year].map(post => (
                 <Card href={`/posts/${post.id}/`} frontmatter={post.data} />
               ))}
