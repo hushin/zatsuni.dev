@@ -11,11 +11,11 @@ const { title, description, pubDatetime, modDatetime } = Astro.props;
 <BaseLayout title={title} description={description}>
   <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
     <!-- 記事ヘッダー -->
-    <header class="mb-8 border-b border-gray-400 pb-8">
+    <header class="border-base-300 mb-8 border-b pb-8">
       <div class="text-center">
         <!-- タイトル -->
         <h1
-          class="text-3xl leading-tight font-bold text-gray-900 sm:text-4xl lg:text-5xl"
+          class="text-base-content text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl"
         >
           {title}
         </h1>
@@ -23,7 +23,7 @@ const { title, description, pubDatetime, modDatetime } = Astro.props;
         <!-- 説明文 -->
         {
           description && (
-            <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-gray-600">
+            <p class="text-base-content/70 mx-auto mt-4 max-w-2xl text-lg leading-relaxed">
               {description}
             </p>
           )
