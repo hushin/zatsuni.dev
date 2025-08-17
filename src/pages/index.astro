@@ -17,7 +17,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 <BaseLayout title={SITE.title} description={SITE.desc}>
   <div class="container mx-auto max-w-4xl px-4 py-8">
-    <section id="hero" class="hero py-12">
+    <section id="hero" class="hero py-8">
       <div class="hero-content flex-col gap-8 lg:flex-row-reverse">
         <div class="avatar">
           <a href="/about/">
@@ -39,8 +39,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       </div>
     </section>
 
-    <Hr />
-
     {
       featuredPosts.length > 0 && (
         <>
@@ -54,7 +52,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
               ))}
             </ul>
           </section>
-          {recentPosts.length > 0 && <Hr />}
         </>
       )
     }
@@ -75,7 +72,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       )
     }
 
-    <div class="flex justify-center py-8">
+    <div class="flex justify-center pb-12">
       <LinkButton href="/posts/" variant="ghost" size="lg" className="gap-2">
         すべての記事
         <svg
@@ -93,8 +90,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         </svg>
       </LinkButton>
     </div>
-
-    <Hr />
 
     <section id="slide" class="py-8">
       <h2 class="text-base-content mb-6 text-2xl font-bold">登壇資料</h2>
