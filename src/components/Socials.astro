@@ -3,28 +3,15 @@ import { SOCIALS } from "@config";
 import socialIcons from "@assets/socialIcons";
 
 export interface Props {
-  size?: "sm" | "md" | "lg";
   variant?: "ghost" | "outline" | "solid";
 }
 
-const { size = "md", variant = "ghost" } = Astro.props;
-
-const sizeClasses = {
-  sm: "btn-sm",
-  md: "btn-md",
-  lg: "btn-lg",
-};
+const { variant = "ghost" } = Astro.props;
 
 const variantClasses = {
   ghost: "btn-ghost",
   outline: "btn-outline",
   solid: "",
-};
-
-const iconSizes = {
-  sm: "h-4 w-4",
-  md: "h-5 w-5",
-  lg: "h-6 w-6",
 };
 ---
 
@@ -35,12 +22,12 @@ const iconSizes = {
         href={social.href}
         target="_blank"
         rel="noopener noreferrer"
-        class={`btn btn-circle ${sizeClasses[size]} ${variantClasses[variant]} group transition-transform hover:scale-110`}
+        class={`btn btn-circle btn-sm ${variantClasses[variant]} group transition-transform hover:scale-110`}
         aria-label={social.linkTitle}
         title={social.linkTitle}
       >
         <div
-          class={`${iconSizes[size]} flex items-center justify-center [&>svg]:h-full [&>svg]:w-full`}
+          class="flex h-5 w-5 items-center justify-center [&>svg]:h-full [&>svg]:w-full"
           set:html={socialIcons[social.name]}
         />
         <span class="sr-only">{social.linkTitle}</span>
