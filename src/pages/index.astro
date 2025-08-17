@@ -50,12 +50,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
             </h2>
             <ul class="space-y-4">
               {featuredPosts.map(({ data, id }) => (
-                <Card
-                  href={`/posts/${id}/`}
-                  frontmatter={data}
-                  secHeading={false}
-                  variant="compact"
-                />
+                <Card href={`/posts/${id}/`} frontmatter={data} />
               ))}
             </ul>
           </section>
@@ -72,12 +67,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
             {recentPosts.map(
               ({ data, id }, index) =>
                 index < SITE.postPerIndex && (
-                  <Card
-                    href={`/posts/${id}/`}
-                    frontmatter={data}
-                    secHeading={false}
-                    variant="compact"
-                  />
+                  <Card href={`/posts/${id}/`} frontmatter={data} />
                 )
             )}
           </ul>
