@@ -38,10 +38,9 @@ const { tag, posts } = Astro.props;
 // ページタイトルとメタ情報
 const totalPosts = posts.length;
 const pageTitle = `タグ「${tag}」の記事一覧`;
-const pageDescription = `${SITE.desc} - ${pageTitle}。${totalPosts}件の記事があります。`;
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle}>
   <div class="container mx-auto max-w-4xl px-4 py-8">
     <!-- パンくずナビゲーション -->
     <nav class="breadcrumbs mb-6 text-sm">
