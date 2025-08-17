@@ -42,7 +42,12 @@ const headerProps = {
         tags && tags.length > 0 && (
           <div class="card-actions mt-4 justify-start">
             {tags.slice(0, 3).map((tag: string) => (
-              <div class="badge badge-outline badge-xs">{tag}</div>
+              <a
+                href={`/tags/${slugifyStr(tag)}/`}
+                class="badge badge-outline badge-xs hover:badge-primary"
+              >
+                {tag}
+              </a>
             ))}
             {tags.length > 3 && (
               <div class="badge badge-ghost badge-xs">+{tags.length - 3}</div>
