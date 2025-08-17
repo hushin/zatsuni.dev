@@ -1,6 +1,7 @@
 ---
 import { slugifyStr } from "@utils/slugify";
 import Datetime from "./Datetime.astro";
+import Tag from "./Tag.astro";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -40,7 +41,7 @@ const headerProps = {
             tags && tags.length > 0 && (
               <div class="flex flex-wrap justify-end gap-1">
                 {tags.slice(0, 3).map((tag: string) => (
-                  <div class="badge badge-outline badge-xs">{tag}</div>
+                  <Tag tag={tag} size="sm" variant="outline" />
                 ))}
                 {tags.length > 3 && (
                   <div class="badge badge-ghost badge-xs">

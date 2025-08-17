@@ -2,10 +2,11 @@
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import Datetime from "../components/Datetime.astro";
+import Tag from "../components/Tag.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDatetime, modDatetime } = Astro.props;
+const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -46,6 +47,25 @@ const { title, description, pubDatetime, modDatetime } = Astro.props;
     <div class="prose prose-lg mx-auto max-w-none">
       <slot />
     </div>
+
+    {
+      tags && tags.length > 0 && (
+        <div class="mt-6">
+          <h2 class="sr-only">タグ</h2>
+          <div class="flex flex-wrap justify-center gap-2">
+            {tags.map(tag => (
+              <Tag
+                tag={tag}
+                href={`/tags/${tag}/`}
+                size="md"
+                variant="outline"
+                className="hover:badge-primary"
+              />
+            ))}
+          </div>
+        </div>
+      )
+    }
   </article>
 
   <!-- 画像拡大表示用のモーダル -->

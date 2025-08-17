@@ -1,0 +1,63 @@
+---
+import TagIcon from "./icons/TagIcon.astro";
+
+export interface Props {
+  tag: string;
+  href?: string;
+  size?: "sm" | "md" | "lg";
+  variant?: "default" | "primary" | "secondary" | "accent" | "outline";
+  className?: string;
+}
+
+const {
+  tag,
+  href,
+  size = "md",
+  variant = "default",
+  className = "",
+} = Astro.props;
+
+// サイズに応じたクラス
+const sizeClasses = {
+  sm: "badge-sm text-xs",
+  md: "badge-md text-sm",
+  lg: "badge-lg text-base",
+};
+
+// バリアントに応じたクラス
+const variantClasses = {
+  default: "badge-neutral",
+  primary: "badge-primary",
+  secondary: "badge-secondary",
+  accent: "badge-accent",
+  outline: "badge-outline",
+};
+
+const badgeClasses = `badge ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class={`${badgeClasses} no-underline transition-all duration-200 hover:scale-105 hover:shadow-md`}
+      title={`${tag}タグの記事一覧`}
+    >
+      <TagIcon />
+      {tag}
+    </a>
+  ) : (
+    <span class={badgeClasses}>
+      <TagIcon />
+      {tag}
+    </span>
+  )
+}
+
+<style>
+  @reference "tailwindcss";
+
+  .badge {
+    @apply inline-flex items-center gap-1;
+  }
+</style>
