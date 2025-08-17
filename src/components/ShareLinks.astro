@@ -1,13 +1,21 @@
 ---
-import LinkButton from "./LinkButton.astro";
 import socialIcons from "@assets/socialIcons";
 
 export interface Props {
   title: string;
+  variant?: "ghost" | "outline" | "solid";
 }
 
+const { title, variant = "ghost" } = Astro.props;
+
 const url = encodeURIComponent(Astro.url.href);
-const title = encodeURIComponent(Astro.props.title);
+const encodedTitle = encodeURIComponent(title);
+
+const variantClasses = {
+  ghost: "btn-ghost",
+  outline: "btn-outline",
+  solid: "",
+};
 
 const shareLinks = [
   {
@@ -43,30 +51,28 @@ const shareLinks = [
 ] as const;
 ---
 
-<div class={`social-icons`}>
-  <span class="italic">この記事をシェアする:</span>
-  <div class="text-center">
+<div class="flex items-center gap-3">
+  <span class="text-base-content text-sm">この記事をシェアする</span>
+  <div class="flex flex-wrap justify-center gap-2">
     {
       shareLinks.map(social => (
-        <LinkButton
-          href={social.href.replace("(url)", url).replace("(title)", title)}
-          className="link-button"
+        <a
+          href={social.href
+            .replace("(url)", url)
+            .replace("(title)", encodedTitle)}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`btn btn-circle btn-sm ${variantClasses[variant]} group transition-transform hover:scale-110`}
+          aria-label={social.linkTitle}
           title={social.linkTitle}
-          showInNewTab={true}
         >
-          <Fragment set:html={socialIcons[social.name]} />
+          <div
+            class="flex h-5 w-5 items-center justify-center [&>svg]:h-full [&>svg]:w-full"
+            set:html={socialIcons[social.name]}
+          />
           <span class="sr-only">{social.linkTitle}</span>
-        </LinkButton>
+        </a>
       ))
     }
   </div>
 </div>
-
-<style>
-  .social-icons {
-    @apply flex flex-col flex-wrap items-center justify-center gap-1 sm:items-start;
-  }
-  .link-button {
-    @apply scale-90 p-2 hover:rotate-6 sm:p-1;
-  }
-</style>
