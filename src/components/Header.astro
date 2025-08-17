@@ -11,7 +11,6 @@ const navItems = [
 ];
 
 function isActive(href: string): boolean {
-  console.log(pathname, href, subpath);
   return href === `/${pathname}` || href === "/" + (subpath?.[0] || "");
 }
 ---
