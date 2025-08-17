@@ -4,3 +4,13 @@
     fantasy --default,
     dracula --prefersdark;
 }
+
+/* Social Icons Styling */
+svg.icon-tabler {
+  @apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90;
+}
+
+/* Ensure proper icon display */
+.btn svg {
+  @apply shrink-0;
+}

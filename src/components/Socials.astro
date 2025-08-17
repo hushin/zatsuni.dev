@@ -1,37 +1,50 @@
 ---
 import { SOCIALS } from "@config";
-import LinkButton from "./LinkButton.astro";
 import socialIcons from "@assets/socialIcons";
 
 export interface Props {
-  centered?: boolean;
+  size?: "sm" | "md" | "lg";
+  variant?: "ghost" | "outline" | "solid";
 }
 
-const { centered = false } = Astro.props;
+const { size = "md", variant = "ghost" } = Astro.props;
+
+const sizeClasses = {
+  sm: "btn-sm",
+  md: "btn-md",
+  lg: "btn-lg",
+};
+
+const variantClasses = {
+  ghost: "btn-ghost",
+  outline: "btn-outline",
+  solid: "",
+};
+
+const iconSizes = {
+  sm: "h-4 w-4",
+  md: "h-5 w-5",
+  lg: "h-6 w-6",
+};
 ---
 
-<div class={`social-icons ${centered ? "flex" : ""}`}>
+<div class="flex flex-wrap justify-center gap-2">
   {
     SOCIALS.filter(social => social.active).map(social => (
-      <LinkButton
+      <a
         href={social.href}
-        className="link-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        class={`btn btn-circle ${sizeClasses[size]} ${variantClasses[variant]} group transition-transform hover:scale-110`}
+        aria-label={social.linkTitle}
         title={social.linkTitle}
-        showInNewTab={true}
       >
-        <Fragment set:html={socialIcons[social.name]} />
+        <div
+          class={`${iconSizes[size]} flex items-center justify-center [&>svg]:h-full [&>svg]:w-full`}
+          set:html={socialIcons[social.name]}
+        />
         <span class="sr-only">{social.linkTitle}</span>
-      </LinkButton>
+      </a>
     ))
   }
 </div>
-
-<style>
-  @reference "tailwindcss";
-  .social-icons {
-    @apply flex-wrap justify-center gap-1;
-  }
-  .link-button {
-    @apply p-2 hover:rotate-6 sm:p-1;
-  }
-</style>
