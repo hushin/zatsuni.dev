@@ -30,4 +30,44 @@ const { title, description, pubDatetime, modDatetime } = Astro.props;
       </div>
     </article>
   </main>
+
+  <!-- 画像拡大表示用のモーダル -->
+  <dialog id="imageModal" class="modal">
+    <div class="modal-box h-auto w-auto max-w-none p-0">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute top-2 right-2"
+          >✕</button
+        >
+      </form>
+      <img
+        id="modalImage"
+        src=""
+        alt=""
+        class="h-auto max-h-[90vh] w-full object-contain"
+      />
+    </div>
+  </dialog>
 </BaseLayout>
+
+<script>
+  // 画像クリック時の拡大表示機能
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("imageModal") as HTMLDialogElement;
+    const modalImage = document.getElementById(
+      "modalImage"
+    ) as HTMLImageElement;
+
+    // 記事内の画像にクリックイベントを追加
+    const images = document.querySelectorAll("article img");
+    images.forEach(img => {
+      if (img instanceof HTMLImageElement) {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", function () {
+          modalImage.src = img.src;
+          modalImage.alt = img.alt;
+          modal.showModal();
+        });
+      }
+    });
+  });
+</script>
