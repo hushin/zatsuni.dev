@@ -5,6 +5,12 @@
     dracula --prefersdark;
 }
 
+@plugin "daisyui/theme" {
+  name: "nord";
+  default: true;
+  --color-primary-content: #ffffff;
+}
+
 html {
   font-size: 18px; /* ルート要素のフォントサイズを大きめに */
 }
