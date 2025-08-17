@@ -1,4 +1,6 @@
 ---
+import Datetime from "./Datetime.astro";
+
 export interface Props {
   href: string;
   title: string;
@@ -9,19 +11,21 @@ export interface Props {
 const { href, title, pubDatetime, description } = Astro.props;
 ---
 
-<li class="mb-6">
-  <div class="card bg-base-100 border-base-300 border shadow-sm">
-    <div class="card-body p-6">
-      <a
-        href={href}
-        class="link link-primary"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h3 class="card-title text-lg font-semibold">
+<li>
+  <article
+    class="border-base-300 bg-base-100 hover:border-l-primary border-l-4 transition-all duration-200"
+  >
+    <a
+      href={href}
+      class="block text-inherit no-underline"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="px-4 py-2">
+        <h3 class="text-lg font-semibold">
           {title}
           <svg
-            class="h-4 w-4"
+            class="ml-1 inline h-4 w-4"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -34,21 +38,23 @@ const { href, title, pubDatetime, description } = Astro.props;
             ></path>
           </svg>
         </h3>
-      </a>
 
-      <div class="text-base-content/60 text-sm">
-        {pubDatetime}
+        <div class="mt-1">
+          <Datetime pubDatetime={pubDatetime} />
+        </div>
+
+        <div class="text-base-content/80 mt-1">
+          <slot />
+        </div>
+
+        {
+          description && (
+            <p class="text-base-content/80 mt-1 line-clamp-2 text-sm">
+              {description}
+            </p>
+          )
+        }
       </div>
-
-      <div class="text-base-content/80 mt-2">
-        <slot />
-      </div>
-
-      {
-        description && (
-          <p class="text-base-content/80 mt-2 text-sm">{description}</p>
-        )
-      }
-    </div>
-  </div>
+    </a>
+  </article>
 </li>
