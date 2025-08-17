@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import Datetime from "../components/Datetime.astro";
 import Tag from "../components/Tag.astro";
+import ShareLinks from "@components/ShareLinks.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -10,25 +11,16 @@ const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-    <!-- 記事ヘッダー -->
-    <header class="border-base-300 mb-8 border-b pb-8">
-      <div class="text-center">
+  <div class="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
+    <article>
+      <!-- 記事ヘッダー -->
+      <header class="border-base-300 mb-8 border-b pb-8">
         <!-- タイトル -->
         <h1
-          class="text-base-content text-3xl leading-tight font-bold sm:text-4xl lg:text-5xl"
+          class="text-primary text-3xl leading-tight font-bold sm:text-3xl lg:text-4xl"
         >
           {title}
         </h1>
-
-        <!-- 説明文 -->
-        {
-          description && (
-            <p class="text-base-content/70 mx-auto mt-4 max-w-2xl text-lg leading-relaxed">
-              {description}
-            </p>
-          )
-        }
 
         <!-- 公開日・更新日 -->
         <div class="mt-4">
@@ -36,23 +28,22 @@ const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
             pubDatetime={pubDatetime}
             modDatetime={modDatetime}
             size="md"
-            className="justify-center"
             showTime={true}
           />
         </div>
-      </div>
-    </header>
+      </header>
 
-    <!-- 記事本文 -->
-    <div class="prose prose-lg mx-auto max-w-none">
-      <slot />
-    </div>
+      <!-- 記事本文 -->
+      <div class="prose prose-lg mx-auto max-w-none">
+        <slot />
+      </div>
+    </article>
 
     {
       tags && tags.length > 0 && (
-        <div class="mt-6">
+        <div>
           <h2 class="sr-only">タグ</h2>
-          <div class="flex flex-wrap justify-center gap-2">
+          <div class="flex flex-wrap gap-2">
             {tags.map(tag => (
               <Tag
                 tag={tag}
@@ -66,8 +57,8 @@ const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
         </div>
       )
     }
-  </article>
-
+    <ShareLinks title={title} />
+  </div>
   <!-- 画像拡大表示用のモーダル -->
   <dialog id="imageModal" class="modal">
     <div class="modal-box h-auto w-auto max-w-none p-0">
