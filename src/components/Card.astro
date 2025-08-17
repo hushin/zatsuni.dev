@@ -52,24 +52,6 @@ const headerProps = {
           </p>
         )
       }
-
-      {
-        tags && tags.length > 0 && (
-          <div class="card-actions mt-4 justify-start">
-            {tags.slice(0, 3).map((tag: string) => (
-              <a
-                href={`/tags/${slugifyStr(tag)}/`}
-                class="badge badge-outline badge-xs hover:badge-primary"
-              >
-                {tag}
-              </a>
-            ))}
-            {tags.length > 3 && (
-              <div class="badge badge-ghost badge-xs">+{tags.length - 3}</div>
-            )}
-          </div>
-        )
-      }
     </div>
   </div>
 </li>
