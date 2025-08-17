@@ -9,7 +9,7 @@ This is a personal blog built with Astro v5 using the blog starter template. The
 ### Target Tech Stack
 
 - **Framework**: Astro v5 with Content Loader API
-- **Styling**: TailwindCSS v4
+- **Styling**: TailwindCSS v4 + DaisyUI v5
 - **Icons**: Boxicons, Tablers (manual copy)
 - **Deployment**: Cloudflare Pages
 - **Package Manager**: pnpm
@@ -92,5 +92,11 @@ description: Astro + Cloudflare Pages でサイトを構築
 
 ## Styling Guidelines
 
+### TailwindCSS v4 + DaisyUI v5
+
 - **Always include TailwindCSS reference**: Add `@reference "tailwindcss";` at the top of `<style>` blocks when using `@apply` directive
 - This is required for TailwindCSS v4 to recognize utility classes like `left-16`, `z-50`, etc.
+- **DaisyUI Components**: Use DaisyUI v5 semantic classes for consistent UI components (btn, card, navbar, badge, etc.)
+- **Styling Strategy**: DaisyUI for components + TailwindCSS utilities for layout and spacing
+- **Style Guide Reference**: See `docs/style-guide.md` for DaisyUI v5 component usage and patterns
+- **DaisyUI Cheat Sheet**: Complete class reference available in `docs/daisy-ui-v5.md`
