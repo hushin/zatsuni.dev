@@ -4,45 +4,46 @@ import Socials from "@components/Socials.astro";
 ---
 
 <BaseLayout title="About">
-  <div>
-    <img
-      src="/my-icon-min.svg"
-      class="w-40 rounded-full bg-[#FF7F00]"
-      alt="hush_in icon"
-    />
-  </div>
+  <div class="prose container mx-auto my-8">
+    <h1>About</h1>
+    <div class="flex flex-col items-center">
+      <img
+        src="/my-icon-min.svg"
+        class="w-40 rounded-full bg-[#FF7F00]"
+        alt="hush_in icon"
+      />
+      <ul>
+        <li>Handle Name: hush_in / はっしゅ / 不信</li>
+        <li>Name: Ryo KUROIWA</li>
+        <li>
+          Web Developer
+          <ul>
+            <li>Web フロントエンド中心にいろいろ</li>
+          </ul>
+        </li>
+        <li>趣味はゲームとお酒と筋トレ</li>
+      </ul>
+      <div class="flex flex-col sm:flex-row sm:items-center">
+        <div class="mr-2 whitespace-nowrap">
+          <p class="m-0">Social Links:</p>
+        </div>
+        <Socials />
+      </div>
+    </div>
 
-  <div class="prose mx-auto max-w-max">
+    <h2>過去サイト・作ったもの</h2>
+
     <ul>
-      <li>Handle Name: hush_in / はっしゅ / 不信</li>
-      <li>Name: Ryo KUROIWA</li>
       <li>
-        Web Developer
+        <a href="https://flatv.fdempa.com/">FLATV</a>
         <ul>
-          <li>Web フロントエンド中心にいろいろ</li>
+          <li>
+            <a href="https://flatv.fdempa.com/swf2pngsequence/"
+              >SWF2PNGSequence</a
+            > SWFからPNGシーケンスを作成するAIRアプリ
+          </li>
         </ul>
       </li>
-      <li>趣味はゲームとお酒と筋トレ</li>
     </ul>
-    <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
-      <div class="mt-1 mr-2 whitespace-nowrap">
-        <p class="m-0">Social Links:</p>
-      </div>
-      <Socials />
-    </div>
   </div>
-
-  <h2>過去サイト・作ったもの</h2>
-
-  <ul>
-    <li>
-      <a href="https://flatv.fdempa.com/">FLATV</a>
-      <ul>
-        <li>
-          <a href="https://flatv.fdempa.com/swf2pngsequence/">SWF2PNGSequence</a
-          > SWFからPNGシーケンスを作成するAIRアプリ
-        </li>
-      </ul>
-    </li>
-  </ul>
 </BaseLayout>
