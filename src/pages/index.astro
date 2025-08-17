@@ -4,6 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card.astro";
+import SlideCard from "@components/SlideCard.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE } from "@config";
 import Datetime from "@components/Datetime.astro";
@@ -16,147 +17,100 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 ---
 
 <BaseLayout title={SITE.title} description={SITE.desc}>
-  <main id="main-content" class="mx-auto max-w-3xl px-4 pb-12">
-    <section id="hero">
-      <div class="flex space-x-4">
-        <div>
-          <img
-            src="/my-icon-min.svg"
-            class="w-20 rounded-full bg-[#FF7F00]"
-            alt="hush_in icon"
-          />
+  <div class="container mx-auto max-w-4xl px-4 py-8">
+    <section id="hero" class="hero py-8">
+      <div class="hero-content flex-col gap-8 lg:flex-row-reverse">
+        <div class="avatar">
+          <a href="/about/">
+            <div class="w-24 rounded-full bg-[#FF7F00] p-2">
+              <img
+                src="/my-icon-min.svg"
+                class="w-full rounded-full"
+                alt="hush_in icon"
+              />
+            </div>
+          </a>
         </div>
-        <div class="flex flex-col justify-center">
-          <p>雑になんか作る。雑記も書く。</p>
-          <p>
-            <LinkButton
-              className="underline decoration-dashed underline-offset-4"
-              href="/about/"
-            >
-              About me
-            </LinkButton>
+        <div class="text-center lg:text-left">
+          <h1 class="text-base-content text-xl">雑に作る。雑記も書く。</h1>
+          <p class="text-base-content/80 prose py-4">
+            <LinkButton variant="link" href="/about/"> About me → </LinkButton>
           </p>
         </div>
       </div>
     </section>
 
-    <Hr />
-
     {
       featuredPosts.length > 0 && (
         <>
-          <section id="featured">
-            <h2>人気の記事</h2>
-            <ul>
+          <section id="featured" class="py-8">
+            <h2 class="text-base-content mb-6 text-2xl font-bold">
+              人気の記事
+            </h2>
+            <ul class="space-y-4">
               {featuredPosts.map(({ data, id }) => (
-                <Card
-                  href={`/posts/${id}/`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
+                <Card href={`/posts/${id}/`} frontmatter={data} />
               ))}
             </ul>
           </section>
-          {recentPosts.length > 0 && <Hr />}
         </>
       )
     }
 
     {
       recentPosts.length > 0 && (
-        <section id="recent-posts">
-          <h2>最新記事</h2>
-          <ul>
+        <section id="recent-posts" class="py-8">
+          <h2 class="text-base-content mb-6 text-2xl font-bold">最新記事</h2>
+          <ul class="space-y-4">
             {recentPosts.map(
               ({ data, id }, index) =>
                 index < SITE.postPerIndex && (
-                  <Card
-                    href={`/posts/${id}/`}
-                    frontmatter={data}
-                    secHeading={false}
-                  />
+                  <Card href={`/posts/${id}/`} frontmatter={data} />
                 )
             )}
           </ul>
         </section>
       )
     }
-    <div class="all-posts-btn-wrapper">
-      <LinkButton href="/posts/">
+
+    <div class="flex justify-center pb-12">
+      <LinkButton href="/posts/" variant="ghost" size="lg" className="gap-2">
         すべての記事
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="ml-2 inline-block h-6 w-6"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
           <path
-            d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-          ></path>
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
         </svg>
       </LinkButton>
     </div>
 
-    <Hr />
-    <section id="slide">
-      <h2>登壇資料</h2>
-      <ul>
-        <li class="slide-item">
+    <section id="slide" class="py-8">
+      <h2 class="text-base-content mb-6 text-2xl font-bold">登壇資料</h2>
+      <ul class="space-y-6">
+        <SlideCard
+          href="https://hushin.github.io/slides/figma-cloudflare-hono.html"
+          title="Figma API + Cloudflare + Hono で画像共有"
+          pubDatetime="2024-01-12"
+        >
           <a
-            href="https://hushin.github.io/slides/figma-cloudflare-hono.html"
-            class="slide-link"
+            href="https://kyotojs.connpass.com/event/302442/"
+            class="link link-primary"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <h3>Figma API + Cloudflare + Hono で画像共有</h3>
+            ToKyoto.js #02
           </a>
-          <Datetime pubDatetime="2024-01-12" modDatetime={null} />
-          <p>
-            <a
-              href="https://kyotojs.connpass.com/event/302442/"
-              class="event-link">ToKyoto.js #02</a
-            > で登壇
-          </p>
-        </li>
+          で登壇
+        </SlideCard>
       </ul>
     </section>
-  </main>
+  </div>
 </BaseLayout>
-
-<style>
-  @reference "tailwindcss";
-
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply pt-8 pb-6;
-  }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-  }
-
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts,
-  #slide {
-    @apply pt-12 pb-6;
-  }
-  #featured h2,
-  #recent-posts h2,
-  #slide h2 {
-    @apply text-2xl font-semibold tracking-wide;
-  }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
-  }
-
-  /* ===== Slide Section ===== */
-  .slide-item {
-    @apply my-4;
-  }
-  .slide-link {
-    @apply inline-block decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0;
-    color: var(--accent);
-  }
-  .slide-link h3 {
-    @apply text-lg font-medium;
-  }
-  .event-link {
-    @apply underline decoration-dashed underline-offset-4;
-  }
-</style>

@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: "https://zatsuni.dev/", // replace this with your deployed domain
   author: "hush_in",
   profile: "https://zatsuni.dev/",
-  desc: "雑になんか作る。雑記も書く。",
+  desc: "雑に作る。雑記も書く。",
   title: "雑にdev",
   // ogImage: "zatsuni-og.png",
   lightAndDarkMode: true,
@@ -17,13 +17,6 @@ export const LOCALE = {
   lang: "ja", // html lang code. Set this empty and default will be "en"
   langTag: ["ja-JP"], // BCP 47 Language Tags. Set this empty [] to use the environment default
 } as const;
-
-export const LOGO_IMAGE = {
-  enable: false,
-  svg: true,
-  width: 216,
-  height: 46,
-};
 
 export const SOCIALS: SocialObjects = [
   {

@@ -1,163 +1,81 @@
 ---
-import { LOGO_IMAGE, SITE } from "../config";
-import Hr from "./Hr.astro";
+import { SITE } from "../config";
 
-export interface Props {
-  activeNav?: "posts" | "tags" | "about";
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+const subpath = pathname.match(/[^\/]+/g);
+
+const navItems = [
+  { href: "/posts/", label: "Posts" },
+  { href: "/tags/", label: "Tags" },
+  { href: "/about/", label: "About" },
+];
+
+function isActive(href: string): boolean {
+  return href === `/${pathname}` || href === "/" + (subpath?.[0] || "");
 }
-
-const { activeNav } = Astro.props;
 ---
 
-<header>
-  <a id="skip-to-content" href="#main-content">Skip to content</a>
-  <div class="nav-container">
-    <div class="top-nav-wrap">
-      <a href="/" class="logo whitespace-nowrap">
-        {
-          LOGO_IMAGE.enable ? (
-            <img
-              src={`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
-              alt={SITE.title}
-              width={LOGO_IMAGE.width}
-              height={LOGO_IMAGE.height}
-            />
-          ) : (
-            SITE.title
-          )
-        }
-      </a>
-      <nav id="nav-menu">
-        <button
-          class="hamburger-menu focus-outline"
-          aria-label="Open Menu"
-          aria-expanded="false"
-          aria-controls="menu-items"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="menu-icon"
+<header class="bg-base-100 shadow-sm">
+  <div class="mx-auto max-w-4xl">
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex-1">
+        <a href="/" class="btn btn-ghost text-xl">
+          {SITE.title}
+        </a>
+      </div>
+
+      <div class="flex-none">
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            {
+              navItems.map(({ href, label }) => (
+                <li>
+                  <a
+                    href={href}
+                    class={`btn btn-ghost ${isActive(href) ? "btn-active" : ""}`}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div class="dropdown dropdown-end lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h7"></path>
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <line x1="7" y1="12" x2="21" y2="12" class="line"></line>
-            <line x1="3" y1="6" x2="21" y2="6" class="line"></line>
-            <line x1="12" y1="18" x2="21" y2="18" class="line"></line>
-            <line x1="18" y1="6" x2="6" y2="18" class="close"></line>
-            <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
-          </svg>
-        </button>
-        <ul id="menu-items" class="display-none sm:flex">
-          <li>
-            <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
-              Posts
-            </a>
-          </li>
-          <li>
-            <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>
-              Tags
-            </a>
-          </li>
-          <li>
-            <a href="/about/" class={activeNav === "about" ? "active" : ""}>
-              About
-            </a>
-          </li>
-        </ul>
-      </nav>
+            {
+              navItems.map(({ href, label }) => (
+                <li>
+                  <a href={href} class={isActive(href) ? "active" : ""}>
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  <Hr />
 </header>
-
-<style>
-  @reference "tailwindcss";
-
-  #skip-to-content {
-    @apply absolute -top-full left-16 z-50 px-3 py-2 transition-all focus:top-4;
-    background-color: var(--color-skin-accent);
-    color: var(--color-skin-inverted);
-  }
-  .nav-container {
-    @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
-  }
-  .top-nav-wrap {
-    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
-  }
-  .logo {
-    @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
-  }
-  .hamburger-menu {
-    @apply self-end p-2 sm:hidden;
-  }
-  .hamburger-menu svg {
-    @apply h-6 w-6 scale-125;
-    fill: var(--color-skin-base);
-  }
-
-  nav {
-    @apply flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
-  }
-  nav ul {
-    @apply absolute top-16 right-4 z-10 mt-4 grid w-44 grid-cols-2 grid-rows-2 gap-x-2 gap-y-2 rounded-lg border bg-white p-4 shadow-lg sm:static sm:z-auto sm:mt-0 sm:ml-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0 sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none;
-    background-color: var(--color-skin-fill);
-    border-color: var(--color-skin-line);
-  }
-  nav ul.display-none {
-    @apply hidden sm:flex;
-  }
-  nav ul li {
-    @apply col-span-2 flex items-center justify-center sm:col-span-1;
-  }
-  nav ul li a {
-    @apply w-full px-4 py-3 text-center font-medium sm:my-0 sm:px-2 sm:py-1;
-  }
-  nav ul li a:hover {
-    color: var(--color-skin-accent);
-  }
-  nav a.active {
-    @apply underline decoration-wavy decoration-2 underline-offset-4;
-  }
-
-  .menu-icon line {
-    @apply transition-opacity duration-75 ease-in-out;
-  }
-  .menu-icon .close {
-    opacity: 0;
-  }
-  .menu-icon.is-active .line {
-    @apply opacity-0;
-  }
-  .menu-icon.is-active .close {
-    @apply opacity-100;
-  }
-</style>
-
-<script>
-  function toggleNav() {
-    const menuBtn = document.querySelector(".hamburger-menu");
-    const menuIcon = document.querySelector(".menu-icon");
-    const menuItems = document.querySelector("#menu-items");
-
-    menuBtn?.addEventListener("click", () => {
-      const menuExpanded = menuBtn.getAttribute("aria-expanded") === "true";
-      menuIcon?.classList.toggle("is-active");
-      menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
-      menuBtn.setAttribute(
-        "aria-label",
-        menuExpanded ? "Open Menu" : "Close Menu"
-      );
-      menuItems?.classList.toggle("display-none");
-    });
-  }
-
-  toggleNav();
-
-  document.addEventListener("astro:after-swap", toggleNav);
-</script>
