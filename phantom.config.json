@@ -1,4 +1,5 @@
 {
+  "worktreesDirectory": "./git-worktrees",
   "postCreate": {
     "copyFiles": [
       ".claude/settings.local.json"
