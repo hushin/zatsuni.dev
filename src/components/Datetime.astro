@@ -11,6 +11,7 @@ interface Props extends DatetimesProps {
   className?: string;
   showIcon?: boolean;
   variant?: "default" | "badge";
+  showTime?: boolean;
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   className = "",
   showIcon = true,
   variant = "default",
+  showTime = false,
 } = Astro.props;
 
 const myDatetime = new Date(
@@ -97,14 +99,18 @@ const isUpdated = modDatetime && modDatetime > pubDatetime;
 
         <time datetime={myDatetime.toISOString()}>{date}</time>
 
-        <span aria-hidden="true" class="text-base-content/50">
-          •
-        </span>
+        {showTime && (
+          <>
+            <span aria-hidden="true" class="text-base-content/50">
+              •
+            </span>
 
-        <span class="text-nowrap">
-          <span class="sr-only">at </span>
-          {time}
-        </span>
+            <span class="text-nowrap">
+              <span class="sr-only">at </span>
+              {time}
+            </span>
+          </>
+        )}
       </div>
     </div>
   )
