@@ -14,44 +14,52 @@ const { title, pubDatetime, modDatetime, description, tags, featured } =
 
 const headerProps = {
   style: `view-transition-name: ${slugifyStr(title)}`,
-  class: "card-title text-lg font-semibold",
+  class: "text-lg font-semibold",
 };
 ---
 
-<li class="mb-6">
-  <div class="card bg-base-100 border-base-300 border shadow-sm">
-    <div class="card-body p-6">
-      <a href={href} class="link link-primary">
+<li>
+  <article
+    class="border-base-300 bg-base-100 hover:border-l-primary border-l-4 transition-all duration-200"
+  >
+    <a href={href} class="block text-inherit no-underline">
+      <div class="px-4 py-2">
         <h3 {...headerProps}>
           {title}
-          {featured && <div class="badge badge-primary badge-sm">Featured</div>}
+          {
+            featured && (
+              <div class="badge badge-primary badge-sm ml-2">Featured</div>
+            )
+          }
         </h3>
-      </a>
 
-      <div class="mt-2 flex items-center gap-2">
-        <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
+        <div class="mt-1 flex items-center gap-2">
+          <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
+
+          {
+            tags && tags.length > 0 && (
+              <div class="flex flex-wrap justify-end gap-1">
+                {tags.slice(0, 3).map((tag: string) => (
+                  <div class="badge badge-outline badge-xs">{tag}</div>
+                ))}
+                {tags.length > 3 && (
+                  <div class="badge badge-ghost badge-xs">
+                    +{tags.length - 3}
+                  </div>
+                )}
+              </div>
+            )
+          }
+        </div>
 
         {
-          tags && tags.length > 0 && (
-            <div class="flex flex-wrap justify-end gap-1">
-              {tags.slice(0, 3).map((tag: string) => (
-                <div class="badge badge-outline badge-xs">{tag}</div>
-              ))}
-              {tags.length > 3 && (
-                <div class="badge badge-ghost badge-xs">+{tags.length - 3}</div>
-              )}
-            </div>
+          description && (
+            <p class="text-base-content/80 mt-1 line-clamp-2 text-sm">
+              {description}
+            </p>
           )
         }
       </div>
-
-      {
-        description && (
-          <p class="text-base-content/80 mt-2 line-clamp-2 text-sm">
-            {description}
-          </p>
-        )
-      }
-    </div>
-  </div>
+    </a>
+  </article>
 </li>
