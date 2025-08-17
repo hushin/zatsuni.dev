@@ -41,18 +41,30 @@ const pageTitle = "タグ一覧";
     {
       sortedTags.length > 0 ? (
         <div class="space-y-6">
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="flex flex-wrap gap-3">
             {sortedTags.map(([tag, count]) => (
               <a
                 href={`/tags/${slugifyStr(tag)}/`}
-                class="card bg-base-100 border-base-300 border shadow-sm transition-shadow hover:shadow-md"
+                class="group bg-base-200 text-base-content hover:bg-primary hover:text-primary-content inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium no-underline transition-all duration-200 hover:shadow-md"
               >
-                <div class="card-body p-4">
-                  <div class="flex items-center justify-between">
-                    <h2 class="card-title text-lg">{tag}</h2>
-                    <div class="badge badge-primary badge-sm">{count}</div>
-                  </div>
-                  <p class="text-base-content/70 text-sm">{count}件の記事</p>
+                <span class="flex items-center gap-1">
+                  <svg
+                    class="h-4 w-4 opacity-70"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.99 1.99 0 013 12V7a4 4 0 014-4z"
+                    />
+                  </svg>
+                  {tag}
+                </span>
+                <div class="badge badge-sm bg-base-300 text-base-content group-hover:bg-primary-content group-hover:text-primary">
+                  {count}
                 </div>
               </a>
             ))}
