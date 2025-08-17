@@ -2,12 +2,10 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import LinkButton from "@components/LinkButton.astro";
-import Hr from "@components/Hr.astro";
 import Card from "@components/Card.astro";
 import SlideCard from "@components/SlideCard.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE } from "@config";
-import Datetime from "@components/Datetime.astro";
 
 const posts = await getCollection("blog");
 
