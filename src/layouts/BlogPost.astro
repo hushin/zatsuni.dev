@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
-import FormattedDate from "../components/FormattedDate.astro";
+import Datetime from "../components/Datetime.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -9,25 +9,83 @@ const { title, description, pubDatetime, modDatetime } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <main class="m-0 w-full">
-    <article>
-      <div class="prose text-gray-dark mx-auto w-full max-w-3xl p-4">
-        <div class="title mb-4 py-4 text-center leading-none">
-          <div class="date text-gray mb-2">
-            <FormattedDate date={pubDatetime} />
-            {
-              modDatetime && (
-                <div class="last-updated-on italic">
-                  Last updated on <FormattedDate date={modDatetime} />
-                </div>
-              )
-            }
-          </div>
-          <h1 class="m-0 mb-2">{title}</h1>
-          <hr />
+  <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+    <!-- 記事ヘッダー -->
+    <header class="mb-8 border-b border-gray-400 pb-8">
+      <div class="text-center">
+        <!-- タイトル -->
+        <h1
+          class="text-3xl leading-tight font-bold text-gray-900 sm:text-4xl lg:text-5xl"
+        >
+          {title}
+        </h1>
+
+        <!-- 説明文 -->
+        {
+          description && (
+            <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-gray-600">
+              {description}
+            </p>
+          )
+        }
+
+        <!-- 公開日・更新日 -->
+        <div class="mt-4">
+          <Datetime
+            pubDatetime={pubDatetime}
+            modDatetime={modDatetime}
+            size="md"
+            className="justify-center"
+            showTime={true}
+          />
         </div>
-        <slot />
       </div>
-    </article>
-  </main>
+    </header>
+
+    <!-- 記事本文 -->
+    <div class="prose prose-lg mx-auto max-w-none">
+      <slot />
+    </div>
+  </article>
+
+  <!-- 画像拡大表示用のモーダル -->
+  <dialog id="imageModal" class="modal">
+    <div class="modal-box h-auto w-auto max-w-none p-0">
+      <form method="dialog">
+        <button
+          class="btn btn-sm btn-circle btn-ghost absolute top-2 right-2 z-10"
+          >✕</button
+        >
+      </form>
+      <img
+        id="modalImage"
+        src=""
+        alt=""
+        class="h-auto max-h-[90vh] w-full object-contain"
+      />
+    </div>
+  </dialog>
 </BaseLayout>
+
+<script>
+  // 画像クリック時の拡大表示機能
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("imageModal") as HTMLDialogElement;
+    const modalImage = document.getElementById(
+      "modalImage"
+    ) as HTMLImageElement;
+
+    // 記事内の画像にクリックイベントを追加
+    const images = document.querySelectorAll("article img");
+    images.forEach(img => {
+      if (img instanceof HTMLImageElement) {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", function () {
+          modalImage.src = img.src;
+          modalImage.alt = img.alt;
+          modal.showModal();
+        });
+      }
+    });
+  });
+</script>
