@@ -28,26 +28,28 @@ const headerProps = {
         </h3>
       </a>
 
-      <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
+      <div class="mt-2 flex items-center gap-2">
+        <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
+
+        {
+          tags && tags.length > 0 && (
+            <div class="flex flex-wrap justify-end gap-1">
+              {tags.slice(0, 3).map((tag: string) => (
+                <div class="badge badge-outline badge-xs">{tag}</div>
+              ))}
+              {tags.length > 3 && (
+                <div class="badge badge-ghost badge-xs">+{tags.length - 3}</div>
+              )}
+            </div>
+          )
+        }
+      </div>
 
       {
         description && (
           <p class="text-base-content/80 mt-2 line-clamp-2 text-sm">
             {description}
           </p>
-        )
-      }
-
-      {
-        tags && tags.length > 0 && (
-          <div class="card-actions mt-4 justify-start">
-            {tags.slice(0, 3).map((tag: string) => (
-              <div class="badge badge-outline badge-xs">{tag}</div>
-            ))}
-            {tags.length > 3 && (
-              <div class="badge badge-ghost badge-xs">+{tags.length - 3}</div>
-            )}
-          </div>
         )
       }
     </div>
