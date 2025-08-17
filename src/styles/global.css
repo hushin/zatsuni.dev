@@ -5,9 +5,13 @@
     dracula --prefersdark;
 }
 
+html {
+  font-size: 18px; /* ルート要素のフォントサイズを大きめに */
+}
+
 /* Social Icons Styling */
 svg.icon-tabler {
-  @apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90;
+  @apply inline-block h-5 w-5 scale-125 fill-transparent stroke-current stroke-2 opacity-90;
 }
 
 /* Ensure proper icon display */
