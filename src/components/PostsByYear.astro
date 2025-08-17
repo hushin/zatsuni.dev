@@ -1,0 +1,47 @@
+---
+import Card from "./Card.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+  titlePrefix?: string;
+}
+
+const { posts, titlePrefix = "" } = Astro.props;
+
+// 年別にグループ化
+const postsByYear = posts.reduce(
+  (acc, post) => {
+    const year = post.data.pubDatetime.getFullYear().toString();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+  },
+  {} as Record<string, typeof posts>
+);
+
+// 年のリストを新しい順にソート
+const years = Object.keys(postsByYear).sort(
+  (a, b) => parseInt(b) - parseInt(a)
+);
+---
+
+<div class="space-y-12">
+  {
+    years.map(year => (
+      <section>
+        <h2 class="text-base-content border-base-300 mb-4 border-b pb-2 text-2xl font-bold">
+          {titlePrefix}
+          {year}年
+        </h2>
+        <ul class="space-y-4">
+          {postsByYear[year].map(post => (
+            <Card href={`/posts/${post.id}/`} frontmatter={post.data} />
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</div>

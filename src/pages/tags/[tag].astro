@@ -2,15 +2,14 @@
 import { getCollection } from "astro:content";
 import type { GetStaticPaths } from "astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Card from "../../components/Card.astro";
+import PostsByYear from "../../components/PostsByYear.astro";
+import postFilter from "../../utils/postFilter";
 import { slugifyStr } from "../../utils/slugify";
 import { SITE } from "../../config";
 
 export const getStaticPaths = (async () => {
   // 記事を取得（下書きとスケジュール投稿は除外）
-  const allPosts = await getCollection("blog", ({ data }) => {
-    return !data.draft && data.pubDatetime <= new Date();
-  });
+  const allPosts = (await getCollection("blog")).filter(postFilter);
 
   // 全てのタグを収集
   const allTags = new Set<string>();
@@ -35,24 +34,6 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { tag, posts } = Astro.props;
-
-// 年別にグループ化
-const postsByYear = posts.reduce(
-  (acc, post) => {
-    const year = post.data.pubDatetime.getFullYear().toString();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(post);
-    return acc;
-  },
-  {} as Record<string, typeof posts>
-);
-
-// 年のリストを新しい順にソート
-const years = Object.keys(postsByYear).sort(
-  (a, b) => parseInt(b) - parseInt(a)
-);
 
 // ページタイトルとメタ情報
 const totalPosts = posts.length;
@@ -85,20 +66,7 @@ const pageDescription = `${SITE.desc} - ${pageTitle}。${totalPosts}件の記事
 
     {
       posts.length > 0 ? (
-        <div class="space-y-12">
-          {years.map(year => (
-            <section>
-              <h2 class="text-base-content border-base-300 mb-6 border-b pb-2 text-2xl font-bold">
-                {year}年
-              </h2>
-              <ul class="space-y-0">
-                {postsByYear[year].map(post => (
-                  <Card href={`/posts/${post.id}/`} frontmatter={post.data} />
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
+        <PostsByYear posts={posts} />
       ) : (
         <div class="py-12 text-center">
           <p class="text-base-content/70">このタグの記事はまだありません。</p>

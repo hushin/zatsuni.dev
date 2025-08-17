@@ -1,33 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Card from "../../components/Card.astro";
+import PostsByYear from "../../components/PostsByYear.astro";
+import getSortedPosts from "../../utils/getSortedPosts";
 import { SITE } from "../../config";
 
 // 記事を取得してソート（下書きとスケジュール投稿は除外）
-const allPosts = (
-  await getCollection("blog", ({ data }) => {
-    return !data.draft && data.pubDatetime <= new Date();
-  })
-).sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf());
-
-// 年別にグループ化
-const postsByYear = allPosts.reduce(
-  (acc, post) => {
-    const year = post.data.pubDatetime.getFullYear().toString();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(post);
-    return acc;
-  },
-  {} as Record<string, typeof allPosts>
-);
-
-// 年のリストを新しい順にソート
-const years = Object.keys(postsByYear).sort(
-  (a, b) => parseInt(b) - parseInt(a)
-);
+const allPosts = getSortedPosts(await getCollection("blog"));
 
 // ページタイトルとメタ情報
 const pageTitle = "記事一覧";
@@ -37,19 +16,6 @@ const pageTitle = "記事一覧";
   <div class="container mx-auto max-w-4xl px-4 py-8">
     <h1 class="text-base-content mb-2 pb-4 text-3xl font-bold">記事一覧</h1>
 
-    <div class="space-y-12">
-      {
-        years.map(year => (
-          <section>
-            <h2 class="text-base-content mb-4 text-2xl font-bold">{year}年</h2>
-            <ul class="space-y-4">
-              {postsByYear[year].map(post => (
-                <Card href={`/posts/${post.id}/`} frontmatter={post.data} />
-              ))}
-            </ul>
-          </section>
-        ))
-      }
-    </div>
+    <PostsByYear posts={allPosts} />
   </div>
 </BaseLayout>
