@@ -22,10 +22,10 @@ const headerProps = {
   <div class="card bg-base-100 border-base-300 border shadow-sm">
     <div class="card-body p-6">
       <a href={href} class="link link-primary">
-        <h2 {...headerProps}>
+        <h3 {...headerProps}>
           {title}
           {featured && <div class="badge badge-primary badge-sm">Featured</div>}
-        </h2>
+        </h3>
       </a>
 
       <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
