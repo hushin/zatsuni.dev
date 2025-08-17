@@ -19,6 +19,7 @@
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "daisyui": "^5.0.50",
     "lefthook": "^1.12.3",
     "prettier": "^3.6.2",
