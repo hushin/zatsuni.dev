@@ -6,28 +6,28 @@ import Socials from "@components/Socials.astro";
 <BaseLayout title="About">
   <div class="prose container mx-auto my-8">
     <h1>About</h1>
-    <div class="flex flex-col items-center">
-      <img
-        src="/my-icon-min.svg"
-        class="w-40 rounded-full bg-[#FF7F00]"
-        alt="hush_in icon"
-      />
-      <ul>
-        <li>Handle Name: hush_in / はっしゅ / 不信</li>
-        <li>Name: Ryo KUROIWA</li>
-        <li>
-          Web Developer
-          <ul>
-            <li>Web フロントエンド中心にいろいろ</li>
-          </ul>
-        </li>
-        <li>趣味はゲームとお酒と筋トレ</li>
-      </ul>
-      <div class="flex flex-col sm:flex-row sm:items-center">
-        <div class="mr-2 whitespace-nowrap">
-          <p class="m-0">Social Links:</p>
-        </div>
-        <Socials />
+    <div
+      class="flex flex-col items-center gap-6 md:flex-row md:items-start md:gap-8"
+    >
+      <div class="flex-shrink-0">
+        <img
+          src="/my-icon-min.svg"
+          class="w-32 rounded-full bg-[#FF7F00] md:w-40"
+          alt="hush_in icon"
+        />
+      </div>
+      <div class="flex-1">
+        <ul class="space-y-2">
+          <li>Handle Name: hush_in / はっしゅ / 不信</li>
+          <li>Name: Ryo KUROIWA</li>
+          <li>
+            Web Developer
+            <ul class="mt-1 ml-4">
+              <li>Web フロントエンド中心にいろいろ</li>
+            </ul>
+          </li>
+          <li>趣味はゲームとお酒と筋トレ</li>
+        </ul>
       </div>
     </div>
 
