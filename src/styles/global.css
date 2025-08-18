@@ -6,14 +6,22 @@
     dracula --prefersdark;
 }
 
-@plugin "daisyui/theme" {
-  name: "nord";
-  default: true;
-  --color-primary-content: #ffffff;
-}
-
 html {
   font-size: 18px; /* ルート要素のフォントサイズを大きめに */
+}
+
+/* Typography Plugin Link Customization */
+.prose a {
+  @apply text-primary decoration-primary/30 underline decoration-1 underline-offset-2;
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.prose a:hover {
+  @apply text-primary decoration-primary/80 decoration-2;
+}
+
+.prose a:focus {
+  @apply outline-primary/50 rounded-sm outline-2 outline-offset-2;
 }
 
 /* Social Icons Styling */
