@@ -6,6 +6,12 @@
     dracula --prefersdark;
 }
 
+@theme {
+  --font-sans:
+    "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    "BIZ UDPGothic", "Meiryo", sans-serif;
+}
+
 html {
   font-size: 18px; /* ルート要素のフォントサイズを大きめに */
 }
