@@ -18,7 +18,10 @@
 }
 
 html {
-  font-size: 18px; /* ルート要素のフォントサイズを大きめに */
+  /* ルート要素のフォントサイズを大きめに */
+  font-size: 112.5%;
+  /* スクロールバーのスタイルを安定させる */
+  scrollbar-gutter: stable;
 }
 
 /* Typography Plugin Link Customization */
