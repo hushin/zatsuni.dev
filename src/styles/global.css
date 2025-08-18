@@ -5,6 +5,11 @@
     nord --default,
     dracula --prefersdark;
 }
+@plugin "daisyui/theme" {
+  name: "nord";
+  default: true;
+  --color-primary-content: var(--color-neutral-content);
+}
 
 @theme {
   --font-sans:
