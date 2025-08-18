@@ -15,14 +15,10 @@ const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
     <article>
       <!-- 記事ヘッダー -->
       <header class="border-base-300 mb-8 border-b pb-8">
-        <!-- タイトル -->
-        <h1
-          class="text-primary text-3xl leading-tight font-bold sm:text-3xl lg:text-4xl"
-        >
+        <h1 class="text-3xl leading-tight font-bold sm:text-3xl lg:text-4xl">
           {title}
         </h1>
 
-        <!-- 公開日・更新日 -->
         <div class="mt-4">
           <Datetime
             pubDatetime={pubDatetime}
@@ -34,7 +30,7 @@ const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
       </header>
 
       <!-- 記事本文 -->
-      <div class="prose prose-lg mx-auto max-w-none">
+      <div class="prose mx-auto max-w-none">
         <slot />
       </div>
     </article>
