@@ -8,8 +8,6 @@ export const SITE: Site = {
   title: "雑にdev",
   // ogImage: "zatsuni-og.png",
   lightAndDarkMode: true,
-  postPerIndex: 4,
-  postPerPage: 10,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
