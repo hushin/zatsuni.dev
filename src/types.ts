@@ -9,6 +9,7 @@ export type Site = {
   ogImage?: string;
   lightAndDarkMode: boolean;
   scheduledPostMargin: number;
+  postPerIndex: number;
 };
 
 export type SocialObjects = {

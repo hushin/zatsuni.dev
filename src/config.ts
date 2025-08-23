@@ -9,6 +9,7 @@ export const SITE: Site = {
   // ogImage: "zatsuni-og.png",
   lightAndDarkMode: true,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
+  postPerIndex: 3,
 };
 
 export const LOCALE = {
