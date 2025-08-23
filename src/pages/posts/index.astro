@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseHead from "../../components/BaseHead.astro";
 import PostsByYear from "../../components/PostsByYear.astro";
 import getSortedPosts from "../../utils/getSortedPosts";
 import { SITE } from "../../config";
@@ -12,7 +13,8 @@ const allPosts = getSortedPosts(await getCollection("blog"));
 const pageTitle = "記事一覧";
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout>
+  <BaseHead slot="head" title={pageTitle} />
   <div class="container mx-auto max-w-4xl px-4 py-8">
     <h1 class="text-base-content mb-2 pb-4 text-3xl font-bold">記事一覧</h1>
 

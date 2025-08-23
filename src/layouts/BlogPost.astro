@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
+import BaseHead from "../components/BaseHead.astro";
 import Datetime from "../components/Datetime.astro";
 import Tag from "../components/Tag.astro";
 import ShareLinks from "@components/ShareLinks.astro";
@@ -10,7 +11,14 @@ type Props = CollectionEntry<"blog">["data"];
 const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout>
+  <BaseHead
+    slot="head"
+    title={title}
+    description={description}
+    pubDatetime={pubDatetime}
+    modDatetime={modDatetime}
+  />
   <div class="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
     <article>
       <!-- 記事ヘッダー -->

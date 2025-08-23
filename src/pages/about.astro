@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseHead from "../components/BaseHead.astro";
 import Socials from "@components/Socials.astro";
 ---
 
-<BaseLayout title="About">
+<BaseLayout>
+  <BaseHead slot="head" title="About" />
   <div class="prose container mx-auto px-4 py-8">
     <h1>About</h1>
     <div

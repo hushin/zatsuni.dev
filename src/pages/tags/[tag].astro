@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import type { GetStaticPaths } from "astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseHead from "../../components/BaseHead.astro";
 import PostsByYear from "../../components/PostsByYear.astro";
 import postFilter from "../../utils/postFilter";
 import { slugifyStr } from "../../utils/slugify";
@@ -40,7 +41,8 @@ const totalPosts = posts.length;
 const pageTitle = `タグ「${tag}」の記事一覧`;
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout>
+  <BaseHead slot="head" title={pageTitle} />
   <div class="container mx-auto max-w-4xl px-4 py-8">
     <!-- パンくずナビゲーション -->
     <nav class="breadcrumbs mb-6 text-sm">

@@ -6,16 +6,24 @@ import type { ImageMetadata } from "astro";
 // import FallbackImage from "../assets/blog-placeholder-about.jpg";
 import { SITE } from "@config";
 
-interface Props {
+export interface Props {
   title?: string;
   description?: string;
   image?: ImageMetadata;
+  pubDatetime?: Date;
+  modDatetime?: Date | null;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const author = SITE.author;
 
-const { title: pageTitle, description: pageDescription, image } = Astro.props;
+const {
+  title: pageTitle,
+  description: pageDescription,
+  image,
+  pubDatetime,
+  modDatetime,
+} = Astro.props;
 const title = pageTitle ? `${pageTitle} | ${SITE.title}` : SITE.title;
 const description = pageDescription || SITE.desc;
 ---
@@ -41,6 +49,24 @@ const description = pageDescription || SITE.desc;
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="author" content={author} />
+
+<!-- Article Published/Modified time -->
+{
+  pubDatetime && (
+    <meta
+      property="article:published_time"
+      content={pubDatetime.toISOString()}
+    />
+  )
+}
+{
+  modDatetime && (
+    <meta
+      property="article:modified_time"
+      content={modDatetime.toISOString()}
+    />
+  )
+}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />

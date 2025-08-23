@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import BaseHead from "../components/BaseHead.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Card from "@components/Card.astro";
 import SlideCard from "@components/SlideCard.astro";
@@ -14,7 +15,8 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 ---
 
-<BaseLayout description={SITE.desc}>
+<BaseLayout>
+  <BaseHead slot="head" description={SITE.desc} />
   <div class="container mx-auto max-w-4xl px-4 py-8">
     <section id="hero" class="hero py-8">
       <div class="hero-content flex-col gap-8 lg:flex-row-reverse">
