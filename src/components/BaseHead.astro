@@ -69,11 +69,13 @@ const description = pageDescription || SITE.desc;
 }
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+{/* TODO <meta property="og:type" content="website" /> */}
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 {image && <meta property="og:image" content={new URL(image.src, Astro.url)} />}
+
+{/* TODO Google JSON-LD Structured data */}
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
