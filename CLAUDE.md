@@ -21,6 +21,7 @@ This is a personal blog built with Astro v5 using the blog starter template. The
 | `pnpm dev`       | Start development server at localhost:4321 |
 | `pnpm build`     | Build for production                       |
 | `pnpm preview`   | Preview production build locally           |
+| `pnpm new-post <slug>` | Create new blog post with specified slug |
 | `pnpm format`    | Format code with Prettier                  |
 | `pnpm astro ...` | Run Astro CLI commands                     |
 
