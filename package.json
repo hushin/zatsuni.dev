@@ -11,18 +11,18 @@
     "new-post": "node scripts/new-post.js"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/mdx": "^4.3.5",
     "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.5.0",
-    "@tailwindcss/vite": "^4.1.12",
-    "astro": "^5.13.2",
-    "sharp": "^0.34.2",
-    "tailwindcss": "^4.1.12"
+    "@astrojs/sitemap": "^3.5.1",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.6",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
-    "daisyui": "^5.0.50",
-    "lefthook": "^1.12.3",
+    "daisyui": "^5.1.9",
+    "lefthook": "^1.12.4",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.14"
