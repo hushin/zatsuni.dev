@@ -2,12 +2,13 @@
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes:
-    nord --default,
+    fantasy --default,
     dracula --prefersdark;
 }
 @plugin "daisyui/theme" {
-  name: "nord";
+  name: "fantasy";
   default: true;
+  --color-primary: oklch(40% 0.4 210);
   --color-primary-content: var(--color-neutral-content);
 }
 
