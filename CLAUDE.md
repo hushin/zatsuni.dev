@@ -35,8 +35,9 @@ src/
 ├── components/      # Astro components
 ├── data/
 │   └── blog/
-│       └── yyyy/   # Year-based organization
-│           └── post-slug.md
+│       └── yyyy/
+│           └── mm/   # Year/Month-based organization
+│               └── post-slug.md
 ├── layouts/        # Page layouts
 ├── pages/          # File-based routing
 └── styles/         # CSS files
@@ -70,7 +71,7 @@ description: Astro + Cloudflare Pages でサイトを構築
 
 - `/` - Homepage with self-introduction and latest 3 posts
 - `/posts/` - Posts index
-  - `/yyyy/(slug)/` - Individual post pages
+  - `/yyyy/mm/(slug)/` - Individual post pages
 - `/tags/` - Tag listing
   - `/(tag-name)/` - Posts by tag
 - `/about/` - About page

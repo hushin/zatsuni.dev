@@ -24,10 +24,12 @@ async function createBlogPost() {
   const slug = args[0];
   const title = slug; // タイトルは後で編集
   const tags = ['tech']; // デフォルトタグ
-  const currentYear = new Date().getFullYear().toString();
+  const now = new Date();
+  const currentYear = now.getFullYear().toString();
+  const currentMonth = String(now.getMonth() + 1).padStart(2, '0');
   const currentDateTime = getCurrentDateTime();
 
-  const postDir = path.join(rootDir, 'src', 'data', 'blog', currentYear);
+  const postDir = path.join(rootDir, 'src', 'data', 'blog', currentYear, currentMonth);
   const postPath = path.join(postDir, `${slug}.md`);
 
   // ディレクトリを作成
@@ -64,7 +66,7 @@ description:
   console.log(`✅ ブログ記事を作成しました: ${postPath}`);
   console.log(`🔗 スラッグ: ${slug}`);
   console.log(`🏷️  タグ: ${tags.join(', ')}`);
-  console.log(`📁 パス: src/data/blog/${currentYear}/${slug}.md`);
+  console.log(`📁 パス: src/data/blog/${currentYear}/${currentMonth}/${slug}.md`);
 }
 
 createBlogPost().catch(console.error);
