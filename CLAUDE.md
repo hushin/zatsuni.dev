@@ -1,104 +1,86 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with this codebase.
 
-## Project Overview
+## What is This Project?
 
-This is a personal blog built with Astro v5 using the blog starter template. The project uses modern web technologies including TypeScript, MDX, and follows accessibility and SEO best practices.
+A personal blog platform focused on writing and sharing technical content. Built to be simple, fast, and maintainable with modern static site generation.
 
-### Target Tech Stack
+**Why these choices?**
+- Astro v5: Static-first with excellent performance and DX
+- Content Loader API: Type-safe content with flexible file organization
+- TailwindCSS v4 + DaisyUI v5: Rapid UI development with consistent design system
+- Cloudflare Pages: Zero-config deployment with edge performance
 
-- **Framework**: Astro v5 with Content Loader API
-- **Styling**: TailwindCSS v4 + DaisyUI v5
-- **Icons**: Boxicons, Tablers (manual copy)
-- **Deployment**: Cloudflare Pages
-- **Package Manager**: pnpm
+**Package Manager**: pnpm (check `package.json` for available scripts)
 
-## Development Commands
-
-| Command          | Description                                |
-| ---------------- | ------------------------------------------ |
-| `pnpm dev`       | Start development server at localhost:4321 |
-| `pnpm build`     | Build for production                       |
-| `pnpm preview`   | Preview production build locally           |
-| `pnpm new-post <slug>` | Create new blog post with specified slug |
-| `pnpm format`    | Format code with Prettier                  |
-| `pnpm astro ...` | Run Astro CLI commands                     |
-
-## Architecture
-
-### Current Structure
+## Project Structure
 
 ```
 src/
-├── assets/          # Static assets (images)
-├── components/      # Astro components
-├── data/
-│   └── blog/
-│       └── yyyy/
-│           └── mm/   # Year/Month-based organization
-│               └── post-slug.md
-├── layouts/        # Page layouts
-├── pages/          # File-based routing
-└── styles/         # CSS files
+├── data/blog/           # Blog posts organized by date
+│   └── yyyy/mm/         # Year/Month hierarchy for content organization
+│       └── *.md         # Individual blog posts
+├── pages/               # File-based routing
+│   ├── index.astro      # Homepage (self-intro + latest 3 posts)
+│   ├── posts/           # Blog post pages
+│   ├── tags/            # Tag listing and filtered views
+│   └── about.astro      # About page
+├── components/          # Reusable Astro components
+├── layouts/             # Page layouts
+└── content.config.ts    # Content schema definition
 ```
 
-### Content Configuration
+**Why this structure?**
+- Date-based content organization (`yyyy/mm/`) keeps posts manageable as the blog grows
+- File-based routing in `pages/` mirrors the intended URL structure
+- Content Loader API (`content.config.ts`) provides type-safe frontmatter validation
 
-The project uses Astro's Content Loader API with glob loader. Current configuration in `src/content.config.ts`:
+## Content Schema
 
-- Loader: `glob({ base: './src/data/blog', pattern: '**/[^_]*.{md,mdx}' })`
-- Schema includes: pubDatetime, modDatetime, title, featured, draft, tags, description, ogImage
-
-### Content Schema Format
-
-The current frontmatter format already matches the desired structure:
+Blog posts use the following frontmatter (defined in `src/content.config.ts`):
 
 ```yaml
----
-pubDatetime: 2024-09-13T23:00:00.000+09:00
-modDatetime:
-title: 新しくサイトを構築した
-featured: false
-draft: false
-tags:
-  - tech
-description: Astro + Cloudflare Pages でサイトを構築
----
+pubDatetime: 2024-09-13T23:00:00.000+09:00  # Required: Publication date
+modDatetime:                                  # Optional: Last modified date
+title: "Post Title"                          # Required
+featured: false                              # Optional: Highlight on homepage
+draft: false                                 # Optional: Hide from production
+tags: [tech, astro]                          # Optional: Categorization
+description: "Brief summary"                 # Optional: For SEO/previews
 ```
 
-## Site Structure Goals
+**Content loader pattern**: `glob({ base: './src/data/blog', pattern: '**/[^_]*.{md,mdx}' })`
+- Excludes files starting with `_` (useful for drafts/templates)
+- Supports both `.md` and `.mdx` formats
 
-- `/` - Homepage with self-introduction and latest 3 posts
-- `/posts/` - Posts index
-  - `/yyyy/mm/(slug)/` - Individual post pages
-- `/tags/` - Tag listing
-  - `/(tag-name)/` - Posts by tag
-- `/about/` - About page
+## Styling Approach
 
-## Key Features
+- **Framework**: TailwindCSS v4 with DaisyUI v5 component library
+- **TailwindCSS v4 requirement**: Include `@reference "tailwindcss";` in `<style>` blocks when using `@apply`
+- **Component patterns**: See `docs/style-guide.md` for DaisyUI v5 usage examples
+- **Complete reference**: `docs/daisy-ui-v5.md` contains full DaisyUI class reference
 
-- SEO-friendly with sitemap and RSS feed
-- Accessible and responsive design
+**Why this approach?**
+- DaisyUI provides semantic components (btn, card, navbar) for consistency
+- TailwindCSS utilities handle layout and spacing with minimal custom CSS
+- v4 architecture requires explicit references for better IDE support
 
-## Configuration Files
+## Key Design Decisions
 
-- `astro.config.mjs` - Main Astro configuration
-- `src/content.config.ts` - Content collections schema
+1. **Static Generation**: All pages pre-rendered at build time for optimal performance
+2. **Type Safety**: TypeScript + Content Loader API ensures content validation
+3. **SEO Focus**: Sitemap and RSS feed generation built-in
+4. **Accessibility**: WCAG compliance through semantic HTML and DaisyUI components
 
-## Notes
+## Development Workflow
 
-- Built on Astro blog template with customizations
-- Content schema and TailwindCSS implementation completed
-- Uses pnpm for package management
+- Use `pnpm new-post <slug>` to scaffold new blog posts with correct frontmatter
+- Run `pnpm format` before committing to ensure consistent code style
+- Check `package.json` for all available commands
 
-## Styling Guidelines
+## Important Notes
 
-### TailwindCSS v4 + DaisyUI v5
-
-- **Always include TailwindCSS reference**: Add `@reference "tailwindcss";` at the top of `<style>` blocks when using `@apply` directive
-- This is required for TailwindCSS v4 to recognize utility classes like `left-16`, `z-50`, etc.
-- **DaisyUI Components**: Use DaisyUI v5 semantic classes for consistent UI components (btn, card, navbar, badge, etc.)
-- **Styling Strategy**: DaisyUI for components + TailwindCSS utilities for layout and spacing
-- **Style Guide Reference**: See `docs/style-guide.md` for DaisyUI v5 component usage and patterns
-- **DaisyUI Cheat Sheet**: Complete class reference available in `docs/daisy-ui-v5.md`
+- Content files starting with `_` are ignored by the content loader
+- The `description` field in blog frontmatter is optional but recommended for SEO
+- Blog posts are automatically sorted by `pubDatetime` in descending order
