@@ -52,12 +52,12 @@ featured: false
 draft: false
 tags:
 ${tags.map(tag => `  - ${tag}`).join('\n')}
-description:
+description: ''
 ---
 
 書き出し...
 
-## 見出し1
+## 見出し
 
 `;
 
