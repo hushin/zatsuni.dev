@@ -33,3 +33,8 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm format`          | Format code with Prettier                        |
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
+
+## LICENSE
+
+- The source code under the MIT LICENSE.
+- `src/data/` under the CC-BY [![CC-BY](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
