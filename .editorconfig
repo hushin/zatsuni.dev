@@ -1,0 +1,4 @@
+root = true
+
+[*.{dot}]
+indent_size = 4
