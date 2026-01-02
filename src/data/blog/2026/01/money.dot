@@ -40,7 +40,7 @@ digraph G    {
         "Amazonカード" [label="Amazon\nMastercard\n(Amazonで\nポイント2%)"];
         "三井住友カードゴールド" [label="三井住友カード\nゴールド（NL）\n(Visa)"];
         "リクルートカードJCB" [label="リクルートカード\n(JCB)\n(ポイント1.2%)"];
-        "EPOSカード" [label="EPOSカードゴールド\n(Visa)\n(ポイント0.5%)"];
+        "EPOSカード" [label="EPOSカードゴールド\n(Visa)"];
         "dカード" [label="dカード\n(Mastercard)"];
         "Oliveゴールド" [label="Oliveゴールド\n(Visa)"];
     }
