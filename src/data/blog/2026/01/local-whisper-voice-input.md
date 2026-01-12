@@ -12,10 +12,9 @@ description: "Whisperを使った無料のローカル音声入力アプリ Hush
 
 文字入力するときに音声入力を使いたいと思っていた。
 SuperWhisper やAqua Voiceなど優れたアプリはあるが、月額料金がかかるのがネックだった。
-
 既存のOSS [Whispering](https://github.com/EpicenterHQ/epicenter/tree/main/apps/whispering) があったが、私の環境だと動かなかった。
 
-無料で使いたいと思い、OpenAIの[Whisper](https://openai.com/ja-JP/index/whisper/)を使ったローカル音声入力アプリをVive Codingで自作した。
+無料で使いたいと思い、OpenAIの[Whisper](https://openai.com/ja-JP/index/whisper/)を使ったローカル音声入力アプリをVibe Codingで自作した。
 
 作ったアプリはこちら [hushin/hush-whisper](https://github.com/hushin/hush-whisper)
 
@@ -59,9 +58,9 @@ SuperWhisper やAqua Voiceなど優れたアプリはあるが、月額料金が
 
 使用するAIモデルについては [ローカルAIかわいいよと言う話｜shi3z](https://note.com/shi3zblog/n/n5863f7a59f12) を参考にした。
 
-### Vive Coding
+### Vibe Coding
 
-Claude Code + Claude Opus 4.5 で Vive Coding した。
+Claude Code + Claude Opus 4.5 で Vibe Coding した。
 
 Opus 4.5は優秀に感じる。エラーが出てもすぐに原因を特定して修正案を提示してくれる。
 
