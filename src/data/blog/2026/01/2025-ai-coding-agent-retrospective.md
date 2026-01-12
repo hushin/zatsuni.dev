@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2026-01-04T21:00:06.592+09:00
-modDatetime:
+modDatetime: 2026-01-12T11:00:27.000+09:00
 title: 2025年 個人的AIコーディングエージェント振り返り
 featured: false
 draft: false
@@ -163,8 +163,7 @@ AI活用で空いた時間を学習・手を動かすことに当て、自分の
 ### 12月
 
 - Claude Code + Claude Opus 4.5 で Whisper を使った ローカル音声入力アプリを作成
-  - 普通に使えるアプリができて満足
-  - TODO: 公開したらリンク差し替え
+  - [Whisperを使った無料のローカル音声入力アプリを作った | 雑にdev](/posts/2026/01/local-whisper-voice-input/)
 - Copilot CLI で Claude Opus 4.5 が 3 Premium requests で使えるのがコスパ良い
   - 自律的に進められる難しいタスクを任せられるとお得
 - 印象に残った記事
