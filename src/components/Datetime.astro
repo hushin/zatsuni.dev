@@ -119,10 +119,31 @@ const isUpdated = modDatetime && modDatetime > pubDatetime;
         </svg>
       )}
 
-      <div class={`flex flex-col gap-1 ${sizeClasses[size]}`}>
+      <div
+        class={`flex flex-wrap items-center gap-x-3 gap-y-1 ${sizeClasses[size]}`}
+      >
+        <div class="flex items-center gap-1">
+          <span class="text-base-content/70">公開日:</span>
+          <time datetime={pubDate.toISOString()}>{pubDateFormatted}</time>
+          {showTime && (
+            <>
+              <span aria-hidden="true" class="text-base-content/50">
+                •
+              </span>
+              <span class="text-nowrap">{pubTime}</span>
+            </>
+          )}
+        </div>
+
+        {isUpdated && modDateFormatted && (
+          <span aria-hidden="true" class="text-base-content/50">
+            /
+          </span>
+        )}
+
         {isUpdated && modDateFormatted && (
           <div class="flex items-center gap-1">
-            <span class="font-medium">更新日:</span>
+            <span class="text-base-content/70">更新日:</span>
             <time datetime={modDate!.toISOString()}>{modDateFormatted}</time>
             {showTime && modTime && (
               <>
@@ -134,21 +155,6 @@ const isUpdated = modDatetime && modDatetime > pubDatetime;
             )}
           </div>
         )}
-
-        <div class="flex items-center gap-1">
-          <span class="text-base-content/70">公開日:</span>
-          <time datetime={pubDate.toISOString()}>{pubDateFormatted}</time>
-
-          {showTime && (
-            <>
-              <span aria-hidden="true" class="text-base-content/50">
-                •
-              </span>
-
-              <span class="text-nowrap">{pubTime}</span>
-            </>
-          )}
-        </div>
       </div>
     </div>
   )
