@@ -8,7 +8,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "new-post": "node scripts/new-post.js"
+    "new-post": "node scripts/new-post.js",
+    "deploy": "astro build && wrangler deploy",
+    "deploy:preview": "astro build && wrangler deploy --dry-run"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
@@ -25,6 +27,7 @@
     "lefthook": "^2.0.15",
     "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "wrangler": "^4.60.0"
   }
 }
