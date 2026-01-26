@@ -19,10 +19,10 @@ const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
     pubDatetime={pubDatetime}
     modDatetime={modDatetime}
   />
-  <div class="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-4xl space-y-12 px-4 py-8 sm:px-6 lg:px-8">
     <article>
       <!-- 記事ヘッダー -->
-      <header class="border-base-300 mb-8 border-b pb-8">
+      <header class="border-base-300 mb-6 border-b pb-6">
         <h1 class="text-3xl leading-tight font-bold sm:text-3xl lg:text-4xl">
           {title}
         </h1>
@@ -35,6 +35,18 @@ const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
             showTime={true}
           />
         </div>
+        {
+          tags && tags.length > 0 && (
+            <div class="mt-2">
+              <h2 class="sr-only">タグ</h2>
+              <div class="flex flex-wrap gap-2">
+                {tags.map(tag => (
+                  <Tag tag={tag} href={`/tags/${tag}/`} size="md" />
+                ))}
+              </div>
+            </div>
+          )
+        }
       </header>
 
       <!-- 記事本文 -->
@@ -43,24 +55,6 @@ const { title, description, pubDatetime, modDatetime, tags = [] } = Astro.props;
       </div>
     </article>
 
-    {
-      tags && tags.length > 0 && (
-        <div>
-          <h2 class="sr-only">タグ</h2>
-          <div class="flex flex-wrap gap-2">
-            {tags.map(tag => (
-              <Tag
-                tag={tag}
-                href={`/tags/${tag}/`}
-                size="md"
-                variant="outline"
-                className="hover:badge-primary"
-              />
-            ))}
-          </div>
-        </div>
-      )
-    }
     <ShareLinks title={title} />
   </div>
   <!-- 画像拡大表示用のモーダル -->
