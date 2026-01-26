@@ -21,7 +21,6 @@ description: "2025年のAIコーディングエージェント活用を振り返
 - Agent
   - Claude Code
   - Copilot CLI
-  - VS Code Agent
 - Model
   - Claude Opus 4.5: 難しいタスク向け
   - Claude Sonnet 4.5: 明確なタスク向け
