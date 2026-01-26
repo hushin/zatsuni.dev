@@ -4,7 +4,7 @@ export interface Props {
   className?: string;
 }
 
-const { size = 14, className = "mr-1" } = Astro.props;
+const { size = 14, className = "" } = Astro.props;
 ---
 
 <svg
@@ -19,8 +19,9 @@ const { size = 14, className = "mr-1" } = Astro.props;
   stroke-linejoin="round"
   class={className}
 >
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M6.5 7.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
   <path
-    d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"
+    d="M3 6v5.172a2 2 0 0 0 .586 1.414l7.71 7.71a2.41 2.41 0 0 0 3.408 0l5.592 -5.592a2.41 2.41 0 0 0 0 -3.408l-7.71 -7.71a2 2 0 0 0 -1.414 -.586h-5.172a3 3 0 0 0 -3 3"
   ></path>
-  <circle cx="7" cy="7" r="1"></circle>
 </svg>

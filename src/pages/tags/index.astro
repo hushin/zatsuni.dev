@@ -42,19 +42,11 @@ const pageTitle = "タグ一覧";
     {
       sortedTags.length > 0 ? (
         <div class="space-y-6">
-          <div class="flex flex-wrap gap-3">
+          <div class="flex flex-wrap gap-4">
             {sortedTags.map(([tag, count]) => (
-              <div class="inline-flex items-center gap-4">
-                <div>
-                  <Tag
-                    tag={tag}
-                    href={`/tags/${slugifyStr(tag)}/`}
-                    size="md"
-                    variant="default"
-                    className="hover:badge-primary"
-                  />
-                  <div class="badge badge-sm badge-soft">{count}</div>
-                </div>
+              <div class="inline-flex items-center gap-1">
+                <Tag tag={tag} href={`/tags/${slugifyStr(tag)}/`} size="md" />
+                <span class="text-base-content/50 text-sm">({count})</span>
               </div>
             ))}
           </div>

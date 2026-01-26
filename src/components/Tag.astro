@@ -5,59 +5,38 @@ export interface Props {
   tag: string;
   href?: string;
   size?: "sm" | "md" | "lg";
-  variant?: "default" | "primary" | "secondary" | "accent" | "outline";
   className?: string;
 }
 
-const {
-  tag,
-  href,
-  size = "md",
-  variant = "default",
-  className = "",
-} = Astro.props;
+const { tag, href, size = "md", className = "" } = Astro.props;
 
 // サイズに応じたクラス
 const sizeClasses = {
-  sm: "badge-sm text-xs",
-  md: "badge-md text-sm",
-  lg: "badge-lg text-base",
+  sm: "text-xs",
+  md: "text-sm",
+  lg: "text-base",
 };
 
-// バリアントに応じたクラス
-const variantClasses = {
-  default: "badge-neutral",
-  primary: "badge-primary",
-  secondary: "badge-secondary",
-  accent: "badge-accent",
-  outline: "badge-outline",
-};
-
-const badgeClasses = `badge ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
+const baseClasses =
+  "inline-flex items-center gap-1 text-base-content/70 no-underline transition-colors duration-200";
+const hoverClasses = "hover:text-primary";
+const tagClasses = `${baseClasses} ${sizeClasses[size]} ${className}`;
 ---
 
 {
   href ? (
     <a
       href={href}
-      class={`${badgeClasses} no-underline transition-all duration-200 hover:scale-105 hover:shadow-md`}
+      class={`${tagClasses} ${hoverClasses}`}
       title={`${tag}タグの記事一覧`}
     >
       <TagIcon />
       {tag}
     </a>
   ) : (
-    <span class={badgeClasses}>
+    <span class={tagClasses}>
       <TagIcon />
       {tag}
     </span>
   )
 }
-
-<style>
-  @reference "tailwindcss";
-
-  .badge {
-    @apply inline-flex items-center gap-1;
-  }
-</style>

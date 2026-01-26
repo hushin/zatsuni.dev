@@ -39,9 +39,9 @@ const headerProps = {
 
           {
             tags && tags.length > 0 && (
-              <div class="flex flex-wrap justify-end gap-1">
+              <div class="flex flex-wrap justify-end gap-2">
                 {tags.slice(0, 3).map((tag: string) => (
-                  <Tag tag={tag} size="sm" variant="outline" />
+                  <Tag tag={tag} size="sm" />
                 ))}
                 {tags.length > 3 && (
                   <div class="badge badge-ghost badge-xs">
