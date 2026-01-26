@@ -19,7 +19,7 @@ function isActive(href: string): boolean {
   <div class="mx-auto max-w-4xl">
     <div class="flex h-16 items-center justify-between">
       <div class="flex-1">
-        <a href="/" class="btn btn-ghost text-xl">
+        <a href="/" class="text-xl font-bold hover:underline">
           {SITE.title}
         </a>
       </div>
@@ -27,13 +27,13 @@ function isActive(href: string): boolean {
       <div class="flex-none">
         <!-- Desktop Navigation -->
         <nav class="hidden lg:flex">
-          <ul class="menu menu-horizontal space-x-1 px-1">
+          <ul class="flex space-x-1">
             {
               navItems.map(({ href, label }) => (
                 <li>
                   <a
                     href={href}
-                    class={`btn btn-ghost ${isActive(href) ? "btn-active" : ""}`}
+                    class={`px-3 py-2 hover:underline ${isActive(href) ? "font-semibold" : ""}`}
                   >
                     {label}
                   </a>

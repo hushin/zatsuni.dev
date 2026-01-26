@@ -34,7 +34,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <div class="text-center lg:text-left">
           <h1 class="text-base-content text-xl">雑に作る。雑記も書く。</h1>
           <p class="text-base-content/80 prose py-4">
-            <LinkButton variant="link" href="/about/"> About me → </LinkButton>
+            <LinkButton variant="link" href="/about/"> About me </LinkButton>
           </p>
         </div>
       </div>
@@ -74,22 +74,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     }
 
     <div class="flex justify-center pb-12">
-      <LinkButton href="/posts/" variant="ghost" size="lg" className="gap-2">
-        すべての記事
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
-      </LinkButton>
+      <a href="/posts/" class="hover:underline"> すべての記事 </a>
     </div>
 
     <section id="slide" class="py-8">
