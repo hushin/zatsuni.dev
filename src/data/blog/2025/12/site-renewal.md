@@ -6,6 +6,7 @@ featured: false
 draft: false
 tags:
   - tech
+  - astro
 description: ""
 ---
 
