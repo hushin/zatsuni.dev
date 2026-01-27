@@ -34,7 +34,7 @@ description: ""
 
 ### `@astrojs/cloudflare` adapterは必要か
 
-[Astro · Cloudflare Workers docs](https://developers.cloudflare.com/workers/framework-guides/web-apps/astro/) のテンプレートを試した。 `@astrojs/cloudflare` adapter を使っていて、オンデマンドレンダリングするためリクエストの枠を消費することを確認した。
+[Astro · Cloudflare Workers docs](https://developers.cloudflare.com/workers/framework-guides/web-apps/astro/) のテンプレートを試したところ、 `@astrojs/cloudflare` adapter を使ってオンデマンドレンダリングするためリクエストの枠を消費することを確認した。
 
 試したリポジトリ: [hushin-sandbox/astro-cloudflare-workers](https://github.com/hushin-sandbox/astro-cloudflare-workers)
 
