@@ -63,7 +63,7 @@ main ブランチに記事をpushすると、X と Bluesky に自動投稿され
 ## 学んだこと
 
 - X の投稿には $0.01 かかる
-  - 最初試したら `X API error: 402 Payment Required` が返ってきた
+  - 最初試したら `402 Payment Required` が返ってきた
   - https://docs.x.com/x-api/getting-started/pricing
   - 無料枠がなくなって完全に従量課金制になったっぽい？
   - [【2026年1月最新版】X APIでPOST投稿する方法｜新規アカウントは$5課金が必須](https://zenn.dev/acntechjp/articles/4de3d142aaa05e)
