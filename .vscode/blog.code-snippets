@@ -12,6 +12,7 @@
       "tags:",
       "  - $6",
       "description: $7",
+      "sns_shared: false",
       "---",
     ],
     "description": "Adds the frontmatter block for the AstroPaper Blog post"
