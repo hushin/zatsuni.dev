@@ -128,7 +128,11 @@ export function formatPostContent(post: ParsedPost): string {
   const url = generatePostUrl(post.slug);
   const tags = (post.frontmatter.tags || [])
     .slice(0, MAX_TAGS)
-    .map(tag => `#${tag}`)
+    .map(tag => {
+      // Replace hyphens with underscores for hashtag compatibility
+      const normalizedTag = tag.replace(/-/g, "_");
+      return `#${normalizedTag}`;
+    })
     .join(" ");
 
   const parts = [`ブログ書いた / ${post.frontmatter.title}`, url];
