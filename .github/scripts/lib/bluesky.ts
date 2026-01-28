@@ -18,13 +18,6 @@ interface Facet {
 }
 
 /**
- * Calculate UTF-8 byte length of a string
- */
-function getUtf8ByteLength(str: string): number {
-  return new TextEncoder().encode(str).length;
-}
-
-/**
  * Detect facets (links and hashtags) in text
  */
 function detectFacets(text: string): Facet[] {
