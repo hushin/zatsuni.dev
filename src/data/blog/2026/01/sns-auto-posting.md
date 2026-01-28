@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2026-01-28T23:30:00.000+09:00
+pubDatetime: 2026-01-28T22:30:00.000+09:00
 modDatetime:
 title: ブログを書いたらSNSに自動投稿されるようにした
 featured: false
