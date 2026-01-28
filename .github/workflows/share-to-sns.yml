@@ -1,0 +1,60 @@
+name: Share to SNS
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/data/blog/**/*.md"
+      - "src/data/blog/**/*.mdx"
+  workflow_dispatch:
+    inputs:
+      file_path:
+        description: "Specific file path to share (e.g., src/data/blog/2026/01/article.md)"
+        required: false
+        type: string
+
+jobs:
+  share:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run share script
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          BLUESKY_IDENTIFIER: ${{ secrets.BLUESKY_IDENTIFIER }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          GITHUB_BEFORE_SHA: ${{ github.event.before }}
+          GITHUB_AFTER_SHA: ${{ github.sha }}
+        run: |
+          if [ -n "${{ github.event.inputs.file_path }}" ]; then
+            node --experimental-strip-types .github/scripts/share-to-sns.ts "${{ github.event.inputs.file_path }}"
+          else
+            node --experimental-strip-types .github/scripts/share-to-sns.ts
+          fi
+
+      - name: Commit sns_shared updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: mark posts as shared on SNS"
+            git push
+          fi

@@ -4,6 +4,7 @@ modDatetime: 2026-01-12T11:00:27.000+09:00
 title: 2025年 個人的AIコーディングエージェント振り返り
 featured: false
 draft: false
+sns_shared: true
 tags:
   - tech
   - ai

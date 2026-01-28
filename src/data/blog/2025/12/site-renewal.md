@@ -4,6 +4,7 @@ modDatetime:
 title: Claude Codeを使って Astro v5, daisyUI v5 でサイトをリニューアル
 featured: false
 draft: false
+sns_shared: true
 tags:
   - tech
   - astro

@@ -4,6 +4,7 @@ modDatetime:
 title: 2026年年初お金整理
 featured: false
 draft: false
+sns_shared: true
 tags:
   - life
 description: ""

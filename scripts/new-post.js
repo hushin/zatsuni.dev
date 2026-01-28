@@ -53,6 +53,7 @@ draft: false
 tags:
 ${tags.map(tag => `  - ${tag}`).join('\n')}
 description: ''
+sns_shared: false
 ---
 
 書き出し...

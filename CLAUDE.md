@@ -48,6 +48,7 @@ featured: false                              # Optional: Highlight on homepage
 draft: false                                 # Optional: Hide from production
 tags: [tech, astro]                          # Optional: Categorization
 description: "Brief summary"                 # Optional: For SEO/previews
+sns_shared: false                            # Optional: Tracks if post was shared to SNS
 ```
 
 **Content loader pattern**: `glob({ base: './src/data/blog', pattern: '**/[^_]*.{md,mdx}' })`

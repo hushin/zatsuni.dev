@@ -4,6 +4,7 @@ modDatetime:
 title: Cloudflare Pages から Cloudflare Workers に移行した
 featured: false
 draft: false
+sns_shared: true
 tags:
   - tech
   - cloudflare
