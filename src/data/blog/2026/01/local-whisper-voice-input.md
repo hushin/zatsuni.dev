@@ -4,6 +4,7 @@ modDatetime: 2026-01-26T22:41:56.000+09:00
 title: Whisperを使った無料のローカル音声入力アプリを作った
 featured: false
 draft: false
+sns_shared: true
 tags:
   - tech
   - ai

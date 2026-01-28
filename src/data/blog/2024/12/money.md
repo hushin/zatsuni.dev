@@ -4,6 +4,7 @@ modDatetime:
 title: 2024年末お金整理
 featured: false
 draft: false
+sns_shared: true
 tags:
   - life
 description: 2024年末時点での自分のお金周りの流れやポイ活について整理

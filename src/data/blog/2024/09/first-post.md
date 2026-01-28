@@ -4,6 +4,7 @@ modDatetime:
 title: 新しくサイトを構築した
 featured: false
 draft: false
+sns_shared: true
 tags:
   - tech
 description: Astro + Cloudflare Pages でサイトを構築

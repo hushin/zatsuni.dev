@@ -4,6 +4,7 @@ modDatetime:
 title: 2024年振り返り
 featured: false
 draft: false
+sns_shared: true
 tags:
   - life
 description: 2024年も終わるので今年を振り返っていきます。
