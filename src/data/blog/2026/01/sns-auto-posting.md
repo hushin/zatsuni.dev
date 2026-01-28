@@ -8,7 +8,7 @@ tags:
   - tech
   - github-actions
 description: "GitHub Actionsでブログ記事をX（Twitter）とBlueskyに自動投稿する仕組みを設定した記録"
-sns_shared: false
+sns_shared: true
 ---
 
 ブログ記事を書いたあと、手動でX（Twitter）とBlueskyに投稿するのが面倒だった。
