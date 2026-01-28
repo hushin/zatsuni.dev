@@ -15,7 +15,11 @@ sns_shared: true
 
 記事を公開すると自動的にSNSにシェアされるようにしたいと思い、GitHub Actionsで自動投稿の仕組みを作った。
 
-設定したコミットは[こちら](https://github.com/hushin/zatsuni.dev/commit/9643efc)。
+設定したコミット
+
+- [9643efc](https://github.com/hushin/zatsuni.dev/commit/9643efc)
+- [cc17672](https://github.com/hushin/zatsuni.dev/commit/cc17672)
+- [4cfd0b0](https://github.com/hushin/zatsuni.dev/commit/4cfd0b0)
 
 main ブランチに記事をpushすると、X と Bluesky に自動投稿される。
 両方のプラットフォームへの投稿が成功したら、記事のfrontmatterに `sns_shared: true` を追記してコミットする。
