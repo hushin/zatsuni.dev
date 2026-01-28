@@ -22,6 +22,15 @@ async function main(): Promise<void> {
   const postsToShare = getPostsToShare(changedFiles);
   console.log(`Posts to share: ${postsToShare.length}`);
 
+  // Wait for Cloudflare deployment to complete before sharing
+  if (postsToShare.length > 0 && !dryRun) {
+    console.log("Waiting 60 seconds for deployment to complete...");
+    await new Promise(resolve => setTimeout(resolve, 60000));
+    console.log(
+      "Deployment should be complete, proceeding with SNS sharing..."
+    );
+  }
+
   for (const post of postsToShare) {
     const content = formatPostContent(post);
     console.log(`\n--- Posting ---`);
