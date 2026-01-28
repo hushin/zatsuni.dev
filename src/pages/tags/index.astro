@@ -4,11 +4,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import BaseHead from "../../components/BaseHead.astro";
 import { slugifyStr } from "../../utils/slugify";
 import Tag from "../../components/Tag.astro";
+import postFilter from "../../utils/postFilter";
 
 // 記事を取得（下書きとスケジュール投稿は除外）
-const allPosts = await getCollection("blog", ({ data }) => {
-  return !data.draft && data.pubDatetime <= new Date();
-});
+const allPosts = (await getCollection("blog")).filter(postFilter);
 
 // タグ毎の記事数を集計
 const tagCounts = allPosts.reduce(
