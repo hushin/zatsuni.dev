@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2026-01-27T00:04:51.662+09:00
-modDatetime:
+modDatetime: 2026-02-19T21:40:00.000+09:00
 title: Cloudflare Pages から Cloudflare Workers に移行した
 featured: false
 draft: false
@@ -18,11 +18,10 @@ description: ""
 
 ## 移行手順
 
-1.  設定追加 ([commit](https://github.com/hushin/zatsuni.dev/commit/aa7fcb94401c0c73ddb096bf8795138ed7872f1b))
-    - Wrangler v4を追加
-    - wrangler.jsonc設定ファイルを作成
+1.  設定追加
+    - Wrangler v4を追加 `pnpm add -D wrangler`
+    - [wrangler.jsonc](https://github.com/hushin/zatsuni.dev/blob/main/wrangler.jsonc) 設定ファイルを作成
       - compatibility_date は現在の日付
-    - （commit は deploy コマンドも追加もしているが、必須ではない）
 2.  Cloudflare ダッシュボードの Workers & Pages から 「アプリケーションを作成する」をクリックし、GitHub リポジトリを設定
     - 名前は Pages のものと重複しても問題なし
     - 詳細設定から 変数名 `TZ` 変数値 `Asia/Tokyo` を追加
