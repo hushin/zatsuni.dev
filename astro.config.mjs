@@ -9,6 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
 	site: 'https://zatsuni.dev',
 	integrations: [mdx(), sitemap()],
+  security: { csp: true },
 	vite: {
 		plugins: [tailwindcss()],
 	},
