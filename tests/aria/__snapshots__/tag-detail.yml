@@ -1,0 +1,147 @@
+- banner:
+  - link "雑にdev":
+    - /url: /
+  - navigation:
+    - list:
+      - listitem:
+        - link "Posts":
+          - /url: /posts/
+      - listitem:
+        - link "Tags":
+          - /url: /tags/
+      - listitem:
+        - link "About":
+          - /url: /about/
+- main:
+  - navigation:
+    - list:
+      - listitem:
+        - link "ホーム":
+          - /url: /
+      - listitem:
+        - link "タグ一覧":
+          - /url: /tags/
+      - listitem: tech
+  - heading "タグ「tech」の記事一覧" [level=1]
+  - text: 6件
+  - heading "2026年" [level=2]
+  - list:
+    - listitem:
+      - article:
+        - 'link "ブログを書いたらSNSに自動投稿されるようにした 公開日: 2026年1月28日 更新日: 2026年1月29日 tech github-actions GitHub Actionsでブログ記事をX（Twitter）とBlueskyに自動投稿する仕組みを設定した記録"':
+          - /url: /posts/2026/01/sns-auto-posting/
+          - heading "ブログを書いたらSNSに自動投稿されるようにした" [level=3]
+          - text: "公開日:"
+          - time: 2026年1月28日
+          - text: "更新日:"
+          - time: 2026年1月29日
+          - img
+          - text: tech
+          - img
+          - text: github-actions
+          - paragraph: GitHub Actionsでブログ記事をX（Twitter）とBlueskyに自動投稿する仕組みを設定した記録
+    - listitem:
+      - article:
+        - 'link "Cloudflare Pages から Cloudflare Workers に移行した 公開日: 2026年1月27日 更新日: 2026年2月19日 tech cloudflare astro"':
+          - /url: /posts/2026/01/migrate-cloudflare-pages-to-workers/
+          - heading "Cloudflare Pages から Cloudflare Workers に移行した" [level=3]
+          - text: "公開日:"
+          - time: 2026年1月27日
+          - text: "更新日:"
+          - time: 2026年2月19日
+          - img
+          - text: tech
+          - img
+          - text: cloudflare
+          - img
+          - text: astro
+    - listitem:
+      - article:
+        - 'link "Whisperを使った無料のローカル音声入力アプリを作った 公開日: 2026年1月12日 更新日: 2026年1月26日 tech ai Whisperを使った無料のローカル音声入力アプリ HushWhisper の開発記録"':
+          - /url: /posts/2026/01/local-whisper-voice-input/
+          - heading "Whisperを使った無料のローカル音声入力アプリを作った" [level=3]
+          - text: "公開日:"
+          - time: 2026年1月12日
+          - text: "更新日:"
+          - time: 2026年1月26日
+          - img
+          - text: tech
+          - img
+          - text: ai
+          - paragraph: Whisperを使った無料のローカル音声入力アプリ HushWhisper の開発記録
+    - listitem:
+      - article:
+        - 'link "2025年 個人的AIコーディングエージェント振り返り 公開日: 2026年1月4日 更新日: 2026年1月12日 tech ai 2025年のAIコーディングエージェント活用を振り返る。開発スタイルの変化、使用ツール、学びをまとめた。"':
+          - /url: /posts/2026/01/2025-ai-coding-agent-retrospective/
+          - heading "2025年 個人的AIコーディングエージェント振り返り" [level=3]
+          - text: "公開日:"
+          - time: 2026年1月4日
+          - text: "更新日:"
+          - time: 2026年1月12日
+          - img
+          - text: tech
+          - img
+          - text: ai
+          - paragraph: 2025年のAIコーディングエージェント活用を振り返る。開発スタイルの変化、使用ツール、学びをまとめた。
+  - heading "2025年" [level=2]
+  - list:
+    - listitem:
+      - article:
+        - 'link "Claude Codeを使って Astro v5, daisyUI v5 でサイトをリニューアル 公開日: 2025年12月7日 tech astro"':
+          - /url: /posts/2025/12/site-renewal/
+          - heading "Claude Codeを使って Astro v5, daisyUI v5 でサイトをリニューアル" [level=3]
+          - text: "公開日:"
+          - time: 2025年12月7日
+          - img
+          - text: tech
+          - img
+          - text: astro
+  - heading "2024年" [level=2]
+  - list:
+    - listitem:
+      - article:
+        - 'link "新しくサイトを構築した 公開日: 2024年9月13日 tech Astro + Cloudflare Pages でサイトを構築"':
+          - /url: /posts/2024/09/first-post/
+          - heading "新しくサイトを構築した" [level=3]
+          - text: "公開日:"
+          - time: 2024年9月13日
+          - img
+          - text: tech
+          - paragraph: Astro + Cloudflare Pages でサイトを構築
+  - link "タグ一覧に戻る":
+    - /url: /tags/
+- contentinfo:
+  - complementary:
+    - paragraph: Copyright © 2026 hush_in • All rights reserved.
+  - navigation:
+    - link "RSS Feed":
+      - /url: /rss.xml
+      - img
+    - link "X(Twitter)":
+      - /url: https://x.com/hush_in
+      - img
+      - text: X(Twitter)
+    - link "Bluesky":
+      - /url: https://bsky.app/profile/hushin.bsky.social
+      - img
+      - text: Bluesky
+    - link "Github":
+      - /url: https://github.com/hushin
+      - img
+      - text: Github
+    - link "Zenn":
+      - /url: https://zenn.dev/hush_in
+      - img
+      - text: Zenn
+    - link "Instagram":
+      - /url: https://www.instagram.com/hush_in
+      - img
+      - text: Instagram
+    - link "YouTube":
+      - /url: https://www.youtube.com/@hush_in
+      - img
+      - text: YouTube
+    - link "Send an email to hush_in":
+      - /url: mailto:ngtv.hsn@gmail.com
+      - img
+      - text: Send an email to hush_in

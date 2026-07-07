@@ -60,10 +60,4 @@ export const SOCIALS: SocialObjects = [
     linkTitle: `Send an email to ${SITE.author}`,
     active: true,
   },
-  {
-    name: "Discord",
-    href: "https://discordapp.com/users/336255981111738371",
-    linkTitle: `Discord`,
-    active: false,
-  },
 ];

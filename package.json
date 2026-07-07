@@ -8,9 +8,12 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "new-post": "node scripts/new-post.js",
     "deploy": "astro build && wrangler deploy",
-    "deploy:preview": "astro build && wrangler deploy --dry-run"
+    "deploy:preview": "astro build && wrangler deploy --dry-run",
+    "test:aria": "playwright test",
+    "test:aria:update": "tsx tests/aria/generate-snapshots.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
@@ -22,12 +25,16 @@
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@playwright/test": "^1.56.1",
     "@tailwindcss/typography": "^0.5.19",
     "daisyui": "^5.5.19",
     "lefthook": "^2.1.6",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "tsx": "^4.20.7",
+    "typescript": "^5.9.3",
     "wrangler": "^4.83.0"
   }
 }
