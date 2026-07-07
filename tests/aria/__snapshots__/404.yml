@@ -1,0 +1,54 @@
+- banner:
+  - link "雑にdev":
+    - /url: /
+  - navigation:
+    - list:
+      - listitem:
+        - link "Posts":
+          - /url: /posts/
+      - listitem:
+        - link "Tags":
+          - /url: /tags/
+      - listitem:
+        - link "About":
+          - /url: /about/
+- main:
+  - heading "404" [level=1]
+  - paragraph: ページが見つかりません
+  - link "トップページへ戻る":
+    - /url: /
+- contentinfo:
+  - complementary:
+    - paragraph: Copyright © 2026 hush_in • All rights reserved.
+  - navigation:
+    - link "RSS Feed":
+      - /url: /rss.xml
+      - img
+    - link "X(Twitter)":
+      - /url: https://x.com/hush_in
+      - img
+      - text: X(Twitter)
+    - link "Bluesky":
+      - /url: https://bsky.app/profile/hushin.bsky.social
+      - img
+      - text: Bluesky
+    - link "Github":
+      - /url: https://github.com/hushin
+      - img
+      - text: Github
+    - link "Zenn":
+      - /url: https://zenn.dev/hush_in
+      - img
+      - text: Zenn
+    - link "Instagram":
+      - /url: https://www.instagram.com/hush_in
+      - img
+      - text: Instagram
+    - link "YouTube":
+      - /url: https://www.youtube.com/@hush_in
+      - img
+      - text: YouTube
+    - link "Send an email to hush_in":
+      - /url: mailto:ngtv.hsn@gmail.com
+      - img
+      - text: Send an email to hush_in
