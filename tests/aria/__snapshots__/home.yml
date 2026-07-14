@@ -24,47 +24,37 @@
   - list:
     - listitem:
       - article:
-        - 'link "Cloudflare Pages から Cloudflare Workers に移行した 公開日: 2026年1月27日 更新日: 2026年2月19日 tech cloudflare astro"':
-          - /url: /posts/2026/01/migrate-cloudflare-pages-to-workers/
-          - heading "Cloudflare Pages から Cloudflare Workers に移行した" [level=3]
+        - 'link "テスト記事D 公開日: 2025年6月1日 更新日: 2025年6月5日 tech life ARIA snapshotテスト用の固定fixture記事Dです。"':
+          - /url: /posts/2025/06/sample-post-d/
+          - heading "テスト記事D" [level=3]
           - text: "公開日:"
-          - time: 2026年1月27日
+          - time: 2025年6月1日
           - text: "更新日:"
-          - time: 2026年2月19日
+          - time: 2025年6月5日
           - img
           - text: tech
           - img
-          - text: cloudflare
-          - img
-          - text: astro
+          - text: life
+          - paragraph: ARIA snapshotテスト用の固定fixture記事Dです。
     - listitem:
       - article:
-        - 'link "ブログを書いたらSNSに自動投稿されるようにした 公開日: 2026年1月28日 更新日: 2026年1月29日 tech github-actions GitHub Actionsでブログ記事をX（Twitter）とBlueskyに自動投稿する仕組みを設定した記録"':
-          - /url: /posts/2026/01/sns-auto-posting/
-          - heading "ブログを書いたらSNSに自動投稿されるようにした" [level=3]
+        - 'link "テスト記事C 公開日: 2025年3月1日 tech ARIA snapshotテスト用の固定fixture記事Cです。"':
+          - /url: /posts/2025/03/sample-post-c/
+          - heading "テスト記事C" [level=3]
           - text: "公開日:"
-          - time: 2026年1月28日
-          - text: "更新日:"
-          - time: 2026年1月29日
+          - time: 2025年3月1日
           - img
           - text: tech
-          - img
-          - text: github-actions
-          - paragraph: GitHub Actionsでブログ記事をX（Twitter）とBlueskyに自動投稿する仕組みを設定した記録
+          - paragraph: ARIA snapshotテスト用の固定fixture記事Cです。
     - listitem:
       - article:
-        - 'link "Whisperを使った無料のローカル音声入力アプリを作った 公開日: 2026年1月12日 更新日: 2026年1月26日 tech ai Whisperを使った無料のローカル音声入力アプリ HushWhisper の開発記録"':
-          - /url: /posts/2026/01/local-whisper-voice-input/
-          - heading "Whisperを使った無料のローカル音声入力アプリを作った" [level=3]
+        - 'link "テスト記事B 公開日: 2024年11月1日 life"':
+          - /url: /posts/2024/11/sample-post-b/
+          - heading "テスト記事B" [level=3]
           - text: "公開日:"
-          - time: 2026年1月12日
-          - text: "更新日:"
-          - time: 2026年1月26日
+          - time: 2024年11月1日
           - img
-          - text: tech
-          - img
-          - text: ai
-          - paragraph: Whisperを使った無料のローカル音声入力アプリ HushWhisper の開発記録
+          - text: life
   - link "すべての記事":
     - /url: /posts/
   - heading "登壇資料" [level=2]
