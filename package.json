@@ -13,6 +13,7 @@
     "deploy": "astro build && wrangler deploy",
     "deploy:preview": "astro build && wrangler deploy --dry-run",
     "test:aria": "playwright test",
+    "build:test-fixtures": "BLOG_CONTENT_DIR=tests/fixtures/blog astro build",
     "test:aria:update": "tsx tests/aria/generate-snapshots.ts"
   },
   "dependencies": {

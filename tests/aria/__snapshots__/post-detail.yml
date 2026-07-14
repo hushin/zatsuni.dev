@@ -14,7 +14,7 @@
           - /url: /about/
 - main:
   - article:
-    - heading "新しくサイトを構築した" [level=1]
+    - heading "テスト記事A" [level=1]
     - text: "公開日:"
     - time: 2024年9月13日
     - text: 23:00
@@ -26,47 +26,30 @@
       - /url: /tags/tech/
       - img
       - text: tech
-    - paragraph: ドメイン取ってしばらく放置していましたが、イベントで名刺配るので重い腰を上げてサイトを作りました。
-    - paragraph:
-      - text: 勉強も兼ねてAstroでゼロから構築しようかと思ったけど全然時間がなかったので
-      - link "AstroPaper":
-        - /url: https://github.com/satnaing/astro-paper?tab=readme-ov-file
-      - text: というテンプレートをカスタマイズしました。
-    - paragraph: これらの記事を参考にカスタマイズしました。感謝。
-    - list:
-      - listitem:
-        - link "Astro＋Cloudflare Pagesでブログ構築 | WEBOO.DEV":
-          - /url: https://weboo.dev/posts/blog-by-astro-cloudflare-pages/
-      - listitem:
-        - link "公開するまでにやったAstroPaperのカスタマイズまとめ | blog.lycheejam.net":
-          - /url: https://blog.lycheejam.net/posts/my-astropaper-customize/
-    - paragraph:
-      - text: 雑に作っていこうと思って
-      - code: zatsuni.dev
-      - text: ドメインを取ったので雑にやっていきたいですね。
+    - paragraph: これは ARIA snapshot テスト用の固定 fixture 記事です。内容は本番記事とは無関係です。
   - text: この記事をシェアする
   - link "Tweet this post":
-    - /url: https://x.com/intent/post?url=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Ffirst-post%2F&text=%E6%96%B0%E3%81%97%E3%81%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%97%E3%81%9F
+    - /url: https://x.com/intent/post?url=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Fsample-post-a%2F&text=%E3%83%86%E3%82%B9%E3%83%88%E8%A8%98%E4%BA%8BA
     - img
     - text: Tweet this post
   - link "Share this post on Bluesky":
-    - /url: https://bsky.app/intent/compose?text=%E6%96%B0%E3%81%97%E3%81%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%97%E3%81%9F%0Ahttps%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Ffirst-post%2F
+    - /url: https://bsky.app/intent/compose?text=%E3%83%86%E3%82%B9%E3%83%88%E8%A8%98%E4%BA%8BA%0Ahttps%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Fsample-post-a%2F
     - img
     - text: Share this post on Bluesky
   - link "このエントリーをはてなブックマークに追加":
-    - /url: https://b.hatena.ne.jp/add?mode=confirm&url=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Ffirst-post%2F&title=%E6%96%B0%E3%81%97%E3%81%8F%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%97%E3%81%9F
+    - /url: https://b.hatena.ne.jp/add?mode=confirm&url=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Fsample-post-a%2F&title=%E3%83%86%E3%82%B9%E3%83%88%E8%A8%98%E4%BA%8BA
     - img
     - text: このエントリーをはてなブックマークに追加
   - link "このエントリーをPocketに追加":
-    - /url: https://getpocket.com/edit?url=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Ffirst-post%2F
+    - /url: https://getpocket.com/edit?url=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Fsample-post-a%2F
     - img
     - text: このエントリーをPocketに追加
   - link "Share this post on Facebook":
-    - /url: https://www.facebook.com/sharer.php?u=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Ffirst-post%2F
+    - /url: https://www.facebook.com/sharer.php?u=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Fsample-post-a%2F
     - img
     - text: Share this post on Facebook
   - link "Share this post on Pinterest":
-    - /url: https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Ffirst-post%2F
+    - /url: https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fzatsuni.dev%2Fposts%2F2024%2F09%2Fsample-post-a%2F
     - img
     - text: Share this post on Pinterest
 - contentinfo:

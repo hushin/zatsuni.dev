@@ -12,3 +12,8 @@ export function loadSnapshot(name: string): string {
 		);
 	}
 }
+
+// Footerの Copyright © {年} は年をまたぐと変わるため、比較前に年を固定値へ正規化する
+export function normalizeSnapshot(text: string): string {
+	return text.replace(/Copyright © \d{4} /, 'Copyright © YYYY ');
+}
