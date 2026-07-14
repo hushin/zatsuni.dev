@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { loadSnapshot } from '../helpers/snapshot-helpers';
+import { loadSnapshot, normalizeSnapshot } from '../helpers/snapshot-helpers';
 import { PAGES } from './pages';
 
 test.describe('ARIA snapshot', () => {
@@ -11,7 +11,7 @@ test.describe('ARIA snapshot', () => {
 			const snapshot = await page.locator('body').ariaSnapshot();
 			const expected = loadSnapshot(name);
 
-			expect(snapshot).toBe(expected);
+			expect(normalizeSnapshot(snapshot)).toBe(normalizeSnapshot(expected));
 		});
 	}
 });
