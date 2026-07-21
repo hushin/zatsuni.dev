@@ -1,25 +1,42 @@
 name: Dependabot auto-merge
 
-on: pull_request
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-  dependabot:
-    runs-on: ubuntu-slim
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
+  merge:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
     steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
+      - name: Find PR
+        id: pr
+        run: |
+          PR=$(gh pr list --head "$HEAD_BRANCH" --json number,author --limit 1 -q '.[0]')
+          echo "number=$(echo "$PR" | jq -r '.number // empty')" >> "$GITHUB_OUTPUT"
+          echo "author=$(echo "$PR" | jq -r '.author.login // empty')" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
 
-      - name: Enable auto-merge for patch/minor updates
+      - name: Fetch Dependabot metadata
+        id: metadata
+        if: steps.pr.outputs.author == 'dependabot[bot]'
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-number: ${{ steps.pr.outputs.number }}
+
+      - name: Merge patch/minor updates
         if: |
           steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
           steps.metadata.outputs.update-type == 'version-update:semver-minor'
-        run: gh pr merge --auto --squash "$PR_URL"
+        run: gh pr merge --merge "$PR_URL"
         env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: https://github.com/${{ github.repository }}/pull/${{ steps.pr.outputs.number }}

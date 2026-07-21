@@ -5,6 +5,15 @@ updates:
     schedule:
       interval: "weekly"
     groups:
+      astro:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+          - "daisyui"
       minor-and-patch:
         patterns:
           - "*"
