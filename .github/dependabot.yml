@@ -4,6 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # リリース直後の不安定なバージョンを掴まないよう、公開から一定期間寝かせる
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
     groups:
       astro:
         patterns:
@@ -25,6 +29,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 7
     groups:
       minor-and-patch:
         patterns:
