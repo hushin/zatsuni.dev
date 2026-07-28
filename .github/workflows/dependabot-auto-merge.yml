@@ -46,11 +46,39 @@ jobs:
           MSG=$(gh api "repos/$GH_REPO/pulls/$PR_NUMBER/commits" -q '.[].commit.message')
           TYPES=$(printf '%s\n' "$MSG" | grep -oE 'update-type: version-update:semver-[a-z]+' | sed 's/.*semver-//' | sort -u || true)
           echo "update types: ${TYPES:-none}"
-          # 1 つも読めなければ何もしない（group PR も含め全て minor 以下のときだけ許可）
-          if [ -n "$TYPES" ] && ! printf '%s\n' "$TYPES" | grep -qx 'major'; then
-            echo "mergeable=true" >> "$GITHUB_OUTPUT"
-          else
+
+          if [ -n "$TYPES" ]; then
+            # 通常のバージョン更新PR: trailer で判定（group PR も含め全て minor 以下のときだけ許可）
+            if printf '%s\n' "$TYPES" | grep -qx 'major'; then
+              echo "mergeable=false" >> "$GITHUB_OUTPUT"
+            else
+              echo "mergeable=true" >> "$GITHUB_OUTPUT"
+            fi
+            exit 0
+          fi
+
+          # 自動セキュリティ修正PR には update-type trailer が付与されないため、
+          # 本文の "compare/vOLD...vNEW" リンクからメジャーバージョンの変化有無を判定する
+          BODY=$(gh api "repos/$GH_REPO/pulls/$PR_NUMBER" -q '.body')
+          if ! printf '%s' "$BODY" | grep -q 'Security Alerts page'; then
             echo "mergeable=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          MAJOR_CHANGED=false
+          while IFS= read -r pair; do
+            [ -z "$pair" ] && continue
+            OLD=$(echo "$pair" | sed -E 's#compare/v?([0-9]+)\..*#\1#')
+            NEW=$(echo "$pair" | sed -E 's#.*\.\.\.v?([0-9]+)\..*#\1#')
+            if [ -z "$OLD" ] || [ -z "$NEW" ] || [ "$OLD" != "$NEW" ]; then
+              MAJOR_CHANGED=true
+            fi
+          done <<< "$(printf '%s' "$BODY" | grep -oE 'compare/v?[0-9]+(\.[0-9]+){1,2}\.\.\.v?[0-9]+(\.[0-9]+){1,2}' || true)"
+
+          if [ "$MAJOR_CHANGED" = true ]; then
+            echo "mergeable=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "mergeable=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Merge patch/minor updates
