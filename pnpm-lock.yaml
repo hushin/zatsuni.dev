@@ -40,8 +40,8 @@ importers:
         specifier: ^0.5.20
         version: 0.5.20(tailwindcss@4.3.3)
       daisyui:
-        specifier: ^5.7.25
-        version: 5.7.25
+        specifier: ^5.7.38
+        version: 5.7.38
       lefthook:
         specifier: ^2.1.14
         version: 2.1.14
@@ -1369,8 +1369,8 @@ packages:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
 
-  daisyui@5.7.25:
-    resolution: {integrity: sha512-lE5kR8FjHxUHiCb3/PAPuaNkv0MSm6B8GWd5x/l7SLDsH58IxYCiPG8wrcRgdZCI5q8jxpeA2Utx6O6X/kpLnw==}
+  daisyui@5.7.38:
+    resolution: {integrity: sha512-ef3RIbteKVmlQ10ak0l4mu8F70pBJ2UBjDJNsA2vWlpNdErpHqfxddxK2ckNNYd7vQvTqP4a1A1vSsunlCGVOw==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -4034,7 +4034,7 @@ snapshots:
     dependencies:
       css-tree: 2.2.1
 
-  daisyui@5.7.25: {}
+  daisyui@5.7.38: {}
 
   debug@4.4.3(supports-color@10.2.2):
     dependencies:
