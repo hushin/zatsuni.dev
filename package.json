@@ -31,11 +31,11 @@
     "@tailwindcss/typography": "^0.5.20",
     "daisyui": "^5.7.43",
     "lefthook": "^2.1.14",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.8",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "tsx": "^4.23.13",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3",
-    "wrangler": "^4.131.2"
+    "wrangler": "^4.136.2"
   }
 }
