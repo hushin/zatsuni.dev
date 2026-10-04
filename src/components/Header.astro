@@ -28,18 +28,16 @@ function isActive(href: string): boolean {
         <!-- Desktop Navigation -->
         <nav class="hidden lg:flex">
           <ul class="flex space-x-1">
-            {
-              navItems.map(({ href, label }) => (
-                <li>
-                  <a
-                    href={href}
-                    class={`px-3 py-2 hover:underline ${isActive(href) ? "font-semibold" : ""}`}
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))
-            }
+            {navItems.map(({ href, label }) => (
+              <li>
+                <a
+                  href={href}
+                  class={`px-3 py-2 hover:underline ${isActive(href) ? "font-semibold" : ""}`}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -57,22 +55,21 @@ function isActive(href: string): boolean {
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h7"></path>
+                d="M4 6h16M4 12h16M4 18h7"
+              ></path>
             </svg>
           </div>
           <ul
             tabindex="0"
             class="menu dropdown-content bg-base-100 rounded-box z-1 mr-3 w-40 p-2 shadow"
           >
-            {
-              navItems.map(({ href, label }) => (
-                <li>
-                  <a href={href} class={isActive(href) ? "active" : ""}>
-                    {label}
-                  </a>
-                </li>
-              ))
-            }
+            {navItems.map(({ href, label }) => (
+              <li>
+                <a href={href} class={isActive(href) ? "active" : ""}>
+                  {label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

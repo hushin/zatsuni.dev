@@ -29,19 +29,17 @@ const years = Object.keys(postsByYear).sort(
 ---
 
 <div class="space-y-12">
-  {
-    years.map(year => (
-      <section>
-        <h2 class="text-base-content border-base-300 mb-4 border-b pb-2 text-2xl font-bold">
-          {titlePrefix}
-          {year}年
-        </h2>
-        <ul class="space-y-4">
-          {postsByYear[year].map(post => (
-            <Card href={`/posts/${post.id}/`} frontmatter={post.data} />
-          ))}
-        </ul>
-      </section>
-    ))
-  }
+  {years.map(year => (
+    <section>
+      <h2 class="text-base-content border-base-300 mb-4 border-b pb-2 text-2xl font-bold">
+        {titlePrefix}
+        {year}年
+      </h2>
+      <ul class="space-y-4">
+        {postsByYear[year].map(post => (
+          <Card href={`/posts/${post.id}/`} frontmatter={post.data} />
+        ))}
+      </ul>
+    </section>
+  ))}
 </div>

@@ -20,46 +20,36 @@ const headerProps = {
 ---
 
 <li>
-  <article
-    class="border-base-300 hover:border-l-primary border-l-4 transition-all duration-200"
-  >
+  <article class="border-base-300 hover:border-l-primary border-l-4 transition-all duration-200">
     <a href={href} class="block text-inherit no-underline">
       <div class="px-4 py-2">
         <h3 {...headerProps}>
           {title}
-          {
-            featured && (
-              <div class="badge badge-primary badge-sm ml-2">Featured</div>
-            )
-          }
+          {featured && (
+            <div class="badge badge-primary badge-sm ml-2">Featured</div>
+          )}
         </h3>
 
         <div class="mt-1 flex items-center gap-2">
           <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
 
-          {
-            tags && tags.length > 0 && (
-              <div class="flex flex-wrap justify-end gap-2">
-                {tags.slice(0, 3).map((tag: string) => (
-                  <Tag tag={tag} size="sm" />
-                ))}
-                {tags.length > 3 && (
-                  <div class="badge badge-ghost badge-xs">
-                    +{tags.length - 3}
-                  </div>
-                )}
-              </div>
-            )
-          }
+          {tags && tags.length > 0 && (
+            <div class="flex flex-wrap justify-end gap-2">
+              {tags.slice(0, 3).map((tag: string) => (
+                <Tag tag={tag} size="sm" />
+              ))}
+              {tags.length > 3 && (
+                <div class="badge badge-ghost badge-xs">+{tags.length - 3}</div>
+              )}
+            </div>
+          )}
         </div>
 
-        {
-          description && (
-            <p class="text-base-content/80 mt-1 line-clamp-2 text-sm">
-              {description}
-            </p>
-          )
-        }
+        {description && (
+          <p class="text-base-content/80 mt-1 line-clamp-2 text-sm">
+            {description}
+          </p>
+        )}
       </div>
     </a>
   </article>

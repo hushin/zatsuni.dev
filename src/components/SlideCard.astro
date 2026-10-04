@@ -12,9 +12,7 @@ const { href, title, pubDatetime, description } = Astro.props;
 ---
 
 <li>
-  <article
-    class="border-base-300 bg-base-100 hover:border-l-primary border-l-4 transition-all duration-200"
-  >
+  <article class="border-base-300 bg-base-100 hover:border-l-primary border-l-4 transition-all duration-200">
     <a
       href={href}
       class="block text-inherit no-underline"
@@ -47,13 +45,11 @@ const { href, title, pubDatetime, description } = Astro.props;
           <slot />
         </div>
 
-        {
-          description && (
-            <p class="text-base-content/80 mt-1 line-clamp-2 text-sm">
-              {description}
-            </p>
-          )
-        }
+        {description && (
+          <p class="text-base-content/80 mt-1 line-clamp-2 text-sm">
+            {description}
+          </p>
+        )}
       </div>
     </a>
   </article>

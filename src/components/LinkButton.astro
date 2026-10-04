@@ -37,21 +37,19 @@ const buttonClasses = [
   .join(" ");
 ---
 
-{
-  disabled ? (
-    <span class={buttonClasses} title={title} aria-disabled={disabled}>
-      <slot />
-    </span>
-  ) : (
-    <a
-      {href}
-      class={buttonClasses}
-      aria-label={ariaLabel}
-      title={title}
-      {...(showInNewTab ? { rel: "noopener noreferrer" } : {})}
-      target={showInNewTab ? "_blank" : "_self"}
-    >
-      <slot />
-    </a>
-  )
-}
+{disabled ? (
+  <span class={buttonClasses} title={title} aria-disabled={disabled}>
+    <slot />
+  </span>
+) : (
+  <a
+    {href}
+    class={buttonClasses}
+    aria-label={ariaLabel}
+    title={title}
+    {...(showInNewTab ? { rel: "noopener noreferrer" } : {})}
+    target={showInNewTab ? "_blank" : "_self"}
+  >
+    <slot />
+  </a>
+)}

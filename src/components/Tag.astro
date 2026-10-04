@@ -23,20 +23,18 @@ const hoverClasses = "hover:text-primary";
 const tagClasses = `${baseClasses} ${sizeClasses[size]} ${className}`;
 ---
 
-{
-  href ? (
-    <a
-      href={href}
-      class={`${tagClasses} ${hoverClasses}`}
-      title={`${tag}タグの記事一覧`}
-    >
-      <TagIcon />
-      {tag}
-    </a>
-  ) : (
-    <span class={tagClasses}>
-      <TagIcon />
-      {tag}
-    </span>
-  )
-}
+{href ? (
+  <a
+    href={href}
+    class={`${tagClasses} ${hoverClasses}`}
+    title={`${tag}タグの記事一覧`}
+  >
+    <TagIcon />
+    {tag}
+  </a>
+) : (
+  <span class={tagClasses}>
+    <TagIcon />
+    {tag}
+  </span>
+)}
