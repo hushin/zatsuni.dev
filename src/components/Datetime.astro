@@ -85,77 +85,75 @@ const iconSizeClasses = {
 const isUpdated = modDatetime && modDatetime > pubDatetime;
 ---
 
-{
-  variant === "badge" ? (
-    <div class={`badge badge-ghost badge-sm gap-1 ${className}`.trim()}>
-      {showIcon && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class={`${iconSizeClasses[size]} fill-current`}
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z" />
-          <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z" />
-        </svg>
-      )}
-      <time datetime={myDatetime.toISOString()} class={sizeClasses[size]}>
-        {date}
-      </time>
-    </div>
-  ) : (
+{variant === "badge" ? (
+  <div class={`badge badge-ghost badge-sm gap-1 ${className}`.trim()}>
+    {showIcon && (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class={`${iconSizeClasses[size]} fill-current`}
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z" />
+        <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z" />
+      </svg>
+    )}
+    <time datetime={myDatetime.toISOString()} class={sizeClasses[size]}>
+      {date}
+    </time>
+  </div>
+) : (
+  <div
+    class={`text-base-content/70 flex items-center gap-2 ${className}`.trim()}
+  >
+    {showIcon && (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class={`${iconSizeClasses[size]} shrink-0 fill-current`}
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z" />
+        <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z" />
+      </svg>
+    )}
+
     <div
-      class={`text-base-content/70 flex items-center gap-2 ${className}`.trim()}
+      class={`flex flex-wrap items-center gap-x-2 gap-y-1 ${sizeClasses[size]}`}
     >
-      {showIcon && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class={`${iconSizeClasses[size]} shrink-0 fill-current`}
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z" />
-          <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z" />
-        </svg>
+      <div class="flex items-center gap-1">
+        <span class="text-base-content/70">公開日:</span>
+        <time datetime={pubDate.toISOString()}>{pubDateFormatted}</time>
+        {showTime && (
+          <>
+            <span aria-hidden="true" class="text-base-content/50">
+              •
+            </span>
+            <span class="text-nowrap">{pubTime}</span>
+          </>
+        )}
+      </div>
+
+      {isUpdated && modDateFormatted && (
+        <span aria-hidden="true" class="text-base-content/50">
+          /
+        </span>
       )}
 
-      <div
-        class={`flex flex-wrap items-center gap-x-2 gap-y-1 ${sizeClasses[size]}`}
-      >
+      {isUpdated && modDateFormatted && (
         <div class="flex items-center gap-1">
-          <span class="text-base-content/70">公開日:</span>
-          <time datetime={pubDate.toISOString()}>{pubDateFormatted}</time>
-          {showTime && (
+          <span class="text-base-content/70">更新日:</span>
+          <time datetime={modDate!.toISOString()}>{modDateFormatted}</time>
+          {showTime && modTime && (
             <>
               <span aria-hidden="true" class="text-base-content/50">
                 •
               </span>
-              <span class="text-nowrap">{pubTime}</span>
+              <span class="text-nowrap">{modTime}</span>
             </>
           )}
         </div>
-
-        {isUpdated && modDateFormatted && (
-          <span aria-hidden="true" class="text-base-content/50">
-            /
-          </span>
-        )}
-
-        {isUpdated && modDateFormatted && (
-          <div class="flex items-center gap-1">
-            <span class="text-base-content/70">更新日:</span>
-            <time datetime={modDate!.toISOString()}>{modDateFormatted}</time>
-            {showTime && modTime && (
-              <>
-                <span aria-hidden="true" class="text-base-content/50">
-                  •
-                </span>
-                <span class="text-nowrap">{modTime}</span>
-              </>
-            )}
-          </div>
-        )}
-      </div>
+      )}
     </div>
-  )
-}
+  </div>
+)}

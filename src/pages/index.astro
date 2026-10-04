@@ -34,47 +34,47 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <div class="text-center lg:text-left">
           <h1 class="text-base-content text-xl">雑に作る。雑記も書く。</h1>
           <p class="text-base-content/80 prose py-4">
-            <LinkButton variant="link" href="/about/"> About me </LinkButton>
+            <LinkButton variant="link" href="/about/">
+              {" "}
+              About me{" "}
+            </LinkButton>
           </p>
         </div>
       </div>
     </section>
 
-    {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured" class="py-8">
-            <h2 class="text-base-content mb-6 text-2xl font-bold">
-              人気の記事
-            </h2>
-            <ul class="space-y-4">
-              {featuredPosts.map(({ data, id }) => (
-                <Card href={`/posts/${id}/`} frontmatter={data} />
-              ))}
-            </ul>
-          </section>
-        </>
-      )
-    }
-
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="py-8">
-          <h2 class="text-base-content mb-6 text-2xl font-bold">最新記事</h2>
+    {featuredPosts.length > 0 && (
+      <>
+        <section id="featured" class="py-8">
+          <h2 class="text-base-content mb-6 text-2xl font-bold">人気の記事</h2>
           <ul class="space-y-4">
-            {recentPosts.map(
-              ({ data, id }, index) =>
-                index < SITE.postPerIndex && (
-                  <Card href={`/posts/${id}/`} frontmatter={data} />
-                )
-            )}
+            {featuredPosts.map(({ data, id }) => (
+              <Card href={`/posts/${id}/`} frontmatter={data} />
+            ))}
           </ul>
         </section>
-      )
-    }
+      </>
+    )}
+
+    {recentPosts.length > 0 && (
+      <section id="recent-posts" class="py-8">
+        <h2 class="text-base-content mb-6 text-2xl font-bold">最新記事</h2>
+        <ul class="space-y-4">
+          {recentPosts.map(
+            ({ data, id }, index) =>
+              index < SITE.postPerIndex && (
+                <Card href={`/posts/${id}/`} frontmatter={data} />
+              )
+          )}
+        </ul>
+      </section>
+    )}
 
     <div class="flex justify-center pb-12">
-      <a href="/posts/" class="hover:underline"> すべての記事 </a>
+      <a href="/posts/" class="hover:underline">
+        {" "}
+        すべての記事{" "}
+      </a>
     </div>
 
     <section id="slide" class="py-8">

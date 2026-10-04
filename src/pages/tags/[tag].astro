@@ -47,8 +47,16 @@ const pageTitle = `タグ「${tag}」の記事一覧`;
     <!-- パンくずナビゲーション -->
     <nav class="breadcrumbs mb-6 text-sm">
       <ul>
-        <li><a href="/" class="link link-hover">ホーム</a></li>
-        <li><a href="/tags/" class="link link-hover">タグ一覧</a></li>
+        <li>
+          <a href="/" class="link link-hover">
+            ホーム
+          </a>
+        </li>
+        <li>
+          <a href="/tags/" class="link link-hover">
+            タグ一覧
+          </a>
+        </li>
         <li class="text-base-content/70">{tag}</li>
       </ul>
     </nav>
@@ -59,28 +67,26 @@ const pageTitle = `タグ「${tag}」の記事一覧`;
         <h1 class="text-base-content text-3xl font-bold">
           タグ「{tag}」の記事一覧
         </h1>
-        <span class="text-base-content/70 text-sm">
-          {totalPosts}件
-        </span>
+        <span class="text-base-content/70 text-sm">{totalPosts}件</span>
       </div>
     </div>
 
-    {
-      posts.length > 0 ? (
-        <PostsByYear posts={posts} />
-      ) : (
-        <div class="py-12 text-center">
-          <p class="text-base-content/70">このタグの記事はまだありません。</p>
-          <a href="/tags/" class="btn btn-primary btn-sm mt-4">
-            タグ一覧に戻る
-          </a>
-        </div>
-      )
-    }
+    {posts.length > 0 ? (
+      <PostsByYear posts={posts} />
+    ) : (
+      <div class="py-12 text-center">
+        <p class="text-base-content/70">このタグの記事はまだありません。</p>
+        <a href="/tags/" class="btn btn-primary btn-sm mt-4">
+          タグ一覧に戻る
+        </a>
+      </div>
+    )}
 
     <!-- フッターナビゲーション -->
     <div class="mt-12 text-center">
-      <a href="/tags/" class="btn btn-outline btn-sm">タグ一覧に戻る</a>
+      <a href="/tags/" class="btn btn-outline btn-sm">
+        タグ一覧に戻る
+      </a>
     </div>
   </div>
 </BaseLayout>
