@@ -1,6 +1,7 @@
-minimumReleaseAge: 1440
+allowBuilds:
+  esbuild: true
+  lefthook: true
+  sharp: true
+  workerd: true
 
-onlyBuiltDependencies:
-  - esbuild
-  - lefthook
-  - sharp
+minimumReleaseAge: 1440
