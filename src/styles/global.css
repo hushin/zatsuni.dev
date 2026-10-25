@@ -39,6 +39,11 @@ html {
   @apply outline-primary/50 rounded-sm outline-2 outline-offset-2;
 }
 
+/* インラインコードの角丸を控えめにする */
+.prose :where(code):not(:where(pre code)) {
+  border-radius: var(--radius-sm);
+}
+
 /* Social Icons Styling */
 svg.icon-tabler {
   @apply inline-block h-5 w-5 scale-125 fill-transparent stroke-current stroke-2 opacity-90;
