@@ -30,7 +30,7 @@
     "@astrojs/check": "^0.9.12",
     "@playwright/test": "^1.65.0",
     "@tailwindcss/typography": "^0.5.20",
-    "daisyui": "^5.7.50",
+    "daisyui": "^5.8.1",
     "lefthook": "^2.2.2",
     "prettier": "^3.9.10",
     "prettier-plugin-astro": "^1.1.2",
